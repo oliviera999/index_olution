@@ -4,7 +4,7 @@
 <head>
 
 <?php
-$version = '2.0';
+$version = '2.1';
 $base = '';
 $script_dir = dirname($_SERVER['SCRIPT_NAME']);
 $base_for_document = rtrim($script_dir, '/') . '/';
@@ -29,7 +29,12 @@ $nomimages[14]="assets/img/entete/bg-14.jpg";
 $nomimages[15]="assets/img/entete/bg-15.jpg";
 $nomimages[16]="assets/img/entete/bg-16.jpg";
 $affimage = random_int(1, $nbimages);
-$scheme = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') ? 'https' : 'http';
+// Détection HTTPS (certificat, proxy, load balancer)
+$is_https = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+  || (!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https')
+  || (!empty($_SERVER['HTTP_X_FORWARDED_SSL']) && $_SERVER['HTTP_X_FORWARDED_SSL'] === 'on')
+  || (isset($_SERVER['SERVER_PORT']) && (int) $_SERVER['SERVER_PORT'] === 443);
+$scheme = $is_https ? 'https' : 'http';
 $host = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '';
 $script_path = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/');
 if ($host !== '') {
