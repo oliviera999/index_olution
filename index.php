@@ -4,7 +4,7 @@
 <head>
 
 <?php
-$version = '2.1';
+$version = '2.2';
 $base = '';
 $script_dir = dirname($_SERVER['SCRIPT_NAME']);
 $base_for_document = rtrim($script_dir, '/') . '/';
@@ -129,7 +129,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
     <div id="act" class="section-title">
       <span>What is it ?</span>
       <h2>What is it ?</h2>
-      <p>Initalement  une Olution est un projet qui propose des alternatives aux façons d'enseigner classiques.</p>
+      <p>Initialement, Olution est un projet qui propose des alternatives aux façons d'enseigner classiques.</p>
     </div>
     
     <section id="actions" class="actions">
@@ -168,7 +168,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
                 <h3>L'apprentissage par l'échange</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Olution c'est cultiver imagination et créativité. Les idées viennent de chacun et sont le centre des projets.
+                  Olution, c'est cultiver l'imagination et créativité. Les idées viennent de chacun et sont le centre des projets.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
@@ -180,7 +180,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
                 <h3>Une philosophie à part entière</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Olution met à l'honneur l'échange, le partage, l'open source, le lowcost, le diy, la nature.
+                  Olution met à l'honneur l'échange, le partage, l'open source, le low-cost, le DIY, la nature.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
@@ -204,8 +204,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
                 <h3>Un projet aux facettes multiples</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  La plateforme olution.info en est un des éléments centraux, proposant des dizaines d'espaces de formation.
-La pratique de terrain est également majeure.
+                  La plateforme olution.info en est un des éléments centraux, proposant des dizaines d'espaces de formation. La pratique de terrain est également majeure.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
@@ -236,7 +235,7 @@ La pratique de terrain est également majeure.
         <div class="section-title">
           <span>olution.info</span>
           <h2>olution.info</h2>
-          <p>olution.info est une plateforme Moodle, d'enseignement en ligne utilisée quotidiennement par les élèves.<br>Initialement, c'est le point de départ, la base d'olution. Aujourd'hui, cela n'en est plus qu'une partie.<br>Son hébergement est réalisé par <a href="https://www.o2switch.fr/" rel="noopener noreferrer" target="_blank">o2switch</a>, des professionnels reconnus dont les serveurs sont en France.</p>
+          <p>Olution.info est une plateforme Moodle, d'enseignement en ligne utilisée quotidiennement par les élèves.<br>Initialement, c'est le point de départ, la base d'olution. Aujourd'hui, cela n'en est plus qu'une partie.<br>Son hébergement est réalisé par <a href="https://www.o2switch.fr/" rel="noopener noreferrer" target="_blank">o2switch</a>, des professionnels reconnus dont les serveurs sont en France.</p>
         </div>
 
         <div class="row">
@@ -272,7 +271,7 @@ La pratique de terrain est également majeure.
                   <div class="count-box">
                     <i class="bi bi-award" style="color: #ffb459;"></i>
                     <span data-purecounter-start="0" data-purecounter-end="4" data-purecounter-duration="1" class="purecounter"></span>
-                    <p><strong>Etablissements</strong><br>En France et en Afrique.</p>
+                    <p><strong>Établissements</strong><br>En France et en Afrique.</p>
                   </div>
                 </div>
               </div>
@@ -318,7 +317,7 @@ La pratique de terrain est également majeure.
         <div class="section-title">
           <span>Les actions</span>
           <h2>Les actions</h2>
-          <p>Olution est varié. Mangroove, farmflow, sas, les chroniques de tonton du bled, Scape New Order, une vie en forêt, météosaules... Sans autant de projets qui en font partie.</p>
+          <p>Olution est varié. Mangroove, Farmflow, SAS, Les chroniques de tonton du bled, Scape New Order, Une vie en forêt, Météosaules… Ce sont autant de projets qui en font partie.</p>
         </div>
 
         <ul id="portfolio-flters" class="d-flex justify-content-center">
@@ -460,11 +459,11 @@ La pratique de terrain est également majeure.
           </div>
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-brousse">
-            <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/DSC04897.JPG" class="img-fluid" alt="Oeil observé à la loupe à main"></div>
+            <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/DSC04897.JPG" class="img-fluid" alt="Œil observé à la loupe à main"></div>
             <div class="portfolio-info">
-              <h4>Oeil, observé à la loupe à main</h4>
+              <h4>Œil, observé à la loupe à main</h4>
               <p>Yvelines - France</p>
-              <a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/DSC04897.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Oeil observé à la loupe à main"><i class="bx bx-plus"></i></a>
+              <a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/DSC04897.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Œil observé à la loupe à main"><i class="bx bx-plus"></i></a>
             </div>
           </div>
 
@@ -551,11 +550,11 @@ La pratique de terrain est également majeure.
           </div>
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-fictions">
-            <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/jeux/2022-05-28.png" class="img-fluid" alt="Scape New Order, jeu de rôle Genialy"></div>
+            <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/jeux/2022-05-28.png" class="img-fluid" alt="Scape New Order, jeu de rôle Genially"></div>
             <div class="portfolio-info">
-              <h4>"Scape New Order", un jeu de rôle Genialy pour le confinement</h4>
+              <h4>"Scape New Order", un jeu de rôle Genially pour le confinement</h4>
               <p>Casablanca - Maroc</p>
-              <a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/jeux/2022-05-28.png" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Scape New Order, jeu de rôle Genialy"><i class="bx bx-plus"></i></a>
+              <a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/jeux/2022-05-28.png" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Scape New Order, jeu de rôle Genially"><i class="bx bx-plus"></i></a>
             </div>
           </div>
 
@@ -741,10 +740,10 @@ La pratique de terrain est également majeure.
               <div class="testimonial-item">
                 <img src="<?php echo $assets_base_safe; ?>assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="Culture">
                 <h3>Culture</h3>
-                <h4>Etre acteur dans son environnement</h4>
+                <h4>Être acteur dans son environnement</h4>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  A siégé et siège dans de nombreuses instances associatives et institutionnelles. Qu'ils s'agissent d'art, de restauration, de commerce, ou de pilotage de projets.
+                  A siégé et siège dans de nombreuses instances associatives et institutionnelles. Qu'il s'agisse d'art, de restauration, de commerce, ou de pilotage de projets.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
@@ -754,10 +753,10 @@ La pratique de terrain est également majeure.
               <div class="testimonial-item">
                 <img src="<?php echo $assets_base_safe; ?>assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="Tech">
                 <h3>Tech</h3>
-                <h4>Faire quelque-chose de ses mains</h4>
+                <h4>Faire quelque chose de ses mains</h4>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Geek, touche à tout. Créer là où il n'existe rien est un leitmotiv. Et si l'on sait pas comment faire, on apprend. IRL ou virtuel.
+                  Geek, touche à tout. Créer là où il n'existe rien est un leitmotiv. Et si l'on ne sait pas comment faire, on apprend. IRL ou virtuel.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
@@ -806,7 +805,7 @@ La pratique de terrain est également majeure.
   <footer id="footer">
     <div class="container">
       <h3>olution</h3>
-      <p>échanger créer apprendre</p>
+      <p>échanger, créer, apprendre</p>
       <div class="copyright">
         &copy; Un projet proposé par l'association <strong><span>Marout</span></strong>. Tous droits réservés — v<?php echo htmlspecialchars($version); ?>
       </div>
