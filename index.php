@@ -3,7 +3,11 @@
 
 <head>
 
-<?php $nbimages=16;
+<?php
+// Base path pour que les assets (CSS, JS, images) fonctionnent en sous-dossier (ex. /test_index/)
+$base = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/') . '/';
+if ($base === '') { $base = '/'; } // à la racine du domaine
+$nbimages=16;
 $nomimages[1]="assets/img/entete/bg-1.jpg";
 $nomimages[2]="assets/img/entete/bg-2.jpg";
 $nomimages[3]="assets/img/entete/bg-3.jpg";
@@ -23,7 +27,7 @@ $nomimages[16]="assets/img/entete/bg-16.jpg";
 srand((double)microtime()*1000000);
 $affimage=rand(1,$nbimages);
 ?>
-
+  <base href="<?php echo htmlspecialchars($base); ?>">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
