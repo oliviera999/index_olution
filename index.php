@@ -4,7 +4,7 @@
 <head>
 
 <?php
-$version = '2.4';
+$version = '2.5';
 $base = '';
 $script_dir = dirname($_SERVER['SCRIPT_NAME']);
 $base_for_document = rtrim($script_dir, '/') . '/';
@@ -739,7 +739,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
             <div class="icon-box service-card">
               <img src="<?php echo $assets_base_safe; ?>assets/img/olutionff.png" class="img-fluid" width="35%" alt="IOT olution">
               <h4 class="title"><a href="https://iot.olution.info" rel="noopener noreferrer" target="_blank">IOT olution</a></h4>
-              <span class="service-badge service-badge-2">Pour qui ? Enseignants & makers</span>
+              <span class="service-badge service-badge-2">Pour qui ? Élèves & makers</span>
               <p class="description">Site présentant les modules DIY connectés créés avec les élèves et permettant leur suivi et contrôle en temps réel à distance.</p>
               <p class="service-impact">Modules open source, fabriqués en classe, pilotés en temps réel</p>
             </div>
