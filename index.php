@@ -4,24 +4,24 @@
 <head>
 
 <?php $nbimages=16;
-$nomimages[1]="assets/img/entete/bg-1.jpg";
-$nomimages[2]="assets/img/entete/bg-2.jpg";
-$nomimages[3]="assets/img/entete/bg-3.jpg";
-$nomimages[4]="assets/img/entete/bg-4.jpg";
-$nomimages[5]="assets/img/entete/bg-5.jpg";
-$nomimages[6]="assets/img/entete/bg-6.jpg";
-$nomimages[7]="assets/img/entete/bg-7.jpg";
-$nomimages[8]="assets/img/entete/bg-8.jpg";
-$nomimages[9]="assets/img/entete/bg-9.jpg";
-$nomimages[10]="assets/img/entete/bg-10.jpg";
-$nomimages[11]="assets/img/entete/bg-11.jpg";
-$nomimages[12]="assets/img/entete/bg-12.jpg";
-$nomimages[13]="assets/img/entete/bg-13.jpg";
-$nomimages[14]="assets/img/entete/bg-14.jpg";
-$nomimages[15]="assets/img/entete/bg-15.jpg";
-$nomimages[16]="assets/img/entete/bg-16.jpg";
+$nomimages[1]="../assets/img/entete/bg-1.jpg";
+$nomimages[2]="../assets/img/entete/bg-2.jpg";
+$nomimages[3]="../assets/img/entete/bg-3.jpg";
+$nomimages[4]="../assets/img/entete/bg-4.jpg";
+$nomimages[5]="../assets/img/entete/bg-5.jpg";
+$nomimages[6]="../assets/img/entete/bg-6.jpg";
+$nomimages[7]="../assets/img/entete/bg-7.jpg";
+$nomimages[8]="../assets/img/entete/bg-8.jpg";
+$nomimages[9]="../assets/img/entete/bg-9.jpg";
+$nomimages[10]="../assets/img/entete/bg-10.jpg";
+$nomimages[11]="../assets/img/entete/bg-11.jpg";
+$nomimages[12]="../assets/img/entete/bg-12.jpg";
+$nomimages[13]="../assets/img/entete/bg-13.jpg";
+$nomimages[14]="../assets/img/entete/bg-14.jpg";
+$nomimages[15]="../assets/img/entete/bg-15.jpg";
+$nomimages[16]="../assets/img/entete/bg-16.jpg";
 srand((double)microtime()*1000000);
-$affimage=rand(1,$nbimages);
+$affimage=rand(0,$nbimages);
 ?>
 
   <meta charset="utf-8">
