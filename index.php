@@ -124,7 +124,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
     <div id="act" class="section-title">
       <span>What is it ?</span>
       <h2>What is it ?</h2>
-      <p>Olution est un projet qui propose des alternatives aux façons d'enseigner classiques.</p>
+      <p>Initalement  une Olution est un projet qui propose des alternatives aux façons d'enseigner classiques.</p>
     </div>
     
     <section id="actions" class="actions">
