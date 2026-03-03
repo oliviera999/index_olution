@@ -4,7 +4,7 @@
 <head>
 
 <?php
-$version = '1.5';
+$version = '1.6';
 $base = '';
 $script_dir = dirname($_SERVER['SCRIPT_NAME']);
 $base_for_document = rtrim($script_dir, '/') . '/';
@@ -231,7 +231,7 @@ La pratique de terrain est également majeure.
         <div class="section-title">
           <span>olution.info</span>
           <h2>olution.info</h2>
-          <p>La plateforme d'enseignement en ligne utilisée quotidiennement par les élèves.<br> Initialement, c'est le point de départ, la base d'olution. Aujourd'hui, cela n'en est plus qu'une partie. </p>
+          <p>olution.info est une plateforme Moodle, d'enseignement en ligne utilisée quotidiennement par les élèves.<br>Initialement, c'est le point de départ, la base d'olution. Aujourd'hui, cela n'en est plus qu'une partie.<br>Son hébergement est réalisé par <a href="https://www.o2switch.fr/" rel="noopener noreferrer" target="_blank">o2switch</a>, des professionnels reconnus dont les serveurs sont en France.</p>
         </div>
 
         <div class="row">
