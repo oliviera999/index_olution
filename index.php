@@ -4,6 +4,8 @@
 <head>
 
 <?php
+// Version du site (versioning sémantique type X.Y)
+$version = '1.0';
 // Base path pour que les assets (CSS, JS, images) fonctionnent en sous-dossier (ex. /test_index/)
 $base = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/') . '/';
 if ($base === '') { $base = '/'; } // à la racine du domaine
@@ -792,7 +794,7 @@ La pratique de terrain est également majeure.
       <h3>olution</h3>
       <p>échanger créer apprendre</p>
       <div class="copyright">
-        &copy; Un projet proposé par l'association <strong><span>Marout</span></strong>. Tous droits réservés
+        &copy; Un projet proposé par l'association <strong><span>Marout</span></strong>. Tous droits réservés — v<?php echo htmlspecialchars($version); ?>
       </div>
     </div>
   </footer><!-- End Footer -->
