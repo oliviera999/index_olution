@@ -8,7 +8,7 @@
 | `#act` | « What is it ? » — présentation du projet Olution (slider) |
 | `#about` | olution.info — plateforme, chiffres (compteurs), domaines |
 | `#portfolio` | Les actions — galerie filtrable par catégorie |
-| `#services` | Sites en lien — n³, IOT olution, Farmflow, Marout |
+| `#services` | Sites en lien — n³, IOT olution, Gnomes&Licornes, Farmflow, Marout |
 | `#testi` | Me concernant — témoignages (slider) |
 | `#contact` | Contact — email affiché |
 
