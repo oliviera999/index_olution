@@ -4,7 +4,7 @@
 <head>
 
 <?php
-$version = '1.7';
+$version = '1.8';
 $base = '';
 $script_dir = dirname($_SERVER['SCRIPT_NAME']);
 $base_for_document = rtrim($script_dir, '/') . '/';
@@ -664,7 +664,7 @@ La pratique de terrain est également majeure.
             <div class="icon-box">
               <img src="<?php echo $assets_base_safe; ?>assets/img/logo-gnomes-licornes.png" class="img-fluid" width="35%" alt="Gnomes&amp;Licornes">
               <h4 class="title"><a href="https://gl.olution.info/" rel="noopener noreferrer" target="_blank">Gnomes&amp;Licornes</a></h4>
-              <p class="description">Un jeu sur l'année en Sciences et Technologie.</p>
+              <p class="description">Une véritable aventure ludique sur l'ensemble de l'année en Sciences et Technologie pour les sixièmes.</p>
             </div>
           </div>
 
