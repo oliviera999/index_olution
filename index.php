@@ -4,7 +4,7 @@
 <head>
 
 <?php
-$version = '1.4';
+$version = '1.5';
 $base = '';
 $script_dir = dirname($_SERVER['SCRIPT_NAME']);
 $base_for_document = rtrim($script_dir, '/') . '/';
@@ -39,6 +39,10 @@ if ($host !== '') {
 }
 $assets_base_safe = htmlspecialchars($assets_base, ENT_QUOTES, 'UTF-8');
 $hero_image_url = ($assets_base !== '') ? $assets_base . $nomimages[$affimage] : $nomimages[$affimage];
+
+// Années d'existence : calcul automatique depuis le déploiement de la plateforme (2013)
+$plateforme_annee_deploiement = 2013;
+$annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
 ?>
   <?php if ($base !== ''): ?><base href="<?php echo htmlspecialchars($base); ?>"><?php endif; ?>
   <meta charset="utf-8">
@@ -254,7 +258,7 @@ La pratique de terrain est également majeure.
                 <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
                   <div class="count-box">
                     <i class="bi bi-clock" style="color: #2cbdee;"></i>
-                    <span data-purecounter-start="0" data-purecounter-end="8" data-purecounter-duration="1" class="purecounter"></span>
+                    <span data-purecounter-start="0" data-purecounter-end="<?php echo (int) $annees_existence; ?>" data-purecounter-duration="1" class="purecounter"></span>
                     <p><strong>Années d'existence</strong><br>Parti de rien, chaque instant qui passe enrichit l'ensemble.</p>
                   </div>
                 </div>
