@@ -641,9 +641,9 @@ La pratique de terrain est également majeure.
         <div class="row  justify-content-center">
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box">
-              <img src="<?php echo $assets_base; ?>assets/img/logoff.png" class="img-fluid" width="25%" alt="">
-              <h4 class="title"><a href="https://farmflow.marout.org">Farmflow</a></h4>
-              <p class="description">Projet d'aquaponie connecté porté par des élèves de seconde.</p>
+              <img src="<?php echo $assets_base; ?>assets/img/logo-n3.png" class="img-fluid" width="35%" alt="n³">
+              <h4 class="title"><a href="https://n3.olution.info/">n³</a></h4>
+              <p class="description">La salle aérée Nature Numérique et Nomade.</p>
             </div>
           </div>
 
@@ -653,6 +653,14 @@ La pratique de terrain est également majeure.
               
               <h4 class="title"><a href="https://iot.olution.info">IOT olution</a></h4>
               <p class="description">Les datas des différents objets connectés... Projet en cours de construction.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box">
+              <img src="<?php echo $assets_base; ?>assets/img/logoff.png" class="img-fluid" width="25%" alt="">
+              <h4 class="title"><a href="https://farmflow.marout.org">Farmflow</a></h4>
+              <p class="description">Projet d'aquaponie connecté porté par des élèves de seconde.</p>
             </div>
           </div>
 

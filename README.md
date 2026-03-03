@@ -1,6 +1,6 @@
 # Index Olution
 
-Site vitrine une page pour le projet **Olution** : initiative pédagogique proposant des alternatives aux façons d’enseigner classiques (échange, création, apprentissage). Le site présente la plateforme olution.info, les actions terrain et les sites associés (Farmflow, IOT olution, Marout).
+Site vitrine une page pour le projet **Olution** : initiative pédagogique proposant des alternatives aux façons d’enseigner classiques (échange, création, apprentissage). Le site présente la plateforme olution.info, les actions terrain et les sites associés (n³, IOT olution, Farmflow, Marout).
 
 ## Stack
 
@@ -51,8 +51,9 @@ Puis ouvrir http://localhost:8000. Les chemins des assets sont relatifs à la ra
 
 - **olution.info** : plateforme d’enseignement en ligne — https://olution.info
 - **Connexion** : https://olution.info/my/
-- **Farmflow** : https://farmflow.marout.org
+- **n³** (Nature Numérique et Nomade) : https://n3.olution.info/
 - **IOT olution** : https://iot.olution.info
+- **Farmflow** : https://farmflow.marout.org
 - **Marout** (association) : https://marout.org
 
 ## Documentation technique
