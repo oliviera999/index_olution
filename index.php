@@ -4,7 +4,7 @@
 <head>
 
 <?php
-$version = '2.2';
+$version = '2.3';
 $base = '';
 $script_dir = dirname($_SERVER['SCRIPT_NAME']);
 $base_for_document = rtrim($script_dir, '/') . '/';
@@ -95,9 +95,10 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
     <nav id="navbar" class="navbar" aria-label="Menu principal">
       <ul>
         <li><a class="nav-link scrollto active" href="#hero">Accueil</a></li>
-        <li><a class="nav-link scrollto" href="#act">What is it ?</a></li>
+        <li><a class="nav-link scrollto" href="#act">Pourquoi Olution ?</a></li>
         <li><a class="nav-link scrollto" href="#about">olution.info</a></li>
         <li><a class="nav-link scrollto" href="#portfolio">Les actions</a></li>
+        <li><a class="nav-link scrollto" href="#results">Résultats</a></li>
         <li><a class="nav-link scrollto" href="#services">Sites en lien</a></li>
         <li><a class="nav-link scrollto" href="#testi">Me concernant</a></li>
         <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
@@ -116,6 +117,12 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
       <img src="<?php echo $assets_base_safe; ?>assets/img/logoblanc.png" class="img-fluid" width="10%" alt="Logo Olution">
       <br>
       <h2>échanger, créer, apprendre</h2>
+      <div class="hero-audience-buttons d-flex flex-wrap justify-content-center gap-2 mt-3">
+        <a href="#about" class="btn btn-outline-light rounded-pill scrollto">Enseignant</a>
+        <a href="#portfolio" class="btn btn-outline-light rounded-pill scrollto">Élève</a>
+        <a href="#testi" class="btn btn-outline-light rounded-pill scrollto">Institution</a>
+        <a href="#services" class="btn btn-outline-light rounded-pill scrollto">Partenaire</a>
+      </div>
       <a href="#act" class="btn-scroll scrollto" title="Scroll Down"><i class="bx bx-chevron-down"></i></a>
     </div>
   </section><!-- End Hero -->
@@ -127,9 +134,50 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
        <!-- ======= Testimonials Section ======= -->
 
     <div id="act" class="section-title">
-      <span>What is it ?</span>
-      <h2>What is it ?</h2>
+      <span>Pourquoi Olution ?</span>
+      <h2>Pourquoi Olution ?</h2>
       <p>Initialement, Olution est un projet qui propose des alternatives aux façons d'enseigner classiques.</p>
+    </div>
+
+    <div class="container mb-4">
+      <div class="row g-3 justify-content-center">
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="audience-card card h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <p class="audience-card-icon mb-2">🎓</p>
+              <h5 class="card-title h6">Enseignant</h5>
+              <p class="card-text small mb-0">Des ressources pédagogiques innovantes, prêtes à l'emploi, gratuites</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="audience-card card h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <p class="audience-card-icon mb-2">🧑‍🎒</p>
+              <h5 class="card-title h6">Élève</h5>
+              <p class="card-text small mb-0">Apprendre en jouant, en construisant, en sortant de la classe</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="audience-card card h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <p class="audience-card-icon mb-2">🏫</p>
+              <h5 class="card-title h6">Institution</h5>
+              <p class="card-text small mb-0">Un dispositif documenté, évalué, déployé dans 5 établissements AEFE</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="audience-card card h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <p class="audience-card-icon mb-2">🤝</p>
+              <h5 class="card-title h6">Partenaire</h5>
+              <p class="card-text small mb-0">Un projet associatif à impact, ancré dans l'enseignement français à l'étranger</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     
     <section id="actions" class="actions">
@@ -246,16 +294,16 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
                 <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
                   <div class="count-box">
                     <i class="bi bi-emoji-smile" style="color: #20b38e;"></i>
-                    <span data-purecounter-start="0" data-purecounter-end="3196" data-purecounter-duration="1" class="purecounter"></span>
-                    <p><strong>Utilisateurs</strong><br>Qui changent d'année en année...</p>
+                    <span data-purecounter-start="0" data-purecounter-end="300" data-purecounter-duration="1" class="purecounter"></span>
+                    <p><strong>Utilisateurs</strong><br>élèves accompagnés chaque année</p>
                   </div>
                 </div>
 
                 <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
                   <div class="count-box">
                     <i class="bi bi-journal" style="color: #8a1ac2;"></i>
-                    <span data-purecounter-start="0" data-purecounter-end="90" data-purecounter-duration="1" class="purecounter"></span>
-                    <p><strong>Espaces de formation</strong><br>Dans des domaines qui concernent les sciences.</p>
+                    <span data-purecounter-start="0" data-purecounter-end="42" data-purecounter-duration="1" class="purecounter"></span>
+                    <p><strong>Espaces de formation</strong><br>dans les domaines scientifiques</p>
                   </div>
                 </div>
 
@@ -263,7 +311,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
                   <div class="count-box">
                     <i class="bi bi-clock" style="color: #2cbdee;"></i>
                     <span data-purecounter-start="0" data-purecounter-end="<?php echo (int) $annees_existence; ?>" data-purecounter-duration="1" class="purecounter"></span>
-                    <p><strong>Années d'existence</strong><br>Parti de rien, chaque instant qui passe enrichit l'ensemble.</p>
+                    <p><strong>Années d'existence</strong><br>de terrain, en France et en Afrique</p>
                   </div>
                 </div>
 
@@ -271,7 +319,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
                   <div class="count-box">
                     <i class="bi bi-award" style="color: #ffb459;"></i>
                     <span data-purecounter-start="0" data-purecounter-end="4" data-purecounter-duration="1" class="purecounter"></span>
-                    <p><strong>Établissements</strong><br>En France et en Afrique.</p>
+                    <p><strong>Établissements</strong><br>en France, au Gabon et au Maroc</p>
                   </div>
                 </div>
               </div>
@@ -636,6 +684,36 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
 
     </section><!-- End My Portfolio Section -->
 
+    <!-- ======= Résultats & Reconnaissances ======= -->
+    <section id="results" class="results section-bg">
+      <div class="container">
+        <div class="section-title">
+          <span>Résultats & Reconnaissances</span>
+          <h2>Résultats & Reconnaissances</h2>
+        </div>
+        <div class="row g-4 justify-content-center">
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="results-item results-stat">
+              <span class="results-number">90%</span>
+              <p class="mb-0">des élèves engagés sur l'année complète dans le dispositif Gnomes & Licornes</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="results-item">
+              <span class="results-badge">🏆 Lauréat Hacktonfutur</span>
+              <p class="mb-0">Farmflow, projet élève d'aquaponie connectée, présenté au salon BPI Paris 2022</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="results-item">
+              <span class="results-badge">💬 « L'école vécue comme une aventure »</span>
+              <p class="mb-0">Retour d'expérience issu du projet n³, salle aérée du Lycée Lyautey</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Résultats -->
+
  <!-- ======= My Services Section ======= -->
     <section id="services" class="services">
       <div class="container">
@@ -646,45 +724,54 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           <p>Différents sites permettent de partager les projets en ligne. Olution est supporté par l'association Marout.</p>
         </div>
 
-        <div class="row justify-content-center row-cols-1 row-cols-md-2 row-cols-lg-5 g-4">
+        <div class="row justify-content-center row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
           <div class="col d-flex align-items-stretch">
-            <div class="icon-box">
+            <div class="icon-box service-card">
               <img src="<?php echo $assets_base_safe; ?>assets/img/logo-n3.png" class="img-fluid" width="35%" alt="La salle aérée n³">
               <h4 class="title"><a href="https://n3.olution.info/" rel="noopener noreferrer" target="_blank">La salle aérée n³</a></h4>
+              <span class="service-badge service-badge-1">Pour qui ? Institutions & partenaires</span>
               <p class="description">Une salle de cours extérieure et bien plus au lycée français de Casablanca.</p>
+              <p class="service-impact">Premier espace d'apprentissage Nature, Nomade du réseau AEFE</p>
             </div>
           </div>
 
           <div class="col d-flex align-items-stretch">
-            <div class="icon-box">
+            <div class="icon-box service-card">
               <img src="<?php echo $assets_base_safe; ?>assets/img/olutionff.png" class="img-fluid" width="35%" alt="IOT olution">
-              
               <h4 class="title"><a href="https://iot.olution.info" rel="noopener noreferrer" target="_blank">IOT olution</a></h4>
+              <span class="service-badge service-badge-2">Pour qui ? Enseignants & makers</span>
               <p class="description">Site présentant les modules DIY connectés créés avec les élèves et permettant leur suivi et contrôle en temps réel à distance.</p>
+              <p class="service-impact">Modules open source, fabriqués en classe, pilotés en temps réel</p>
             </div>
           </div>
 
           <div class="col d-flex align-items-stretch">
-            <div class="icon-box">
+            <div class="icon-box service-card">
               <img src="<?php echo $assets_base_safe; ?>assets/img/logo-gnomes-licornes.png" class="img-fluid" width="35%" alt="Gnomes&amp;Licornes">
               <h4 class="title"><a href="https://gl.olution.info/" rel="noopener noreferrer" target="_blank">Gnomes&amp;Licornes</a></h4>
+              <span class="service-badge service-badge-3">Pour qui ? Élèves de 6e & enseignants</span>
               <p class="description">Une véritable aventure ludique sur l'ensemble de l'année en Sciences et Technologie pour les sixièmes.</p>
+              <p class="service-impact">Gamification complète d'une année scolaire en ST</p>
             </div>
           </div>
 
           <div class="col d-flex align-items-stretch">
-            <div class="icon-box">
+            <div class="icon-box service-card">
               <img src="<?php echo $assets_base_safe; ?>assets/img/logoff.png" class="img-fluid" width="25%" alt="Farmflow">
               <h4 class="title"><a href="https://farmflow.marout.org" rel="noopener noreferrer" target="_blank">Farmflow</a></h4>
+              <span class="service-badge service-badge-4">Pour qui ? Partenaires & presse</span>
               <p class="description">Un projet de start-up d'aquaponie connectée initié par des élèves de seconde, récompensé au concours Hacktonfutur et présenté au salon de la BPI 2022.</p>
+              <p class="service-impact">De la classe au salon BPI — une start-up née à l'école</p>
             </div>
           </div>
 
           <div class="col d-flex align-items-stretch">
-            <div class="icon-box">
+            <div class="icon-box service-card">
               <img src="<?php echo $assets_base_safe; ?>assets/img/logomarout.png" class="img-fluid" width="35%" alt="Marout">
               <h4 class="title"><a href="https://marout.org" rel="noopener noreferrer" target="_blank">Marout</a></h4>
+              <span class="service-badge service-badge-5">Pour qui ? Réseau associatif</span>
               <p class="description">Mutualisation, partage, conseil sont les mots-clés qui définissent cette association.</p>
+              <p class="service-impact">L'association support qui rend tout cela possible</p>
             </div>
           </div>
         </div>
@@ -766,6 +853,12 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
         </div>
       </div>
     </section><!-- End Testimonials Section -->
+
+    <div class="legitimacy-bar">
+      <div class="container">
+        <p class="legitimacy-text">Enseignant certifié — Sciences & Technologie · Réseau AEFE · Lycée Lyautey de Casablanca · Académie de Versailles · 15 ans d'expérience terrain en France, au Gabon et au Maroc</p>
+      </div>
+    </div>
     
     <!-- ======= Contact Me Section ======= -->
     <section id="contact" class="contact">
@@ -774,7 +867,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
         <div class="section-title">
           <span>Contact</span>
           <h2>Contact</h2>
-          <p>Un besoin, une question, une remarque, une suggestion... C'est ici !</p>
+          <p>Vous souhaitez adapter Olution à votre établissement ? Vous cherchez un intervenant pour un projet pédagogique innovant ? Vous voulez collaborer ou en savoir plus ? → Écrivons-nous.</p>
         </div>
 
         <div class="row justify-content-center">

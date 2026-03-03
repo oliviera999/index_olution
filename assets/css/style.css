@@ -404,6 +404,18 @@ h6 {
   text-transform: uppercase;
 }
 
+#hero .hero-audience-buttons .btn {
+  font-size: 0.9rem;
+  padding: 0.35rem 1rem;
+  border-width: 1px;
+  transition: 0.3s;
+}
+#hero .hero-audience-buttons .btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border-color: #fff;
+}
+
 #hero .btn-scroll {
   transition: 0.4s;
   color: rgba(255, 255, 255, 0.6);
@@ -466,6 +478,38 @@ section {
   background-color: white;
 }
 
+/* Section Résultats & Reconnaissances */
+#results {
+  padding: 60px 0;
+}
+.results-item {
+  padding: 1.5rem;
+  background: rgba(248, 249, 250, 0.9);
+  border-radius: 8px;
+  height: 100%;
+  border-left: 4px solid #ffab40;
+}
+.results-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: "Raleway", sans-serif;
+  color: #20b38e;
+  margin-bottom: 0.5rem;
+}
+.results-badge {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 0.5rem;
+}
+.results-item p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+
 .section-title {
   text-align: center;
   padding: 30px 0;
@@ -511,6 +555,20 @@ section {
   .section-title span {
     font-size: 38px;
   }
+}
+
+/* Encart audience — Pourquoi Olution ? */
+.audience-card {
+  background: rgba(255, 255, 255, 0.85);
+  transition: 0.3s;
+}
+.audience-card:hover {
+  background: rgba(255, 255, 255, 0.95);
+}
+.audience-card-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
 }
 
 /*--------------------------------------------------------------
@@ -811,6 +869,51 @@ section {
 
 .services .icon-box:hover .title a {
   color: #ffab40;
+}
+
+/* Services — badges et phrase d'impact */
+.services .service-card {
+  display: flex;
+  flex-direction: column;
+}
+.services .service-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+.services .service-badge-1 { background: #20b38e; }
+.services .service-badge-2 { background: #8a1ac2; }
+.services .service-badge-3 { background: #2cbdee; }
+.services .service-badge-4 { background: #ffb459; }
+.services .service-badge-5 { background: #444; }
+.services .service-impact {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+/* Encart légitimité — Me concernant */
+.legitimacy-bar {
+  background: rgba(248, 249, 250, 0.95);
+  padding: 1rem 0;
+  text-align: center;
+}
+.legitimacy-text {
+  font-size: 0.85rem;
+  color: #555;
+  margin: 0;
+  line-height: 1.5;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /*--------------------------------------------------------------

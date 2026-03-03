@@ -276,10 +276,18 @@
   });
 
   /**
-   * Initiate Pure Counter (optionnel si le script CDN s'auto-initialise)
+   * Initiate Pure Counter au scroll (section #about)
    */
-  if (typeof PureCounter === 'function') {
-    new PureCounter();
+  let aboutSection = select('#about');
+  if (aboutSection && typeof PureCounter === 'function') {
+    new Waypoint({
+      element: aboutSection,
+      offset: '80%',
+      handler: function() {
+        new PureCounter();
+        this.destroy();
+      }
+    });
   }
 
 })()
