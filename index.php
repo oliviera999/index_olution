@@ -4,7 +4,7 @@
 <head>
 
 <?php
-$version = '1.6';
+$version = '1.7';
 $base = '';
 $script_dir = dirname($_SERVER['SCRIPT_NAME']);
 $base_for_document = rtrim($script_dir, '/') . '/';
