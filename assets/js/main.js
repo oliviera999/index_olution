@@ -240,10 +240,21 @@
   });
 
   /**
-   * Initiate portfolio lightbox 
+   * Initiate portfolio lightbox (focus déplacé à l'ouverture pour éviter aria-hidden)
    */
   const portfolioLightbox = GLightbox({
-    selector: '.portfolio-lightbox'
+    selector: '.portfolio-lightbox',
+    openEffect: 'zoom',
+    closeEffect: 'zoom',
+    onOpen: function () {
+      setTimeout(function () {
+        var lb = document.querySelector('.glightbox-container');
+        if (lb) {
+          lb.setAttribute('tabindex', '-1');
+          lb.focus();
+        }
+      }, 50);
+    }
   });
 
   /**
@@ -264,8 +275,10 @@
   });
 
   /**
-   * Initiate Pure Counter 
+   * Initiate Pure Counter (optionnel si le script CDN s'auto-initialise)
    */
-  new PureCounter();
+  if (typeof PureCounter === 'function') {
+    new PureCounter();
+  }
 
 })()
