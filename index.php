@@ -638,8 +638,8 @@ La pratique de terrain est également majeure.
           <p>Différents sites permettent de partager les projets en ligne. Olution est supporté par l'association Marout.</p>
         </div>
 
-        <div class="row  justify-content-center">
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+        <div class="row justify-content-center row-cols-1 row-cols-md-2 row-cols-lg-5 g-4">
+          <div class="col d-flex align-items-stretch">
             <div class="icon-box">
               <img src="<?php echo $assets_base; ?>assets/img/logo-n3.png" class="img-fluid" width="35%" alt="La salle aérée n³">
               <h4 class="title"><a href="https://n3.olution.info/">La salle aérée n³</a></h4>
@@ -647,7 +647,7 @@ La pratique de terrain est également majeure.
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+          <div class="col d-flex align-items-stretch">
             <div class="icon-box">
               <img src="<?php echo $assets_base; ?>assets/img/olutionff.png" class="img-fluid" width="35%" alt="">
               
@@ -656,7 +656,7 @@ La pratique de terrain est également majeure.
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+          <div class="col d-flex align-items-stretch">
             <div class="icon-box">
               <img src="<?php echo $assets_base; ?>assets/img/logo-gnomes-licornes.png" class="img-fluid" width="35%" alt="Gnomes&amp;Licornes">
               <h4 class="title"><a href="https://gl.olution.info/">Gnomes&amp;Licornes</a></h4>
@@ -664,7 +664,7 @@ La pratique de terrain est également majeure.
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+          <div class="col d-flex align-items-stretch">
             <div class="icon-box">
               <img src="<?php echo $assets_base; ?>assets/img/logoff.png" class="img-fluid" width="25%" alt="">
               <h4 class="title"><a href="https://farmflow.marout.org">Farmflow</a></h4>
@@ -672,7 +672,7 @@ La pratique de terrain est également majeure.
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+          <div class="col d-flex align-items-stretch">
             <div class="icon-box">
               <img src="<?php echo $assets_base; ?>assets/img/logomarout.png" class="img-fluid" width="35%" alt="">
               <h4 class="title"><a href="https://marout.org">Marout</a></h4>
