@@ -4,7 +4,7 @@
 <head>
 
 <?php
-$version = '1.9';
+$version = '2.0';
 $base = '';
 $script_dir = dirname($_SERVER['SCRIPT_NAME']);
 $base_for_document = rtrim($script_dir, '/') . '/';
@@ -656,7 +656,7 @@ La pratique de terrain est également majeure.
               <img src="<?php echo $assets_base_safe; ?>assets/img/olutionff.png" class="img-fluid" width="35%" alt="IOT olution">
               
               <h4 class="title"><a href="https://iot.olution.info" rel="noopener noreferrer" target="_blank">IOT olution</a></h4>
-              <p class="description">Les datas des différents objets connectés... Projet en cours de construction.</p>
+              <p class="description">Site présentant les modules DIY connectés créés avec les élèves et permettant leur suivi et contrôle en temps réel à distance.</p>
             </div>
           </div>
 
@@ -672,7 +672,7 @@ La pratique de terrain est également majeure.
             <div class="icon-box">
               <img src="<?php echo $assets_base_safe; ?>assets/img/logoff.png" class="img-fluid" width="25%" alt="Farmflow">
               <h4 class="title"><a href="https://farmflow.marout.org" rel="noopener noreferrer" target="_blank">Farmflow</a></h4>
-              <p class="description">Projet d'aquaponie connecté porté par des élèves de seconde.</p>
+              <p class="description">Un projet de start-up d'aquaponie connectée initié par des élèves de seconde, récompensé au concours Hacktonfutur et présenté au salon de la BPI 2022.</p>
             </div>
           </div>
 
