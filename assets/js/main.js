@@ -115,8 +115,9 @@
    */
   on('click', '.mobile-nav-toggle', function(e) {
     select('#navbar').classList.toggle('navbar-mobile')
-    this.classList.toggle('bi-list')
-    this.classList.toggle('bi-x')
+    const icon = this.querySelector('i') || this
+    icon.classList.toggle('bi-list')
+    icon.classList.toggle('bi-x')
   })
 
   /**
