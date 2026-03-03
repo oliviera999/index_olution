@@ -4,7 +4,7 @@
 <head>
 
 <?php
-$version = '2.3';
+$version = '2.4';
 $base = '';
 $script_dir = dirname($_SERVER['SCRIPT_NAME']);
 $base_for_document = rtrim($script_dir, '/') . '/';
@@ -721,7 +721,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
         <div class="section-title">
           <span>Sites en lien</span>
           <h2>Sites en lien</h2>
-          <p>Différents sites permettent de partager les projets en ligne. Olution est supporté par l'association Marout.</p>
+          <p>Sites et projets développés dans le cadre d'Olution. L'association Marout en assure le support.</p>
         </div>
 
         <div class="row justify-content-center row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
