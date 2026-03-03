@@ -1,6 +1,7 @@
 # PHP
 *.log
-vendor/
+# Composer (racine uniquement) — ne pas ignorer assets/vendor/
+/vendor/
 composer.lock
 .env
 .env.local

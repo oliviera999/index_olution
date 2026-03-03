@@ -7,7 +7,7 @@ Site vitrine une page pour le projet **Olution** : initiative pédagogique propo
 - **Backend** : PHP (choix aléatoire de l’image hero)
 - **Frontend** : HTML, CSS, JavaScript
 - **Template** : [Laura](https://bootstrapmade.com/laura-free-creative-bootstrap-theme/) (BootstrapMade), basé sur Bootstrap
-- **Librairies** : Bootstrap 5, Bootstrap Icons, Boxicons, Swiper, Isotope, GLightbox, PureCounter, Waypoints
+- **Librairies** : Bootstrap 5, Bootstrap Icons, Boxicons, Swiper, Isotope, GLightbox, PureCounter, Waypoints (chargées via CDN jsDelivr)
 
 ## Structure du projet
 
@@ -23,11 +23,12 @@ index_olution/
     ├── css/
     │   └── style.css       # Styles principaux (personnalisation)
     ├── js/
-    │   └── main.js         # Nav, sliders, filtres portfolio, lightbox, compteurs
+    │   ├── main.js         # Nav, sliders, filtres portfolio, lightbox, compteurs
+    │   └── validate.js    # Validation formulaire (compatibilité template)
     ├── img/                # Images (entete, portfolio, logos, favicon)
     │   ├── entete/         # Images de fond hero (bg-1.jpg … bg-16.jpg)
     │   └── portfolio/      # dehors, dedans, urbain, jeux, tech
-    └── vendor/             # Librairies tierces (ne pas modifier)
+    └── vendor/             # Optionnel : librairies tierces (sinon chargées via CDN)
 ```
 
 ## Déploiement

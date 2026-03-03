@@ -55,12 +55,12 @@ $hero_image_url = ($assets_base !== '') ? $assets_base . $nomimages[$affimage] :
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Cabin" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
-  <link href="<?php echo $assets_base; ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="<?php echo $assets_base; ?>assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="<?php echo $assets_base; ?>assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="<?php echo $assets_base; ?>assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="<?php echo $assets_base; ?>assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <!-- Vendor CSS (CDN — pas besoin de assets/vendor/) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/css/glightbox.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
   <link href="<?php echo $assets_base; ?>assets/css/style.css" rel="stylesheet">
@@ -812,14 +812,14 @@ La pratique de terrain est également majeure.
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Vendor JS Files -->
-  <script src="<?php echo $assets_base; ?>assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="<?php echo $assets_base; ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="<?php echo $assets_base; ?>assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="<?php echo $assets_base; ?>assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="<?php echo $assets_base; ?>assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="<?php echo $assets_base; ?>assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="<?php echo $assets_base; ?>assets/vendor/php-email-form/validate.js"></script>
+  <!-- Vendor JS (CDN — pas besoin de assets/vendor/) -->
+  <script src="https://cdn.jsdelivr.net/npm/purecounterjs@1.2.1/dist/purecounter_vanilla.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/js/glightbox.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/waypoints@4.0.1/lib/noframework.waypoints.min.js"></script>
+  <script src="<?php echo $assets_base; ?>assets/js/validate.js"></script>
 
   <!-- Template Main JS File -->
   <script src="<?php echo $assets_base; ?>assets/js/main.js"></script>
