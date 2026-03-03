@@ -1,0 +1,29 @@
+# PHP
+*.log
+vendor/
+composer.lock
+.env
+.env.local
+.env.*.local
+*.cache
+
+# IDE / Éditeurs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Système
+.DS_Store
+Thumbs.db
+
+# Dépendances et build
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Fichiers sensibles (à adapter selon le projet)
+# config/local.php
+# uploads/
