@@ -4,7 +4,7 @@
 <head>
 
 <?php
-$version = '2.7';
+$version = '2.8';
 $base = '';
 $script_dir = dirname($_SERVER['SCRIPT_NAME']);
 $base_for_document = rtrim($script_dir, '/') . '/';
@@ -739,6 +739,26 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
               <span class="service-badge service-badge-5">Pour qui ? Réseau associatif</span>
               <p class="description">Mutualisation, partage, conseil sont les mots-clés qui définissent cette association.</p>
               <p class="service-impact">L'association support qui rend tout cela possible</p>
+            </div>
+          </div>
+
+          <div class="col d-flex align-items-stretch">
+            <div class="icon-box service-card">
+              <img src="<?php echo $assets_base_safe; ?>assets/img/logo-education-nationale.png" class="img-fluid" width="45%" alt="Ministère de l'Éducation Nationale">
+              <h4 class="title"><a href="https://www.education.gouv.fr/" rel="noopener noreferrer" target="_blank">Ministère de l'Éducation Nationale</a></h4>
+              <span class="service-badge service-badge-6">Pour qui ? Tous</span>
+              <p class="description">Le portail officiel du ministère : politiques éducatives, programmes, concours et ressources pour les personnels et les familles.</p>
+              <p class="service-impact">Liberté, Égalité, Fraternité — l'éducation pour tous</p>
+            </div>
+          </div>
+
+          <div class="col d-flex align-items-stretch">
+            <div class="icon-box service-card">
+              <img src="<?php echo $assets_base_safe; ?>assets/img/logo-aefe.png" class="img-fluid" width="45%" alt="AEFE - Agence pour l'enseignement français à l'étranger">
+              <h4 class="title"><a href="https://www.aefe.fr/" rel="noopener noreferrer" target="_blank">AEFE</a></h4>
+              <span class="service-badge service-badge-7">Pour qui ? Réseau français à l'étranger</span>
+              <p class="description">Agence pour l'enseignement français à l'étranger : réseau des lycées français du monde, offres de formation et mobilité internationale.</p>
+              <p class="service-impact">L'enseignement français à l'étranger — un réseau mondial</p>
             </div>
           </div>
         </div>
