@@ -8,6 +8,23 @@
   "use strict";
 
   /**
+   * Tous les liens externes s'ouvrent dans un nouvel onglet
+   */
+  const applyExternalLinkTarget = () => {
+    document.querySelectorAll('a[href^="http://"], a[href^="https://"]').forEach(function(a) {
+      if (!a.hasAttribute('target') || a.getAttribute('target') !== '_blank') {
+        a.setAttribute('target', '_blank');
+        a.setAttribute('rel', 'noopener noreferrer');
+      }
+    });
+  };
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', applyExternalLinkTarget);
+  } else {
+    applyExternalLinkTarget();
+  }
+
+  /**
    * Easy selector helper function
    */
   const select = (el, all = false) => {
