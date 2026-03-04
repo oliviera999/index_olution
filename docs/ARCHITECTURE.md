@@ -73,4 +73,4 @@ Les deux sont initialisés dans `assets/js/main.js`. Ne pas supprimer les classe
 
 - **Chemins assets** : toujours depuis la racine du site, préfixe `assets/` (ex. `assets/css/style.css`, `assets/img/entete/...`). Pas de `../` pour les assets depuis `index.php`.
 - **Vendor** : ne pas modifier les fichiers dans `assets/vendor/`. Personnalisation dans `assets/css/style.css` et `assets/js/main.js`.
-- **Formulaire contact** : actuellement commenté dans le HTML ; pas de `forms/contact.php`. Contact affiché : olution@olution.info.
+- **Formulaire contact** : actuellement commenté dans le HTML ; pas de `forms/contact.php`. Contact affiché : info@olution.info.
