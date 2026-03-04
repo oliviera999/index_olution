@@ -4,7 +4,7 @@
 <head>
 
 <?php
-$version = '3.5';
+$version = '3.6';
 $base = '';
 $script_dir = dirname($_SERVER['SCRIPT_NAME']);
 $base_for_document = rtrim($script_dir, '/') . '/';
@@ -852,27 +852,6 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
         <div class="section-title">
           <h2>Contact</h2>
           <p>Vous souhaitez adapter Olution à votre établissement ? Vous cherchez un intervenant pour un projet pédagogique innovant ? Vous voulez collaborer ou en savoir plus ? → <a href="mailto:olution@olution.info">Écrivons-nous</a>.</p>
-        </div>
-
-        <div class="row justify-content-center">
-          <div class="col-lg-6">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="info-box mt-4">
-                  <i class="bx bx-envelope"></i>
-                  <h3>Courriel</h3>
-                  <p><a href="mailto:olution@olution.info">olution@olution.info</a></p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Formulaire contact désactivé
-          <div class="col-lg-6">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              ...
-            </form>
-          </div>
-          -->
         </div>
       </div>
     </section><!-- End Contact Me Section -->
