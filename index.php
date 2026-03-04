@@ -4,7 +4,7 @@
 <head>
 
 <?php
-$version = '2.8';
+$version = '2.9';
 $base = '';
 $script_dir = dirname($_SERVER['SCRIPT_NAME']);
 $base_for_document = rtrim($script_dir, '/') . '/';
@@ -97,7 +97,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
         <li><a class="nav-link scrollto active" href="#hero">Accueil</a></li>
         <li><a class="nav-link scrollto" href="#act">Pourquoi Olution ?</a></li>
         <li><a class="nav-link scrollto" href="#about">olution.info</a></li>
-        <li><a class="nav-link scrollto" href="#portfolio">Les actions</a></li>
+        <li><a class="nav-link scrollto" href="#portfolio">Actions & projets</a></li>
         <li><a class="nav-link scrollto" href="#results">Résultats</a></li>
         <li><a class="nav-link scrollto" href="#services">Sites en lien</a></li>
         <li><a class="nav-link scrollto" href="#testi">Me concernant</a></li>
@@ -363,8 +363,8 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
       <div class="container">
 
         <div class="section-title">
-          <span>Les actions</span>
-          <h2>Les actions</h2>
+          <span>Actions & projets</span>
+          <h2>Actions & projets</h2>
           <p>Olution est varié. Mangroove, Farmflow, SAS, Les chroniques de tonton du bled, Scape New Order, Une vie en forêt, Météosaules… Ce sont autant de projets qui en font partie.</p>
         </div>
 
