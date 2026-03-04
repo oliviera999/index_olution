@@ -4,7 +4,7 @@
 <head>
 
 <?php
-$version = '2.6';
+$version = '2.7';
 $base = '';
 $script_dir = dirname($_SERVER['SCRIPT_NAME']);
 $base_for_document = rtrim($script_dir, '/') . '/';
@@ -49,57 +49,47 @@ $hero_image_url = ($assets_base !== '') ? $assets_base . $nomimages[$affimage] :
 $plateforme_annee_deploiement = 2013;
 $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
 
-// Liste complète des actions (toutes catégories) pour la mosaïque aléatoire
+// Liste complète des actions (toutes catégories) pour mosaïque et filtres
 $portfolio_actions = [
-  ['img' => 'assets/img/portfolio/dehors/IMG_4519.JPG', 'title' => '"Mangoove", à la découverte de la mangrove', 'caption' => 'Libreville - Gabon'],
-  ['img' => 'assets/img/portfolio/dehors/DSC03218.JPG', 'title' => 'La forêt pour tous, une sortie naturaliste en fauteuil roulant', 'caption' => 'Essonne - France'],
-  ['img' => 'assets/img/portfolio/dehors/_DSC2691.JPG', 'title' => 'Découverte de la brousse équatoriale', 'caption' => 'Nyonié - Gabon'],
-  ['img' => 'assets/img/portfolio/dehors/1447416383867.jpg', 'title' => 'Kayak au collège', 'caption' => 'Yvelines - France'],
-  ['img' => 'assets/img/portfolio/dehors/IMG_4179.jpg', 'title' => '"Mangroove à Nyonié", restauration d\'une mangrove abîmée', 'caption' => 'Nyonié - Gabon'],
-  ['img' => 'assets/img/portfolio/dehors/_DSC2570.JPG', 'title' => 'Croquis du paysage', 'caption' => 'Nyonié - Gabon'],
-  ['img' => 'assets/img/portfolio/dehors/_DSC2638.JPG', 'title' => 'Ramassage d\'ordures', 'caption' => 'plages au Gabon'],
-  ['img' => 'assets/img/portfolio/dehors/Une-vie-en-foret.jpg', 'title' => 'Tournage avec Francis Hallé', 'caption' => 'Gabon'],
-  ['img' => 'assets/img/portfolio/dehors/_DSC2573.JPG', 'title' => 'Exploration de l\'environnement', 'caption' => 'Savane et Jungle - Gabon'],
-  ['img' => 'assets/img/portfolio/dedans/DSC_0096.JPG', 'title' => 'Interview concernant la production d\'une minisérie (SAS)', 'caption' => 'Yvelines - France'],
-  ['img' => 'assets/img/portfolio/dedans/DSC04815.JPG', 'title' => 'SAS - dispositif de lutte contre le décrochage scolaire', 'caption' => 'Yvelines - France'],
-  ['img' => 'assets/img/portfolio/dedans/DSC_0078.JPG', 'title' => 'SEGPA horticulture', 'caption' => 'Yvelines - France'],
-  ['img' => 'assets/img/portfolio/dedans/test epnc5.jpg', 'title' => 'Concours photos', 'caption' => 'Yvelines - France'],
-  ['img' => 'assets/img/portfolio/dedans/20181107_091551.jpg', 'title' => 'Construction d\'une maquette du système solaire', 'caption' => 'Libreville - Gabon'],
-  ['img' => 'assets/img/portfolio/dedans/DSC04897.JPG', 'title' => 'Œil, observé à la loupe à main', 'caption' => 'Yvelines - France'],
-  ['img' => 'assets/img/portfolio/dedans/20180411_111457.jpg', 'title' => 'Opération "plante ton palétuvier"', 'caption' => 'Libreville - Gabon'],
-  ['img' => 'assets/img/portfolio/dedans/DSC_0329.JPG', 'title' => 'Dispositif Ecocollège', 'caption' => 'Yvelines - France'],
-  ['img' => 'assets/img/portfolio/urbain/IMG_20220922_124635_565.jpg', 'title' => 'n3, une salle de cours innovante', 'caption' => 'Casablanca - Maroc'],
-  ['img' => 'assets/img/portfolio/urbain/IMG_20220925_185523_261.jpg', 'title' => 'Farmflow Prototype 3, l\'aquaponie à l\'école', 'caption' => 'Casablanca - Maroc'],
-  ['img' => 'assets/img/portfolio/urbain/phasmes.jpg', 'title' => 'Phasmopolis, un élevage d\'insectes', 'caption' => 'Casablanca - Maroc'],
-  ['img' => 'assets/img/portfolio/urbain/DSC03966.JPG', 'title' => 'Le club Bio', 'caption' => 'Yvelines - France'],
-  ['img' => 'assets/img/portfolio/urbain/IMG_20220912_102755_859.jpg', 'title' => 'Le tiny garden, un potager urbain', 'caption' => 'Casablanca - Maroc'],
-  ['img' => 'assets/img/portfolio/urbain/DSC06352.JPG', 'title' => 'Culture de pleurotes', 'caption' => 'Yvelines - France'],
-  ['img' => 'assets/img/portfolio/jeux/20210528_182706.jpg', 'title' => '"Jouons !", des cartes à jouer en Sciences et Technologies', 'caption' => 'Casablanca - Maroc'],
-  ['img' => 'assets/img/portfolio/jeux/2022-05-28.png', 'title' => '"Scape New Order", un jeu de rôle Genially pour le confinement', 'caption' => 'Casablanca - Maroc'],
-  ['img' => 'assets/img/portfolio/jeux/IMG-4684.jpg', 'title' => '"Les chroniques de tonton du bled", une histoire à Imilchil', 'caption' => 'Casablanca - Maroc'],
-  ['img' => 'assets/img/portfolio/jeux/IMG_20220202_125503_1.jpg', 'title' => '"PSE Game", une autre manière d\'aborder la Prévention Santé Environnement', 'caption' => 'Casablanca - Maroc'],
-  ['img' => 'assets/img/portfolio/jeux/_DSC5126.JPG', 'title' => 'Noël sous l\'équateur', 'caption' => 'Libreville - Gabon'],
-  ['img' => 'assets/img/portfolio/tech/2022-05-28 (1) (2).png', 'title' => 'Farmflow, une start-up d\'avenir', 'caption' => 'Casablanca - Maroc'],
-  ['img' => 'assets/img/portfolio/tech/IMG_20220706_141504_5.jpg', 'title' => 'L\'aquaponie connectée', 'caption' => 'Casablanca - Maroc'],
-  ['img' => 'assets/img/portfolio/tech/IMG_20190130_075846_0.jpg', 'title' => 'La grande forêt de l\'équateur, une expo physique et numérique', 'caption' => 'Libreville - Gabon'],
-  ['img' => 'assets/img/portfolio/tech/Diapositive3.JPG', 'title' => 'Les Serious Game SVT, proposé par le "club WebGeek"', 'caption' => 'Yvelines - France'],
-  ['img' => 'assets/img/portfolio/tech/IMG-20220704-WA0015.jpg', 'title' => 'Farmflow au salon de la Banque Publique d\'Investissements', 'caption' => 'Casablanca - Maroc'],
+  ['img' => 'assets/img/portfolio/dehors/IMG_4519.JPG', 'title' => '"Mangoove", à la découverte de la mangrove', 'caption' => 'Libreville - Gabon', 'filter' => 'filter-bateau'],
+  ['img' => 'assets/img/portfolio/dehors/DSC03218.JPG', 'title' => 'La forêt pour tous, une sortie naturaliste en fauteuil roulant', 'caption' => 'Essonne - France', 'filter' => 'filter-bateau'],
+  ['img' => 'assets/img/portfolio/dehors/_DSC2691.JPG', 'title' => 'Découverte de la brousse équatoriale', 'caption' => 'Nyonié - Gabon', 'filter' => 'filter-bateau'],
+  ['img' => 'assets/img/portfolio/dehors/1447416383867.jpg', 'title' => 'Kayak au collège', 'caption' => 'Yvelines - France', 'filter' => 'filter-bateau'],
+  ['img' => 'assets/img/portfolio/dehors/IMG_4179.jpg', 'title' => '"Mangroove à Nyonié", restauration d\'une mangrove abîmée', 'caption' => 'Nyonié - Gabon', 'filter' => 'filter-bateau'],
+  ['img' => 'assets/img/portfolio/dehors/_DSC2570.JPG', 'title' => 'Croquis du paysage', 'caption' => 'Nyonié - Gabon', 'filter' => 'filter-bateau'],
+  ['img' => 'assets/img/portfolio/dehors/_DSC2638.JPG', 'title' => 'Ramassage d\'ordures', 'caption' => 'plages au Gabon', 'filter' => 'filter-bateau'],
+  ['img' => 'assets/img/portfolio/dehors/Une-vie-en-foret.jpg', 'title' => 'Tournage avec Francis Hallé', 'caption' => 'Gabon', 'filter' => 'filter-bateau'],
+  ['img' => 'assets/img/portfolio/dehors/_DSC2573.JPG', 'title' => 'Exploration de l\'environnement', 'caption' => 'Savane et Jungle - Gabon', 'filter' => 'filter-bateau'],
+  ['img' => 'assets/img/portfolio/dedans/DSC_0096.JPG', 'title' => 'Interview concernant la production d\'une minisérie (SAS)', 'caption' => 'Yvelines - France', 'filter' => 'filter-brousse'],
+  ['img' => 'assets/img/portfolio/dedans/DSC04815.JPG', 'title' => 'SAS - dispositif de lutte contre le décrochage scolaire', 'caption' => 'Yvelines - France', 'filter' => 'filter-brousse'],
+  ['img' => 'assets/img/portfolio/dedans/DSC_0078.JPG', 'title' => 'SEGPA horticulture', 'caption' => 'Yvelines - France', 'filter' => 'filter-brousse'],
+  ['img' => 'assets/img/portfolio/dedans/test epnc5.jpg', 'title' => 'Concours photos', 'caption' => 'Yvelines - France', 'filter' => 'filter-brousse'],
+  ['img' => 'assets/img/portfolio/dedans/20181107_091551.jpg', 'title' => 'Construction d\'une maquette du système solaire', 'caption' => 'Libreville - Gabon', 'filter' => 'filter-brousse'],
+  ['img' => 'assets/img/portfolio/dedans/DSC04897.JPG', 'title' => 'Œil, observé à la loupe à main', 'caption' => 'Yvelines - France', 'filter' => 'filter-brousse'],
+  ['img' => 'assets/img/portfolio/dedans/20180411_111457.jpg', 'title' => 'Opération "plante ton palétuvier"', 'caption' => 'Libreville - Gabon', 'filter' => 'filter-brousse'],
+  ['img' => 'assets/img/portfolio/dedans/DSC_0329.JPG', 'title' => 'Dispositif Ecocollège', 'caption' => 'Yvelines - France', 'filter' => 'filter-brousse'],
+  ['img' => 'assets/img/portfolio/urbain/IMG_20220922_124635_565.jpg', 'title' => 'n3, une salle de cours innovante', 'caption' => 'Casablanca - Maroc', 'filter' => 'filter-urbain'],
+  ['img' => 'assets/img/portfolio/urbain/IMG_20220925_185523_261.jpg', 'title' => 'Farmflow Prototype 3, l\'aquaponie à l\'école', 'caption' => 'Casablanca - Maroc', 'filter' => 'filter-urbain'],
+  ['img' => 'assets/img/portfolio/urbain/phasmes.jpg', 'title' => 'Phasmopolis, un élevage d\'insectes', 'caption' => 'Casablanca - Maroc', 'filter' => 'filter-urbain'],
+  ['img' => 'assets/img/portfolio/urbain/DSC03966.JPG', 'title' => 'Le club Bio', 'caption' => 'Yvelines - France', 'filter' => 'filter-urbain'],
+  ['img' => 'assets/img/portfolio/urbain/IMG_20220912_102755_859.jpg', 'title' => 'Le tiny garden, un potager urbain', 'caption' => 'Casablanca - Maroc', 'filter' => 'filter-urbain'],
+  ['img' => 'assets/img/portfolio/urbain/DSC06352.JPG', 'title' => 'Culture de pleurotes', 'caption' => 'Yvelines - France', 'filter' => 'filter-urbain'],
+  ['img' => 'assets/img/portfolio/jeux/20210528_182706.jpg', 'title' => '"Jouons !", des cartes à jouer en Sciences et Technologies', 'caption' => 'Casablanca - Maroc', 'filter' => 'filter-fictions'],
+  ['img' => 'assets/img/portfolio/jeux/2022-05-28.png', 'title' => '"Scape New Order", un jeu de rôle Genially pour le confinement', 'caption' => 'Casablanca - Maroc', 'filter' => 'filter-fictions'],
+  ['img' => 'assets/img/portfolio/jeux/IMG-4684.jpg', 'title' => '"Les chroniques de tonton du bled", une histoire à Imilchil', 'caption' => 'Casablanca - Maroc', 'filter' => 'filter-fictions'],
+  ['img' => 'assets/img/portfolio/jeux/IMG_20220202_125503_1.jpg', 'title' => '"PSE Game", une autre manière d\'aborder la Prévention Santé Environnement', 'caption' => 'Casablanca - Maroc', 'filter' => 'filter-fictions'],
+  ['img' => 'assets/img/portfolio/jeux/_DSC5126.JPG', 'title' => 'Noël sous l\'équateur', 'caption' => 'Libreville - Gabon', 'filter' => 'filter-fictions'],
+  ['img' => 'assets/img/portfolio/tech/2022-05-28 (1) (2).png', 'title' => 'Farmflow, une start-up d\'avenir', 'caption' => 'Casablanca - Maroc', 'filter' => 'filter-prototypage'],
+  ['img' => 'assets/img/portfolio/tech/IMG_20220706_141504_5.jpg', 'title' => 'L\'aquaponie connectée', 'caption' => 'Casablanca - Maroc', 'filter' => 'filter-prototypage'],
+  ['img' => 'assets/img/portfolio/tech/IMG_20190130_075846_0.jpg', 'title' => 'La grande forêt de l\'équateur, une expo physique et numérique', 'caption' => 'Libreville - Gabon', 'filter' => 'filter-prototypage'],
+  ['img' => 'assets/img/portfolio/tech/Diapositive3.JPG', 'title' => 'Les Serious Game SVT, proposé par le "club WebGeek"', 'caption' => 'Yvelines - France', 'filter' => 'filter-prototypage'],
+  ['img' => 'assets/img/portfolio/tech/IMG-20220704-WA0015.jpg', 'title' => 'Farmflow au salon de la Banque Publique d\'Investissements', 'caption' => 'Casablanca - Maroc', 'filter' => 'filter-prototypage'],
 ];
 $portfolio_actions_count = count($portfolio_actions);
 $mosaic_n = min($portfolio_actions_count, rand(5, 10));
 $pool = array_keys($portfolio_actions);
 shuffle($pool);
 $mosaic_keys = array_slice($pool, 0, $mosaic_n);
-// Patterns de taille pour une mosaïque esthétique (large=2x2, wide=2x1, tall=1x2, small=1x1)
-$mosaic_size_patterns = [
-  5 => ['large', 'small', 'small', 'small', 'small'],
-  6 => ['large', 'wide', 'small', 'small', 'small', 'small'],
-  7 => ['large', 'wide', 'wide', 'small', 'small', 'small', 'small'],
-  8 => ['large', 'large', 'wide', 'wide', 'small', 'small', 'small', 'small'],
-  9 => ['large', 'large', 'wide', 'wide', 'small', 'small', 'small', 'small', 'small'],
-  10 => ['large', 'large', 'wide', 'wide', 'wide', 'small', 'small', 'small', 'small', 'small'],
-];
-$mosaic_sizes = isset($mosaic_size_patterns[$mosaic_n]) ? $mosaic_size_patterns[$mosaic_n] : array_fill(0, $mosaic_n, 'small');
 ?>
   <?php if ($base !== ''): ?><base href="<?php echo htmlspecialchars($base); ?>"><?php endif; ?>
   <meta charset="utf-8">
@@ -420,17 +410,44 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           <p>Olution est varié. Mangroove, Farmflow, SAS, Les chroniques de tonton du bled, Scape New Order, Une vie en forêt, Météosaules… Ce sont autant de projets qui en font partie.</p>
         </div>
 
-        <div class="portfolio-mosaic" data-aos="fade-up">
+        <ul id="portfolio-flters" class="d-flex justify-content-center flex-wrap">
+          <li data-filter="en-bref" class="filter-active">En bref</li>
+          <li data-filter=".filter-bateau">Dehors</li>
+          <li data-filter=".filter-brousse">Dedans</li>
+          <li data-filter=".filter-urbain">Nature urbaine</li>
+          <li data-filter=".filter-fictions">Jeux et fictions</li>
+          <li data-filter=".filter-prototypage">Tech</li>
+        </ul>
+
+        <div id="portfolio-en-bref" class="portfolio-mosaic portfolio-mosaic-en-bref" data-aos="fade-up">
           <?php
           $img_base = ($assets_base !== '') ? $assets_base : '';
-          foreach ($mosaic_keys as $i => $key):
+          foreach ($mosaic_keys as $key):
             $item = $portfolio_actions[$key];
-            $size = $mosaic_sizes[$i];
             $img_url = $img_base . $item['img'];
             $img_url_safe = htmlspecialchars($img_url, ENT_QUOTES, 'UTF-8');
             $title_safe = htmlspecialchars($item['title'], ENT_QUOTES, 'UTF-8');
           ?>
-          <a href="<?php echo $img_url_safe; ?>" class="portfolio-lightbox portfolio-mosaic-item portfolio-mosaic-item--<?php echo $size; ?>" data-gallery="portfolioGallery" title="<?php echo $title_safe; ?>">
+          <a href="<?php echo $img_url_safe; ?>" class="portfolio-lightbox portfolio-mosaic-item" data-gallery="portfolioGallery" title="<?php echo $title_safe; ?>">
+            <span class="portfolio-mosaic-img">
+              <img src="<?php echo $img_url_safe; ?>" class="img-fluid" alt="<?php echo $title_safe; ?>">
+            </span>
+            <span class="portfolio-mosaic-info">
+              <h4><?php echo htmlspecialchars($item['title'], ENT_QUOTES, 'UTF-8'); ?></h4>
+              <p><?php echo htmlspecialchars($item['caption'], ENT_QUOTES, 'UTF-8'); ?></p>
+            </span>
+          </a>
+          <?php endforeach; ?>
+        </div>
+
+        <div id="portfolio-by-category" class="portfolio-container portfolio-mosaic" style="display: none;">
+          <?php
+          foreach ($portfolio_actions as $item):
+            $img_url = $img_base . $item['img'];
+            $img_url_safe = htmlspecialchars($img_url, ENT_QUOTES, 'UTF-8');
+            $title_safe = htmlspecialchars($item['title'], ENT_QUOTES, 'UTF-8');
+          ?>
+          <a href="<?php echo $img_url_safe; ?>" class="portfolio-lightbox portfolio-item <?php echo htmlspecialchars($item['filter'], ENT_QUOTES, 'UTF-8'); ?>" data-gallery="portfolioGallery" title="<?php echo $title_safe; ?>">
             <span class="portfolio-mosaic-img">
               <img src="<?php echo $img_url_safe; ?>" class="img-fluid" alt="<?php echo $title_safe; ?>">
             </span>

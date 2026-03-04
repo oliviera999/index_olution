@@ -213,31 +213,34 @@
   });
 
   /**
-   * Porfolio isotope and filter
+   * Portfolio "Les actions" : En bref (mosaïque aléatoire) vs catégories (toutes les photos)
+   * Affichage type Google Photos (masonry CSS), filtres par catégorie
    */
   window.addEventListener('load', () => {
-    let portfolioContainer = select('.portfolio-container');
-    if (portfolioContainer) {
-      let portfolioIsotope = new Isotope(portfolioContainer, {
-        itemSelector: '.portfolio-item'
+    const portfolioEnBref = document.getElementById('portfolio-en-bref');
+    const portfolioByCategory = document.getElementById('portfolio-by-category');
+    const portfolioFilters = select('#portfolio-flters li', true);
+
+    if (!portfolioEnBref || !portfolioByCategory || !portfolioFilters.length) return;
+
+    on('click', '#portfolio-flters li', function(e) {
+      e.preventDefault();
+      portfolioFilters.forEach(function(el) {
+        el.classList.remove('filter-active');
       });
+      this.classList.add('filter-active');
 
-      let portfolioFilters = select('#portfolio-flters li', true);
-
-      on('click', '#portfolio-flters li', function(e) {
-        e.preventDefault();
-        portfolioFilters.forEach(function(el) {
-          el.classList.remove('filter-active');
-        });
-        this.classList.add('filter-active');
-
-        portfolioIsotope.arrange({
-          filter: this.getAttribute('data-filter')
-        });
-
-      }, true);
-    }
-
+      const filter = this.getAttribute('data-filter');
+      if (filter === 'en-bref') {
+        portfolioEnBref.style.display = '';
+        portfolioByCategory.style.display = 'none';
+      } else {
+        portfolioEnBref.style.display = 'none';
+        portfolioByCategory.style.display = '';
+        const filterClass = filter.replace(/^\./, '');
+        portfolioByCategory.setAttribute('data-current-filter', filterClass);
+      }
+    }, true);
   });
 
   /**
@@ -257,19 +260,6 @@
       }, 50);
     }
   });
-
-  /**
-   * Clic sur l'image du portfolio ouvre la lightbox (bonne UX mobile et desktop)
-   */
-  const portfolioContainer = document.querySelector('.portfolio-container');
-  if (portfolioContainer) {
-    portfolioContainer.addEventListener('click', function (e) {
-      const imgZone = e.target.closest('.portfolio-item .portfolio-img');
-      if (!imgZone || e.target.closest('.portfolio-lightbox')) return;
-      const link = imgZone.closest('.portfolio-item').querySelector('.portfolio-info .portfolio-lightbox.preview-link');
-      if (link) link.click();
-    });
-  }
 
   /**
    * Portfolio details slider

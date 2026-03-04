@@ -1226,53 +1226,42 @@ section {
   opacity: 1;
 }
 
-/* Mosaïque aléatoire "Les actions" */
+/* Mosaïque type Google Photos (masonry) */
 .portfolio-mosaic {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 200px;
-  gap: 0.75rem;
+  column-count: 4;
+  column-gap: 0.75rem;
   margin-top: 1.5rem;
 }
 
-.portfolio-mosaic-item {
+.portfolio-mosaic-item,
+.portfolio-mosaic.portfolio-container .portfolio-item {
   position: relative;
-  display: block;
-  overflow: hidden;
+  break-inside: avoid;
+  margin-bottom: 0.75rem;
   border-radius: 8px;
+  overflow: hidden;
+  display: block;
   text-decoration: none;
   color: inherit;
-}
-
-.portfolio-mosaic-item--small {
-  grid-column: span 1;
-  grid-row: span 1;
-}
-
-.portfolio-mosaic-item--wide {
-  grid-column: span 2;
-  grid-row: span 1;
-}
-
-.portfolio-mosaic-item--large {
-  grid-column: span 2;
-  grid-row: span 2;
+  page-break-inside: avoid;
 }
 
 .portfolio-mosaic-img {
-  position: absolute;
-  inset: 0;
+  display: block;
+  line-height: 0;
 }
 
 .portfolio-mosaic-img img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  display: block;
+  vertical-align: bottom;
   transition: transform 0.5s ease;
 }
 
-.portfolio-mosaic-item:hover .portfolio-mosaic-img img {
-  transform: scale(1.08);
+.portfolio-mosaic-item:hover .portfolio-mosaic-img img,
+.portfolio-mosaic.portfolio-container .portfolio-item:hover .portfolio-mosaic-img img {
+  transform: scale(1.03);
 }
 
 .portfolio-mosaic-info {
@@ -1281,46 +1270,38 @@ section {
   right: 0;
   bottom: 0;
   z-index: 2;
-  padding: 1rem 1.25rem;
+  padding: 0.75rem 1rem;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
   color: #fff;
   opacity: 0;
-  transform: translateY(8px);
+  transform: translateY(6px);
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .portfolio-mosaic-item:hover .portfolio-mosaic-info,
-.portfolio-mosaic-item:focus .portfolio-mosaic-info {
+.portfolio-mosaic-item:focus .portfolio-mosaic-info,
+.portfolio-mosaic.portfolio-container .portfolio-item:hover .portfolio-mosaic-info,
+.portfolio-mosaic.portfolio-container .portfolio-item:focus .portfolio-mosaic-info {
   opacity: 1;
   transform: translateY(0);
 }
 
 .portfolio-mosaic-info h4 {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  margin: 0 0 0.25rem 0;
+  margin: 0 0 0.2rem 0;
   line-height: 1.3;
 }
 
 .portfolio-mosaic-info p {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   margin: 0;
   color: rgba(255, 255, 255, 0.9);
 }
 
 @media (max-width: 991px) {
   .portfolio-mosaic {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 160px;
-  }
-
-  .portfolio-mosaic-item--wide {
-    grid-column: span 2;
-  }
-
-  .portfolio-mosaic-item--large {
-    grid-column: span 2;
-    grid-row: span 2;
+    column-count: 3;
   }
 
   .portfolio-mosaic-info h4 {
@@ -1330,17 +1311,23 @@ section {
 
 @media (max-width: 575px) {
   .portfolio-mosaic {
-    grid-template-columns: 1fr;
-    grid-auto-rows: 220px;
+    column-count: 2;
+    column-gap: 0.5rem;
+    margin-bottom: 0.5rem;
   }
 
-  .portfolio-mosaic-item--small,
-  .portfolio-mosaic-item--wide,
-  .portfolio-mosaic-item--large {
-    grid-column: span 1;
-    grid-row: span 1;
+  .portfolio-mosaic-item,
+  .portfolio-mosaic.portfolio-container .portfolio-item {
+    margin-bottom: 0.5rem;
   }
 }
+
+/* Filtres par catégorie : masquer les items non concernés */
+#portfolio-by-category[data-current-filter="filter-bateau"] .portfolio-item:not(.filter-bateau) { display: none !important; }
+#portfolio-by-category[data-current-filter="filter-brousse"] .portfolio-item:not(.filter-brousse) { display: none !important; }
+#portfolio-by-category[data-current-filter="filter-urbain"] .portfolio-item:not(.filter-urbain) { display: none !important; }
+#portfolio-by-category[data-current-filter="filter-fictions"] .portfolio-item:not(.filter-fictions) { display: none !important; }
+#portfolio-by-category[data-current-filter="filter-prototypage"] .portfolio-item:not(.filter-prototypage) { display: none !important; }
 
 /*--------------------------------------------------------------
 # Portfolio Details
