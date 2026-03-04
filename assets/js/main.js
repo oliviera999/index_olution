@@ -213,34 +213,31 @@
   });
 
   /**
-   * Portfolio "Les actions" : En bref (mosaïque aléatoire) vs catégories (toutes les photos)
-   * Affichage type Google Photos (masonry CSS), filtres par catégorie
+   * Porfolio isotope and filter
    */
   window.addEventListener('load', () => {
-    const portfolioEnBref = document.getElementById('portfolio-en-bref');
-    const portfolioByCategory = document.getElementById('portfolio-by-category');
-    const portfolioFilters = select('#portfolio-flters li', true);
-
-    if (!portfolioEnBref || !portfolioByCategory || !portfolioFilters.length) return;
-
-    on('click', '#portfolio-flters li', function(e) {
-      e.preventDefault();
-      portfolioFilters.forEach(function(el) {
-        el.classList.remove('filter-active');
+    let portfolioContainer = select('.portfolio-container');
+    if (portfolioContainer) {
+      let portfolioIsotope = new Isotope(portfolioContainer, {
+        itemSelector: '.portfolio-item'
       });
-      this.classList.add('filter-active');
 
-      const filter = this.getAttribute('data-filter');
-      if (filter === 'en-bref') {
-        portfolioEnBref.style.display = '';
-        portfolioByCategory.style.display = 'none';
-      } else {
-        portfolioEnBref.style.display = 'none';
-        portfolioByCategory.style.display = '';
-        const filterClass = filter.replace(/^\./, '');
-        portfolioByCategory.setAttribute('data-current-filter', filterClass);
-      }
-    }, true);
+      let portfolioFilters = select('#portfolio-flters li', true);
+
+      on('click', '#portfolio-flters li', function(e) {
+        e.preventDefault();
+        portfolioFilters.forEach(function(el) {
+          el.classList.remove('filter-active');
+        });
+        this.classList.add('filter-active');
+
+        portfolioIsotope.arrange({
+          filter: this.getAttribute('data-filter')
+        });
+
+      }, true);
+    }
+
   });
 
   /**

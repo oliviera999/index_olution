@@ -4,7 +4,7 @@
 <head>
 
 <?php
-$version = '2.8';
+$version = '2.5';
 $base = '';
 $script_dir = dirname($_SERVER['SCRIPT_NAME']);
 $base_for_document = rtrim($script_dir, '/') . '/';
@@ -48,48 +48,6 @@ $hero_image_url = ($assets_base !== '') ? $assets_base . $nomimages[$affimage] :
 // Années d'existence : calcul automatique depuis le déploiement de la plateforme (2013)
 $plateforme_annee_deploiement = 2013;
 $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
-
-// Liste complète des actions (toutes catégories) pour mosaïque et filtres
-$portfolio_actions = [
-  ['img' => 'assets/img/portfolio/dehors/IMG_4519.JPG', 'title' => '"Mangoove", à la découverte de la mangrove', 'caption' => 'Libreville - Gabon', 'filter' => 'filter-bateau'],
-  ['img' => 'assets/img/portfolio/dehors/DSC03218.JPG', 'title' => 'La forêt pour tous, une sortie naturaliste en fauteuil roulant', 'caption' => 'Essonne - France', 'filter' => 'filter-bateau'],
-  ['img' => 'assets/img/portfolio/dehors/_DSC2691.JPG', 'title' => 'Découverte de la brousse équatoriale', 'caption' => 'Nyonié - Gabon', 'filter' => 'filter-bateau'],
-  ['img' => 'assets/img/portfolio/dehors/1447416383867.jpg', 'title' => 'Kayak au collège', 'caption' => 'Yvelines - France', 'filter' => 'filter-bateau'],
-  ['img' => 'assets/img/portfolio/dehors/IMG_4179.jpg', 'title' => '"Mangroove à Nyonié", restauration d\'une mangrove abîmée', 'caption' => 'Nyonié - Gabon', 'filter' => 'filter-bateau'],
-  ['img' => 'assets/img/portfolio/dehors/_DSC2570.JPG', 'title' => 'Croquis du paysage', 'caption' => 'Nyonié - Gabon', 'filter' => 'filter-bateau'],
-  ['img' => 'assets/img/portfolio/dehors/_DSC2638.JPG', 'title' => 'Ramassage d\'ordures', 'caption' => 'plages au Gabon', 'filter' => 'filter-bateau'],
-  ['img' => 'assets/img/portfolio/dehors/Une-vie-en-foret.jpg', 'title' => 'Tournage avec Francis Hallé', 'caption' => 'Gabon', 'filter' => 'filter-bateau'],
-  ['img' => 'assets/img/portfolio/dehors/_DSC2573.JPG', 'title' => 'Exploration de l\'environnement', 'caption' => 'Savane et Jungle - Gabon', 'filter' => 'filter-bateau'],
-  ['img' => 'assets/img/portfolio/dedans/DSC_0096.JPG', 'title' => 'Interview concernant la production d\'une minisérie (SAS)', 'caption' => 'Yvelines - France', 'filter' => 'filter-brousse'],
-  ['img' => 'assets/img/portfolio/dedans/DSC04815.JPG', 'title' => 'SAS - dispositif de lutte contre le décrochage scolaire', 'caption' => 'Yvelines - France', 'filter' => 'filter-brousse'],
-  ['img' => 'assets/img/portfolio/dedans/DSC_0078.JPG', 'title' => 'SEGPA horticulture', 'caption' => 'Yvelines - France', 'filter' => 'filter-brousse'],
-  ['img' => 'assets/img/portfolio/dedans/test epnc5.jpg', 'title' => 'Concours photos', 'caption' => 'Yvelines - France', 'filter' => 'filter-brousse'],
-  ['img' => 'assets/img/portfolio/dedans/20181107_091551.jpg', 'title' => 'Construction d\'une maquette du système solaire', 'caption' => 'Libreville - Gabon', 'filter' => 'filter-brousse'],
-  ['img' => 'assets/img/portfolio/dedans/DSC04897.JPG', 'title' => 'Œil, observé à la loupe à main', 'caption' => 'Yvelines - France', 'filter' => 'filter-brousse'],
-  ['img' => 'assets/img/portfolio/dedans/20180411_111457.jpg', 'title' => 'Opération "plante ton palétuvier"', 'caption' => 'Libreville - Gabon', 'filter' => 'filter-brousse'],
-  ['img' => 'assets/img/portfolio/dedans/DSC_0329.JPG', 'title' => 'Dispositif Ecocollège', 'caption' => 'Yvelines - France', 'filter' => 'filter-brousse'],
-  ['img' => 'assets/img/portfolio/urbain/IMG_20220922_124635_565.jpg', 'title' => 'n3, une salle de cours innovante', 'caption' => 'Casablanca - Maroc', 'filter' => 'filter-urbain'],
-  ['img' => 'assets/img/portfolio/urbain/IMG_20220925_185523_261.jpg', 'title' => 'Farmflow Prototype 3, l\'aquaponie à l\'école', 'caption' => 'Casablanca - Maroc', 'filter' => 'filter-urbain'],
-  ['img' => 'assets/img/portfolio/urbain/phasmes.jpg', 'title' => 'Phasmopolis, un élevage d\'insectes', 'caption' => 'Casablanca - Maroc', 'filter' => 'filter-urbain'],
-  ['img' => 'assets/img/portfolio/urbain/DSC03966.JPG', 'title' => 'Le club Bio', 'caption' => 'Yvelines - France', 'filter' => 'filter-urbain'],
-  ['img' => 'assets/img/portfolio/urbain/IMG_20220912_102755_859.jpg', 'title' => 'Le tiny garden, un potager urbain', 'caption' => 'Casablanca - Maroc', 'filter' => 'filter-urbain'],
-  ['img' => 'assets/img/portfolio/urbain/DSC06352.JPG', 'title' => 'Culture de pleurotes', 'caption' => 'Yvelines - France', 'filter' => 'filter-urbain'],
-  ['img' => 'assets/img/portfolio/jeux/20210528_182706.jpg', 'title' => '"Jouons !", des cartes à jouer en Sciences et Technologies', 'caption' => 'Casablanca - Maroc', 'filter' => 'filter-fictions'],
-  ['img' => 'assets/img/portfolio/jeux/2022-05-28.png', 'title' => '"Scape New Order", un jeu de rôle Genially pour le confinement', 'caption' => 'Casablanca - Maroc', 'filter' => 'filter-fictions'],
-  ['img' => 'assets/img/portfolio/jeux/IMG-4684.jpg', 'title' => '"Les chroniques de tonton du bled", une histoire à Imilchil', 'caption' => 'Casablanca - Maroc', 'filter' => 'filter-fictions'],
-  ['img' => 'assets/img/portfolio/jeux/IMG_20220202_125503_1.jpg', 'title' => '"PSE Game", une autre manière d\'aborder la Prévention Santé Environnement', 'caption' => 'Casablanca - Maroc', 'filter' => 'filter-fictions'],
-  ['img' => 'assets/img/portfolio/jeux/_DSC5126.JPG', 'title' => 'Noël sous l\'équateur', 'caption' => 'Libreville - Gabon', 'filter' => 'filter-fictions'],
-  ['img' => 'assets/img/portfolio/tech/2022-05-28 (1) (2).png', 'title' => 'Farmflow, une start-up d\'avenir', 'caption' => 'Casablanca - Maroc', 'filter' => 'filter-prototypage'],
-  ['img' => 'assets/img/portfolio/tech/IMG_20220706_141504_5.jpg', 'title' => 'L\'aquaponie connectée', 'caption' => 'Casablanca - Maroc', 'filter' => 'filter-prototypage'],
-  ['img' => 'assets/img/portfolio/tech/IMG_20190130_075846_0.jpg', 'title' => 'La grande forêt de l\'équateur, une expo physique et numérique', 'caption' => 'Libreville - Gabon', 'filter' => 'filter-prototypage'],
-  ['img' => 'assets/img/portfolio/tech/Diapositive3.JPG', 'title' => 'Les Serious Game SVT, proposé par le "club WebGeek"', 'caption' => 'Yvelines - France', 'filter' => 'filter-prototypage'],
-  ['img' => 'assets/img/portfolio/tech/IMG-20220704-WA0015.jpg', 'title' => 'Farmflow au salon de la Banque Publique d\'Investissements', 'caption' => 'Casablanca - Maroc', 'filter' => 'filter-prototypage'],
-];
-$portfolio_actions_count = count($portfolio_actions);
-$mosaic_n = min($portfolio_actions_count, rand(5, 10));
-$pool = array_keys($portfolio_actions);
-shuffle($pool);
-$mosaic_keys = array_slice($pool, 0, $mosaic_n);
 ?>
   <?php if ($base !== ''): ?><base href="<?php echo htmlspecialchars($base); ?>"><?php endif; ?>
   <meta charset="utf-8">
@@ -410,8 +368,8 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           <p>Olution est varié. Mangroove, Farmflow, SAS, Les chroniques de tonton du bled, Scape New Order, Une vie en forêt, Météosaules… Ce sont autant de projets qui en font partie.</p>
         </div>
 
-        <ul id="portfolio-flters" class="d-flex justify-content-center flex-wrap">
-          <li data-filter="en-bref" class="filter-active">En bref</li>
+        <ul id="portfolio-flters" class="d-flex justify-content-center">
+          <li data-filter="*" class="filter-active">Tout</li>
           <li data-filter=".filter-bateau">Dehors</li>
           <li data-filter=".filter-brousse">Dedans</li>
           <li data-filter=".filter-urbain">Nature urbaine</li>
@@ -419,44 +377,307 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           <li data-filter=".filter-prototypage">Tech</li>
         </ul>
 
-        <div id="portfolio-en-bref" class="portfolio-mosaic portfolio-mosaic-en-bref" data-aos="fade-up">
-          <?php
-          $img_base = ($assets_base !== '') ? $assets_base : '';
-          foreach ($mosaic_keys as $key):
-            $item = $portfolio_actions[$key];
-            $img_url = $img_base . $item['img'];
-            $img_url_safe = htmlspecialchars($img_url, ENT_QUOTES, 'UTF-8');
-            $title_safe = htmlspecialchars($item['title'], ENT_QUOTES, 'UTF-8');
-          ?>
-          <a href="<?php echo $img_url_safe; ?>" class="portfolio-lightbox portfolio-mosaic-item" data-gallery="portfolioGallery" title="<?php echo $title_safe; ?>">
-            <span class="portfolio-mosaic-img">
-              <img src="<?php echo $img_url_safe; ?>" class="img-fluid" alt="<?php echo $title_safe; ?>">
-            </span>
-            <span class="portfolio-mosaic-info">
-              <h4><?php echo htmlspecialchars($item['title'], ENT_QUOTES, 'UTF-8'); ?></h4>
-              <p><?php echo htmlspecialchars($item['caption'], ENT_QUOTES, 'UTF-8'); ?></p>
-            </span>
-          </a>
-          <?php endforeach; ?>
-        </div>
+        <div class="row portfolio-container">
+            
+          <div class="col-lg-4 col-md-6 portfolio-item filter-bateau">
+            <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/IMG_4519.JPG" class="img-fluid" alt="Mangoove, à la découverte de la mangrove"></div>
+            <div class="portfolio-info">
+              <h4>"Mangoove", à la découverte de la mangrove</h4>
+              <p>Libreville - Gabon</p>
+              <a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/IMG_4519.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Mangoove, à la découverte de la mangrove"><i class="bx bx-plus"></i></a>
+            </div>
+          </div>
 
-        <div id="portfolio-by-category" class="portfolio-container portfolio-mosaic" style="display: none;">
-          <?php
-          foreach ($portfolio_actions as $item):
-            $img_url = $img_base . $item['img'];
-            $img_url_safe = htmlspecialchars($img_url, ENT_QUOTES, 'UTF-8');
-            $title_safe = htmlspecialchars($item['title'], ENT_QUOTES, 'UTF-8');
-          ?>
-          <a href="<?php echo $img_url_safe; ?>" class="portfolio-lightbox portfolio-item <?php echo htmlspecialchars($item['filter'], ENT_QUOTES, 'UTF-8'); ?>" data-gallery="portfolioGallery" title="<?php echo $title_safe; ?>">
-            <span class="portfolio-mosaic-img">
-              <img src="<?php echo $img_url_safe; ?>" class="img-fluid" alt="<?php echo $title_safe; ?>">
-            </span>
-            <span class="portfolio-mosaic-info">
-              <h4><?php echo htmlspecialchars($item['title'], ENT_QUOTES, 'UTF-8'); ?></h4>
-              <p><?php echo htmlspecialchars($item['caption'], ENT_QUOTES, 'UTF-8'); ?></p>
-            </span>
-          </a>
-          <?php endforeach; ?>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-bateau">
+            <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/DSC03218.JPG" class="img-fluid" alt="La forêt pour tous, sortie naturaliste en fauteuil roulant"></div>
+            <div class="portfolio-info">
+              <h4>La forêt pour tous, une sortie naturaliste en fauteuil roulant</h4>
+              <p>Essonne - France</p>
+              <a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/DSC03218.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="La forêt pour tous, sortie naturaliste en fauteuil roulant"><i class="bx bx-plus"></i></a>
+            </div>
+          </div>
+          
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-bateau">
+            <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/_DSC2691.JPG" class="img-fluid" alt="Découverte de la brousse équatoriale"></div>
+            <div class="portfolio-info">
+              <h4>Découverte de la brousse équatoriale</h4>
+              <p>Nyonié - Gabon</p>
+              <a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/_DSC2691.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Découverte de la brousse équatoriale"><i class="bx bx-plus"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-bateau">
+            <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/1447416383867.jpg" class="img-fluid" alt="Kayak au collège"></div>
+            <div class="portfolio-info">
+              <h4>Kayak au collège</h4>
+              <p>Yvelines - France</p>
+              <a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/1447416383867.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Kayak au collège"><i class="bx bx-plus"></i></a>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 portfolio-item filter-bateau">
+            <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/IMG_4179.jpg" class="img-fluid" alt="Mangroove à Nyonié, restauration d'une mangrove"></div>
+            <div class="portfolio-info">
+              <h4>"Mangroove à Nyonié", restauration d'une mangrove abîmée</h4>
+              <p>Nyonié - Gabon</p>
+              <a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/IMG_4179.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Mangroove à Nyonié, restauration d'une mangrove"><i class="bx bx-plus"></i></a>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 portfolio-item filter-bateau">
+            <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/_DSC2570.JPG" class="img-fluid" alt="Croquis du paysage"></div>
+            <div class="portfolio-info">
+              <h4>Croquis du paysage</h4>
+              <p>Nyonié - Gabon</p>
+              <a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/_DSC2570.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Croquis du paysage"><i class="bx bx-plus"></i></a>
+            </div>
+          </div>
+          
+        <div class="col-lg-4 col-md-6 portfolio-item filter-bateau">
+            <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/_DSC2638.JPG" class="img-fluid" alt="Ramassage d'ordures sur les plages au Gabon"></div>
+            <div class="portfolio-info">
+              <h4>Ramassage d'ordures</h4>
+              <p>plages au Gabon</p>
+              <a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/_DSC2638.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Ramassage d'ordures"><i class="bx bx-plus"></i></a>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 portfolio-item filter-bateau">
+            <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/Une-vie-en-foret.jpg" class="img-fluid" alt="Tournage avec Francis Hallé"></div>
+            <div class="portfolio-info">
+              <h4>Tournage avec Francis Hallé</h4>
+              <p>Gabon</p>
+              <a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/Une-vie-en-foret.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Tournage avec Francis Hallé"><i class="bx bx-plus"></i></a>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 portfolio-item filter-bateau">
+            <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/_DSC2573.JPG" class="img-fluid" alt="Exploration de l'environnement, savane et jungle"></div>
+            <div class="portfolio-info">
+              <h4>Exploration de l'environnement</h4>
+              <p>Savane et Jungle - Gabon</p>
+              <a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/_DSC2573.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Exploration de l'environnement"><i class="bx bx-plus"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-brousse">
+            <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/DSC_0096.JPG" class="img-fluid" alt="Interview production minisérie SAS"></div>
+            <div class="portfolio-info">
+              <h4>Interview concernant la production d'une minisérie (SAS)</h4>
+              <p>Yvelines - France</p>
+              <a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/DSC_0096.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Interview production minisérie SAS"><i class="bx bx-plus"></i></a>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 portfolio-item filter-brousse">
+            <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/DSC04815.JPG" class="img-fluid" alt="SAS, dispositif contre le décrochage scolaire"></div>
+            <div class="portfolio-info">
+              <h4>SAS - dispositif de lutte contre le décrochage scolaire</h4>
+              <p>Yvelines - France</p>
+              <a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/DSC04815.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="SAS, dispositif contre le décrochage scolaire"><i class="bx bx-plus"></i></a>
+            </div>
+          </div>
+          
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-brousse">
+            <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/DSC_0078.JPG" class="img-fluid" alt="SEGPA horticulture"></div>
+            <div class="portfolio-info">
+              <h4>SEGPA horticulture</h4>
+              <p>Yvelines - France</p>
+              <a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/DSC_0078.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="SEGPA horticulture"><i class="bx bx-plus"></i></a>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 portfolio-item filter-brousse">
+            <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/test epnc5.jpg" class="img-fluid" alt="Concours photos"></div>
+            <div class="portfolio-info">
+              <h4>Concours photos</h4>
+              <p>Yvelines - France</p>
+              <a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/test epnc5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Concours photos"><i class="bx bx-plus"></i></a>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 portfolio-item filter-brousse">
+            <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/20181107_091551.jpg" class="img-fluid" alt="Maquette du système solaire"></div>
+            <div class="portfolio-info">
+              <h4>Construction d'une maquette du système solaire</h4>
+              <p>Libreville - Gabon</p>
+              <a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/20181107_091551.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Maquette du système solaire"><i class="bx bx-plus"></i></a>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 portfolio-item filter-brousse">
+            <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/DSC04897.JPG" class="img-fluid" alt="Œil observé à la loupe à main"></div>
+            <div class="portfolio-info">
+              <h4>Œil, observé à la loupe à main</h4>
+              <p>Yvelines - France</p>
+              <a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/DSC04897.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Œil observé à la loupe à main"><i class="bx bx-plus"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-brousse">
+            <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/20180411_111457.jpg" class="img-fluid" alt="Opération plante ton palétuvier"></div>
+            <div class="portfolio-info">
+              <h4>Opération "plante ton palétuvier"</h4>
+              <p>Libreville - Gabon</p>
+              <a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/20180411_111457.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Opération plante ton palétuvier"><i class="bx bx-plus"></i></a>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 portfolio-item filter-brousse">
+            <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/DSC_0329.JPG" class="img-fluid" alt="Dispositif Ecocollège"></div>
+            <div class="portfolio-info">
+              <h4>Dispositif Ecocollège</h4>
+              <p>Yvelines - France</p>
+              <a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/DSC_0329.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Dispositif Ecocollège"><i class="bx bx-plus"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
+            <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/IMG_20220922_124635_565.jpg" class="img-fluid" alt="n3, salle de cours innovante"></div>
+            <div class="portfolio-info">
+              <h4>n3, une salle de cours innovante</h4>
+              <p>Casablanca - Maroc</p>
+              <a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/IMG_20220922_124635_565.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="n3, salle de cours innovante"><i class="bx bx-plus"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
+            <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/IMG_20220925_185523_261.jpg" class="img-fluid" alt="Farmflow Prototype 3, aquaponie à l'école"></div>
+            <div class="portfolio-info">
+              <h4>Farmflow Prototype 3, l'aquaponie à l'école</h4>
+              <p>Casablanca - Maroc</p>
+              <a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/IMG_20220925_185523_261.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Farmflow Prototype 3, aquaponie à l'école"><i class="bx bx-plus"></i></a>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
+            <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/phasmes.jpg" class="img-fluid" alt="Phasmopolis, élevage d'insectes"></div>
+            <div class="portfolio-info">
+              <h4>Phasmopolis, un élevage d'insectes</h4>
+              <p>Casablanca - Maroc</p>
+              <a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/phasmes.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Phasmopolis, élevage d'insectes"><i class="bx bx-plus"></i></a>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
+            <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/DSC03966.JPG" class="img-fluid" alt="Le club Bio"></div>
+            <div class="portfolio-info">
+              <h4>Le club Bio</h4>
+              <p>Yvelines - France</p>
+              <a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/DSC03966.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Le club Bio"><i class="bx bx-plus"></i></a>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
+            <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/IMG_20220912_102755_859.jpg" class="img-fluid" alt="Le tiny garden, potager urbain"></div>
+            <div class="portfolio-info">
+              <h4>Le tiny garden, un potager urbain</h4>
+              <p>Casablanca - Maroc</p>
+              <a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/IMG_20220912_102755_859.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Le tiny garden, potager urbain"><i class="bx bx-plus"></i></a>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
+            <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/DSC06352.JPG" class="img-fluid" alt="Culture de pleurotes"></div>
+            <div class="portfolio-info">
+              <h4>Culture de pleurotes</h4>
+              <p>Yvelines - France</p>
+              <a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/DSC06352.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Culture de pleurotes"><i class="bx bx-plus"></i></a>
+            </div>
+          </div>
+          
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-fictions">
+            <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/jeux/20210528_182706.jpg" class="img-fluid" alt="Jouons ! Cartes Sciences et Technologies"></div>
+            <div class="portfolio-info">
+              <h4>"Jouons !", des cartes à jouer en Sciences et Technologies</h4>
+              <p>Casablanca - Maroc</p>
+              <a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/jeux/20210528_182706.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Jouons ! Cartes Sciences et Technologies"><i class="bx bx-plus"></i></a>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 portfolio-item filter-fictions">
+            <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/jeux/2022-05-28.png" class="img-fluid" alt="Scape New Order, jeu de rôle Genially"></div>
+            <div class="portfolio-info">
+              <h4>"Scape New Order", un jeu de rôle Genially pour le confinement</h4>
+              <p>Casablanca - Maroc</p>
+              <a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/jeux/2022-05-28.png" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Scape New Order, jeu de rôle Genially"><i class="bx bx-plus"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-fictions">
+            <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/jeux/IMG-4684.jpg" class="img-fluid" alt="Les chroniques de tonton du bled, Imilchil"></div>
+            <div class="portfolio-info">
+              <h4>"Les chroniques de tonton du bled", une histoire à Imilchil</h4>
+              <p>Casablanca - Maroc</p>
+              <a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/jeux/IMG-4684.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Les chroniques de tonton du bled"><i class="bx bx-plus"></i></a>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 portfolio-item filter-fictions">
+            <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/jeux/IMG_20220202_125503_1.jpg" class="img-fluid" alt="PSE Game, Prévention Santé Environnement"></div>
+            <div class="portfolio-info">
+              <h4>"PSE Game", une autre manière d'aborder la Prévention Santé Environnement</h4>
+              <p>Casablanca - Maroc</p>
+              <a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/jeux/IMG_20220202_125503_1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="PSE Game, Prévention Santé Environnement"><i class="bx bx-plus"></i></a>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 portfolio-item filter-fictions">
+            <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/jeux/_DSC5126.JPG" class="img-fluid" alt="Noël sous l'équateur"></div>
+            <div class="portfolio-info">
+              <h4>Noël sous l'équateur</h4>
+              <p>Libreville - Gabon</p>
+              <a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/jeux/_DSC5126.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Noël sous l'équateur"><i class="bx bx-plus"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-prototypage">
+            <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/tech/2022-05-28 (1) (2).png" class="img-fluid" alt="Farmflow, start-up d'avenir"></div>
+            <div class="portfolio-info">
+              <h4>Farmflow, une start-up d'avenir</h4>
+              <p>Casablanca - Maroc</p>
+              <a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/tech/2022-05-28 (1) (2).png" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Farmflow, start-up d'avenir"><i class="bx bx-plus"></i></a>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 portfolio-item filter-prototypage">
+            <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/tech/IMG_20220706_141504_5.jpg" class="img-fluid" alt="L'aquaponie connectée"></div>
+            <div class="portfolio-info">
+              <h4>L'aquaponie connectée</h4>
+              <p>Casablanca - Maroc</p>
+              <a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/tech/IMG_20220706_141504_5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="L'aquaponie connectée"><i class="bx bx-plus"></i></a>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 portfolio-item filter-prototypage">
+            <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/tech/IMG_20190130_075846_0.jpg" class="img-fluid" alt="La grande forêt de l'équateur, expo physique et numérique"></div>
+            <div class="portfolio-info">
+              <h4>La grande forêt de l'équateur, une expo physique et numérique</h4>
+              <p>Libreville - Gabon</p>
+              <a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/tech/IMG_20190130_075846_0.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="La grande forêt de l'équateur, expo physique et numérique"><i class="bx bx-plus"></i></a>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 portfolio-item filter-prototypage">
+            <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/tech/Diapositive3.JPG" class="img-fluid" alt="Serious Game SVT, club WebGeek"></div>
+            <div class="portfolio-info">
+              <h4>Les Serious Game SVT, proposé par le "club WebGeek"</h4>
+              <p>Yvelines - France</p>
+              <a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/tech/Diapositive3.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Serious Game SVT, club WebGeek"><i class="bx bx-plus"></i></a>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 portfolio-item filter-prototypage">
+            <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/tech/IMG-20220704-WA0015.jpg" class="img-fluid" alt="Farmflow au salon BPI"></div>
+            <div class="portfolio-info">
+              <h4>Farmflow au salon de la Banque Publique d'Investissements</h4>
+              <p>Casablanca - Maroc</p>
+              <a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/tech/IMG-20220704-WA0015.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Farmflow au salon BPI"><i class="bx bx-plus"></i></a>
+            </div>
+          </div>
+          
         </div>
 
       </div>
