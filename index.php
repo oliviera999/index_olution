@@ -4,7 +4,7 @@
 <head>
 
 <?php
-$version = '2.5';
+$version = '2.6';
 $base = '';
 $script_dir = dirname($_SERVER['SCRIPT_NAME']);
 $base_for_document = rtrim($script_dir, '/') . '/';
@@ -136,7 +136,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
     <div id="act" class="section-title">
       <span>Pourquoi Olution ?</span>
       <h2>Pourquoi Olution ?</h2>
-      <p>Initialement, Olution est un projet qui propose des alternatives aux façons d'enseigner classiques.</p>
+      <p>Olution est un dispositif qui propose des alternatives pédagogiques.</p>
     </div>
 
     <div class="container mb-4">
@@ -434,7 +434,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
             </div>
           </div>
           
-        <div class="col-lg-4 col-md-6 portfolio-item filter-bateau">
+        <div class="col-lg-4 col-md-6 portfolio-item portfolio-item-more filter-bateau">
             <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/_DSC2638.JPG" class="img-fluid" alt="Ramassage d'ordures sur les plages au Gabon"></div>
             <div class="portfolio-info">
               <h4>Ramassage d'ordures</h4>
@@ -443,7 +443,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item filter-bateau">
+          <div class="col-lg-4 col-md-6 portfolio-item portfolio-item-more filter-bateau">
             <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/Une-vie-en-foret.jpg" class="img-fluid" alt="Tournage avec Francis Hallé"></div>
             <div class="portfolio-info">
               <h4>Tournage avec Francis Hallé</h4>
@@ -452,7 +452,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item filter-bateau">
+          <div class="col-lg-4 col-md-6 portfolio-item portfolio-item-more filter-bateau">
             <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/_DSC2573.JPG" class="img-fluid" alt="Exploration de l'environnement, savane et jungle"></div>
             <div class="portfolio-info">
               <h4>Exploration de l'environnement</h4>
@@ -461,7 +461,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-brousse">
+          <div class="col-lg-4 col-md-6 portfolio-item portfolio-item-more filter-brousse">
             <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/DSC_0096.JPG" class="img-fluid" alt="Interview production minisérie SAS"></div>
             <div class="portfolio-info">
               <h4>Interview concernant la production d'une minisérie (SAS)</h4>
@@ -470,7 +470,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item filter-brousse">
+          <div class="col-lg-4 col-md-6 portfolio-item portfolio-item-more filter-brousse">
             <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/DSC04815.JPG" class="img-fluid" alt="SAS, dispositif contre le décrochage scolaire"></div>
             <div class="portfolio-info">
               <h4>SAS - dispositif de lutte contre le décrochage scolaire</h4>
@@ -479,7 +479,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
             </div>
           </div>
           
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-brousse">
+                    <div class="col-lg-4 col-md-6 portfolio-item portfolio-item-more filter-brousse">
             <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/DSC_0078.JPG" class="img-fluid" alt="SEGPA horticulture"></div>
             <div class="portfolio-info">
               <h4>SEGPA horticulture</h4>
@@ -488,7 +488,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item filter-brousse">
+          <div class="col-lg-4 col-md-6 portfolio-item portfolio-item-more filter-brousse">
             <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/test epnc5.jpg" class="img-fluid" alt="Concours photos"></div>
             <div class="portfolio-info">
               <h4>Concours photos</h4>
@@ -497,7 +497,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item filter-brousse">
+          <div class="col-lg-4 col-md-6 portfolio-item portfolio-item-more filter-brousse">
             <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/20181107_091551.jpg" class="img-fluid" alt="Maquette du système solaire"></div>
             <div class="portfolio-info">
               <h4>Construction d'une maquette du système solaire</h4>
@@ -506,7 +506,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item filter-brousse">
+          <div class="col-lg-4 col-md-6 portfolio-item portfolio-item-more filter-brousse">
             <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/DSC04897.JPG" class="img-fluid" alt="Œil observé à la loupe à main"></div>
             <div class="portfolio-info">
               <h4>Œil, observé à la loupe à main</h4>
@@ -515,7 +515,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-brousse">
+          <div class="col-lg-4 col-md-6 portfolio-item portfolio-item-more filter-brousse">
             <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/20180411_111457.jpg" class="img-fluid" alt="Opération plante ton palétuvier"></div>
             <div class="portfolio-info">
               <h4>Opération "plante ton palétuvier"</h4>
@@ -524,7 +524,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item filter-brousse">
+          <div class="col-lg-4 col-md-6 portfolio-item portfolio-item-more filter-brousse">
             <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/DSC_0329.JPG" class="img-fluid" alt="Dispositif Ecocollège"></div>
             <div class="portfolio-info">
               <h4>Dispositif Ecocollège</h4>
@@ -533,7 +533,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
+          <div class="col-lg-4 col-md-6 portfolio-item portfolio-item-more filter-urbain">
             <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/IMG_20220922_124635_565.jpg" class="img-fluid" alt="n3, salle de cours innovante"></div>
             <div class="portfolio-info">
               <h4>n3, une salle de cours innovante</h4>
@@ -542,7 +542,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
+          <div class="col-lg-4 col-md-6 portfolio-item portfolio-item-more filter-urbain">
             <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/IMG_20220925_185523_261.jpg" class="img-fluid" alt="Farmflow Prototype 3, aquaponie à l'école"></div>
             <div class="portfolio-info">
               <h4>Farmflow Prototype 3, l'aquaponie à l'école</h4>
@@ -551,7 +551,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
+          <div class="col-lg-4 col-md-6 portfolio-item portfolio-item-more filter-urbain">
             <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/phasmes.jpg" class="img-fluid" alt="Phasmopolis, élevage d'insectes"></div>
             <div class="portfolio-info">
               <h4>Phasmopolis, un élevage d'insectes</h4>
@@ -560,7 +560,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
+          <div class="col-lg-4 col-md-6 portfolio-item portfolio-item-more filter-urbain">
             <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/DSC03966.JPG" class="img-fluid" alt="Le club Bio"></div>
             <div class="portfolio-info">
               <h4>Le club Bio</h4>
@@ -569,7 +569,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
+          <div class="col-lg-4 col-md-6 portfolio-item portfolio-item-more filter-urbain">
             <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/IMG_20220912_102755_859.jpg" class="img-fluid" alt="Le tiny garden, potager urbain"></div>
             <div class="portfolio-info">
               <h4>Le tiny garden, un potager urbain</h4>
@@ -578,7 +578,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
+          <div class="col-lg-4 col-md-6 portfolio-item portfolio-item-more filter-urbain">
             <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/DSC06352.JPG" class="img-fluid" alt="Culture de pleurotes"></div>
             <div class="portfolio-info">
               <h4>Culture de pleurotes</h4>
@@ -588,7 +588,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
           
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-fictions">
+          <div class="col-lg-4 col-md-6 portfolio-item portfolio-item-more filter-fictions">
             <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/jeux/20210528_182706.jpg" class="img-fluid" alt="Jouons ! Cartes Sciences et Technologies"></div>
             <div class="portfolio-info">
               <h4>"Jouons !", des cartes à jouer en Sciences et Technologies</h4>
@@ -597,7 +597,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item filter-fictions">
+          <div class="col-lg-4 col-md-6 portfolio-item portfolio-item-more filter-fictions">
             <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/jeux/2022-05-28.png" class="img-fluid" alt="Scape New Order, jeu de rôle Genially"></div>
             <div class="portfolio-info">
               <h4>"Scape New Order", un jeu de rôle Genially pour le confinement</h4>
@@ -606,7 +606,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-fictions">
+          <div class="col-lg-4 col-md-6 portfolio-item portfolio-item-more filter-fictions">
             <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/jeux/IMG-4684.jpg" class="img-fluid" alt="Les chroniques de tonton du bled, Imilchil"></div>
             <div class="portfolio-info">
               <h4>"Les chroniques de tonton du bled", une histoire à Imilchil</h4>
@@ -615,7 +615,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item filter-fictions">
+          <div class="col-lg-4 col-md-6 portfolio-item portfolio-item-more filter-fictions">
             <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/jeux/IMG_20220202_125503_1.jpg" class="img-fluid" alt="PSE Game, Prévention Santé Environnement"></div>
             <div class="portfolio-info">
               <h4>"PSE Game", une autre manière d'aborder la Prévention Santé Environnement</h4>
@@ -624,7 +624,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item filter-fictions">
+          <div class="col-lg-4 col-md-6 portfolio-item portfolio-item-more filter-fictions">
             <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/jeux/_DSC5126.JPG" class="img-fluid" alt="Noël sous l'équateur"></div>
             <div class="portfolio-info">
               <h4>Noël sous l'équateur</h4>
@@ -633,7 +633,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-prototypage">
+          <div class="col-lg-4 col-md-6 portfolio-item portfolio-item-more filter-prototypage">
             <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/tech/2022-05-28 (1) (2).png" class="img-fluid" alt="Farmflow, start-up d'avenir"></div>
             <div class="portfolio-info">
               <h4>Farmflow, une start-up d'avenir</h4>
