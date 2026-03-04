@@ -4,7 +4,7 @@
 <head>
 
 <?php
-$version = '3.7';
+$version = '3.8';
 $base = '';
 $script_dir = dirname($_SERVER['SCRIPT_NAME']);
 $base_for_document = rtrim($script_dir, '/') . '/';
@@ -369,7 +369,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
         <div class="section-title">
           <span>Actions et projets</span>
           <h2>Actions et projets</h2>
-          <p>Olution est varié. Mangroove, Farmflow, SAS, Les chroniques de tonton du bled, Scape New Order, Une vie en forêt, Météosaules… Ce sont autant de projets qui en font partie.</p>
+          <p>Olution est varié. N³, Gnomes&amp;Licornes, Mangroove, Farmflow, SAS, Les chroniques de tonton du bled, Scape New Order, Une vie en forêt, Météosaules… Ce sont autant de projets qui en font partie.</p>
         </div>
 
         <ul id="portfolio-flters" class="d-flex justify-content-center">
