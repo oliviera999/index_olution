@@ -4,7 +4,7 @@
 <head>
 
 <?php
-$version = '2.6';
+$version = '2.7';
 $base = '';
 $script_dir = dirname($_SERVER['SCRIPT_NAME']);
 $base_for_document = rtrim($script_dir, '/') . '/';
@@ -164,7 +164,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
             <div class="card-body">
               <p class="audience-card-icon mb-2">🏫</p>
               <h5 class="card-title h6">Institution</h5>
-              <p class="card-text small mb-0">Un dispositif documenté, évalué, déployé dans 5 établissements AEFE</p>
+              <p class="card-text small mb-0">Un dispositif documenté, évalué, déployé dans 4 établissements</p>
             </div>
           </div>
         </div>
@@ -642,7 +642,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item filter-prototypage">
+          <div class="col-lg-4 col-md-6 portfolio-item portfolio-item-more filter-prototypage">
             <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/tech/IMG_20220706_141504_5.jpg" class="img-fluid" alt="L'aquaponie connectée"></div>
             <div class="portfolio-info">
               <h4>L'aquaponie connectée</h4>
@@ -651,7 +651,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item filter-prototypage">
+          <div class="col-lg-4 col-md-6 portfolio-item portfolio-item-more filter-prototypage">
             <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/tech/IMG_20190130_075846_0.jpg" class="img-fluid" alt="La grande forêt de l'équateur, expo physique et numérique"></div>
             <div class="portfolio-info">
               <h4>La grande forêt de l'équateur, une expo physique et numérique</h4>
@@ -660,7 +660,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item filter-prototypage">
+          <div class="col-lg-4 col-md-6 portfolio-item portfolio-item-more filter-prototypage">
             <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/tech/Diapositive3.JPG" class="img-fluid" alt="Serious Game SVT, club WebGeek"></div>
             <div class="portfolio-info">
               <h4>Les Serious Game SVT, proposé par le "club WebGeek"</h4>
@@ -669,7 +669,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item filter-prototypage">
+          <div class="col-lg-4 col-md-6 portfolio-item portfolio-item-more filter-prototypage">
             <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/tech/IMG-20220704-WA0015.jpg" class="img-fluid" alt="Farmflow au salon BPI"></div>
             <div class="portfolio-info">
               <h4>Farmflow au salon de la Banque Publique d'Investissements</h4>
@@ -678,6 +678,10 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
             </div>
           </div>
           
+        </div>
+
+        <div class="portfolio-more-wrapper text-center mt-4" id="portfolio-more-wrapper">
+          <button type="button" class="btn btn-outline-primary btn-portfolio-more" id="portfolio-more-btn" aria-expanded="false">Voir plus d'actions</button>
         </div>
 
       </div>
