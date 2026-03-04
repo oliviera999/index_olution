@@ -4,7 +4,7 @@
 <head>
 
 <?php
-$version = '4.8';
+$version = '4.9';
 $base = '';
 // URL canonique pour le SEO (page d'accueil officielle olution.info)
 $canonical_url = 'https://olution.info/';
@@ -363,7 +363,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
                 <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
                   <div class="count-box">
                     <i class="bi bi-award" style="color: #ffb459;"></i>
-                    <span data-purecounter-start="0" data-purecounter-end="4" data-purecounter-duration="1" class="purecounter"></span>
+                    <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter"></span>
                     <p><strong>Établissements</strong><br>en France, au Gabon et au Maroc</p>
                   </div>
                 </div>
