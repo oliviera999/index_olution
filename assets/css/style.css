@@ -1134,7 +1134,7 @@ section {
 }
 
 /*--------------------------------------------------------------
-# My Portfolio (Swiper horizontal, titres et légendes sous l'image)
+# My Portfolio
 --------------------------------------------------------------*/
 .portfolio #portfolio-flters {
   list-style: none;
@@ -1161,124 +1161,163 @@ section {
   border-color: #ffab40;
 }
 
-/* Swiper portfolio : une ligne défilable, peu de hauteur */
-.portfolio .portfolio-swiper {
-  padding-bottom: 48px;
-  overflow: hidden;
-}
-
-.portfolio .portfolio-swiper .swiper-slide {
-  height: auto;
-}
-
 .portfolio .portfolio-item {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  background: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
 }
 
 .portfolio .portfolio-item .portfolio-img {
   overflow: hidden;
-  flex-shrink: 0;
-  aspect-ratio: 4/3;
 }
 
 .portfolio .portfolio-item .portfolio-img img {
+  transition: all 0.8s ease-in-out;
+}
+
+.portfolio .portfolio-item .portfolio-info {
+  opacity: 0;
+  position: absolute;
+  left: 15px;
+  bottom: 0;
+  z-index: 3;
+  right: 15px;
+  transition: all ease-in-out 0.3s;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px 15px;
+}
+
+.portfolio .portfolio-item .portfolio-info h4 {
+  font-size: 18px;
+  color: #fff;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0px;
+}
+
+.portfolio .portfolio-item .portfolio-info p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.portfolio .portfolio-item .portfolio-info .preview-link,
+.portfolio .portfolio-item .portfolio-info .details-link {
+  position: absolute;
+  right: 40px;
+  font-size: 24px;
+  top: calc(50% - 18px);
+  color: #fff;
+  transition: 0.3s;
+}
+
+.portfolio .portfolio-item .portfolio-info .preview-link:hover,
+.portfolio .portfolio-item .portfolio-info .details-link:hover {
+  color: #ffc041;
+}
+
+.portfolio .portfolio-item .portfolio-info .details-link {
+  right: 10px;
+}
+
+.portfolio .portfolio-item:hover .portfolio-img img {
+  transform: scale(1.2);
+}
+
+.portfolio .portfolio-item:hover .portfolio-info {
+  opacity: 1;
+}
+
+/* Liste compacte "Les actions" (option C) : miniature gauche, titre + légende droite */
+.portfolio-list.portfolio-container {
+  display: block;
+}
+
+.portfolio-list .portfolio-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+  padding: 0.5rem 0;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.portfolio-list .portfolio-item:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.portfolio-list .portfolio-item .portfolio-img {
+  flex-shrink: 0;
+  width: 80px;
+  min-width: 80px;
+  height: 80px;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.portfolio-list .portfolio-item .portfolio-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
 
-.portfolio .portfolio-item:hover .portfolio-img img {
+.portfolio-list .portfolio-item:hover .portfolio-img img {
   transform: scale(1.05);
 }
 
-/* Titre et légende toujours visibles sous l'image (mobile-friendly) */
-.portfolio .portfolio-item .portfolio-info {
+.portfolio-list .portfolio-item .portfolio-info {
+  flex: 1;
+  min-width: 0;
   position: static;
   opacity: 1;
-  padding: 12px 14px;
-  background: #fff;
-  flex: 1;
+  background: transparent;
+  padding: 0;
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
 }
 
-.portfolio .portfolio-item .portfolio-info h4 {
-  font-size: 15px;
+.portfolio-list .portfolio-item .portfolio-info h4 {
+  font-size: 1rem;
   font-weight: 600;
-  color: #2c3e50;
+  color: #444444;
   margin: 0;
   line-height: 1.3;
+  width: 100%;
 }
 
-.portfolio .portfolio-item .portfolio-info p {
-  font-size: 13px;
+.portfolio-list .portfolio-item .portfolio-info p {
+  font-size: 0.875rem;
   color: #6c757d;
   margin: 0;
 }
 
-.portfolio .portfolio-item .portfolio-info .preview-link,
-.portfolio .portfolio-item .portfolio-info .details-link {
-  position: absolute;
-  right: 12px;
-  bottom: 12px;
-  font-size: 20px;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.5);
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.3s;
-}
-
-.portfolio .portfolio-item .portfolio-info {
-  position: relative;
-}
-
-.portfolio .portfolio-item .portfolio-info .preview-link:hover,
-.portfolio .portfolio-item .portfolio-info .details-link:hover {
-  color: #ffc041;
-  background: rgba(0, 0, 0, 0.7);
-}
-
-.portfolio .portfolio-item .portfolio-info .details-link {
-  right: auto;
-  left: 12px;
-}
-
-/* Navigation Swiper portfolio */
-.portfolio .portfolio-pagination {
-  margin-top: 20px;
-}
-
-.portfolio .portfolio-pagination .swiper-pagination-bullet {
-  background: #444;
-  opacity: 0.4;
-}
-
-.portfolio .portfolio-pagination .swiper-pagination-bullet-active {
-  opacity: 1;
-  background: #ffab40;
-}
-
-.portfolio .portfolio-prev,
-.portfolio .portfolio-next {
-  color: #444;
-}
-
-.portfolio .portfolio-prev:hover,
-.portfolio .portfolio-next:hover {
+.portfolio-list .portfolio-item .portfolio-info .preview-link,
+.portfolio-list .portfolio-item .portfolio-info .details-link {
+  position: static;
+  margin-left: auto;
+  font-size: 1.25rem;
   color: #f3a200;
+  flex-shrink: 0;
+}
+
+.portfolio-list .portfolio-item .portfolio-info .preview-link:hover,
+.portfolio-list .portfolio-item .portfolio-info .details-link:hover {
+  color: #ffab40;
+}
+
+@media (max-width: 576px) {
+  .portfolio-list .portfolio-item .portfolio-img {
+    width: 64px;
+    min-width: 64px;
+    height: 64px;
+  }
+  .portfolio-list .portfolio-item .portfolio-info h4 {
+    font-size: 0.9375rem;
+  }
 }
 
 /*--------------------------------------------------------------
