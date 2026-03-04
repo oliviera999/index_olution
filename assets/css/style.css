@@ -1442,6 +1442,19 @@ section {
   margin-bottom: 0;
 }
 
+.contact .section-title p a,
+.contact .info-box p a {
+  color: #f3a200;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.contact .section-title p a:hover,
+.contact .info-box p a:hover {
+  color: #ffab40;
+  text-decoration: underline;
+}
+
 .contact .social-links {
   margin-top: 15px;
   display: flex;

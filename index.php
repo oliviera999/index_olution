@@ -4,7 +4,7 @@
 <head>
 
 <?php
-$version = '3.0';
+$version = '3.1';
 $base = '';
 $script_dir = dirname($_SERVER['SCRIPT_NAME']);
 $base_for_document = rtrim($script_dir, '/') . '/';
@@ -852,9 +852,8 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
       <div class="container">
 
         <div class="section-title">
-          <span>Contact</span>
           <h2>Contact</h2>
-          <p>Vous souhaitez adapter Olution à votre établissement ? Vous cherchez un intervenant pour un projet pédagogique innovant ? Vous voulez collaborer ou en savoir plus ? → Écrivons-nous.</p>
+          <p>Vous souhaitez adapter Olution à votre établissement ? Vous cherchez un intervenant pour un projet pédagogique innovant ? Vous voulez collaborer ou en savoir plus ? → <a href="mailto:olution@olution.info">Écrivons-nous</a>.</p>
         </div>
 
         <div class="row justify-content-center">
@@ -863,8 +862,8 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
               <div class="col-md-12">
                 <div class="info-box mt-4">
                   <i class="bx bx-envelope"></i>
-                  <h3>Contact</h3>
-                  <p>olution@olution.info</p>
+                  <h3>Courriel</h3>
+                  <p><a href="mailto:olution@olution.info">olution@olution.info</a></p>
                 </div>
               </div>
             </div>
