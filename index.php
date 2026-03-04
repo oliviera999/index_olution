@@ -4,7 +4,7 @@
 <head>
 
 <?php
-$version = '3.3';
+$version = '3.4';
 $base = '';
 $script_dir = dirname($_SERVER['SCRIPT_NAME']);
 $base_for_document = rtrim($script_dir, '/') . '/';
@@ -774,7 +774,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
     <div id="testi" class="section-title">
       <span>Me concernant</span>
       <h2>Me concernant</h2>
-      <p>Enseignant certifié — Sciences &amp; Technologie · Réseau AEFE · Lycée Lyautey de Casablanca · Académie de Versailles · 15 ans d'expérience terrain en France, au Gabon et au Maroc</p>
+      <p>Olivier ARNOULD-LAURENT — Enseignant certifié — Sciences &amp; Technologie · Réseau AEFE · Lycée Lyautey de Casablanca · Académie de Versailles · 15 ans d'expérience terrain en France, au Gabon et au Maroc</p>
     </div>
 
     <section id="testimonials" class="testimonials">
