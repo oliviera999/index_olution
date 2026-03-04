@@ -166,15 +166,20 @@
   }, true)
 
   /**
-   * Scroll with ofset on page load with hash links in the url
+   * Scroll with ofset on page load with hash links in the url.
+   * #about en barre d’adresse au rechargement est annulé : on affiche la page en haut.
    */
   window.addEventListener('load', () => {
-    if (window.location.hash) {
-      if (select(window.location.hash)) {
-        scrollto(window.location.hash)
-      }
+    const hash = window.location.hash
+    if (hash === '#about') {
+      history.replaceState(null, '', window.location.pathname + window.location.search)
+      window.scrollTo(0, 0)
+      return
     }
-  });
+    if (hash && select(hash)) {
+      scrollto(hash)
+    }
+  })
 
   /**
    * Skills animation
