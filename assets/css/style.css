@@ -913,22 +913,6 @@ section {
   border-top: 1px solid rgba(0,0,0,0.06);
 }
 
-/* Encart légitimité — Me concernant */
-.legitimacy-bar {
-  background: rgba(248, 249, 250, 0.95);
-  padding: 1rem 0;
-  text-align: center;
-}
-.legitimacy-text {
-  font-size: 0.85rem;
-  color: #555;
-  margin: 0;
-  line-height: 1.5;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 /*--------------------------------------------------------------
 # Testimonials
 --------------------------------------------------------------*/

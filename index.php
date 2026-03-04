@@ -4,7 +4,7 @@
 <head>
 
 <?php
-$version = '3.2';
+$version = '3.3';
 $base = '';
 $script_dir = dirname($_SERVER['SCRIPT_NAME']);
 $base_for_document = rtrim($script_dir, '/') . '/';
@@ -841,12 +841,6 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
       </div>
     </section><!-- End Testimonials Section -->
 
-    <div class="legitimacy-bar">
-      <div class="container">
-        <p class="legitimacy-text">Enseignant certifié — Sciences & Technologie · Réseau AEFE · Lycée Lyautey de Casablanca · Académie de Versailles · 15 ans d'expérience terrain en France, au Gabon et au Maroc</p>
-      </div>
-    </div>
-    
     <!-- ======= Contact Me Section ======= -->
     <section id="contact" class="contact">
       <div class="container">
