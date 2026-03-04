@@ -4,7 +4,7 @@
 <head>
 
 <?php
-$version = '4.1';
+$version = '4.2';
 $base = '';
 $script_dir = dirname($_SERVER['SCRIPT_NAME']);
 $base_for_document = rtrim($script_dir, '/') . '/';
@@ -789,6 +789,12 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
             <div class="results-item">
               <span class="results-badge">💬 « On va vraiment aller sur Mars monsieur ? »</span>
               <p class="mb-0">Commentaire candide d'élève après 6 mois du projet EIST au lycée Blaise Pascal de Libreville</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="results-item">
+              <span class="results-badge">🏆 Lauréat Météo à l'École</span>
+              <p class="mb-0">Projet Mété'O'Saules au collège de Guyancourt en 2016</p>
             </div>
           </div>
         </div>
