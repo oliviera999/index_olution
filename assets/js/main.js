@@ -213,13 +213,26 @@
   });
 
   /**
-   * Porfolio isotope and filter
+   * Portfolio isotope and filter — "En bref" : tirage aléatoire de quelques items à chaque chargement
    */
   window.addEventListener('load', () => {
     let portfolioContainer = select('.portfolio-container');
     if (portfolioContainer) {
+      let items = portfolioContainer.querySelectorAll('.portfolio-item');
+      let count = parseInt(portfolioContainer.getAttribute('data-en-bref-count'), 10) || 8;
+      count = Math.min(count, items.length);
+      let order = Array.from({ length: items.length }, (_, i) => i);
+      for (let i = order.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [order[i], order[j]] = [order[j], order[i]];
+      }
+      for (let k = 0; k < count; k++) {
+        items[order[k]].classList.add('in-bref');
+      }
+
       let portfolioIsotope = new Isotope(portfolioContainer, {
-        itemSelector: '.portfolio-item'
+        itemSelector: '.portfolio-item',
+        filter: '.in-bref'
       });
 
       let portfolioFilters = select('#portfolio-flters li', true);

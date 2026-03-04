@@ -4,7 +4,7 @@
 <head>
 
 <?php
-$version = '2.5';
+$version = '2.6';
 $base = '';
 $script_dir = dirname($_SERVER['SCRIPT_NAME']);
 $base_for_document = rtrim($script_dir, '/') . '/';
@@ -97,7 +97,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
         <li><a class="nav-link scrollto active" href="#hero">Accueil</a></li>
         <li><a class="nav-link scrollto" href="#act">Pourquoi Olution ?</a></li>
         <li><a class="nav-link scrollto" href="#about">olution.info</a></li>
-        <li><a class="nav-link scrollto" href="#portfolio">Les actions</a></li>
+        <li><a class="nav-link scrollto" href="#portfolio">Actions et projets</a></li>
         <li><a class="nav-link scrollto" href="#results">Résultats</a></li>
         <li><a class="nav-link scrollto" href="#services">Sites en lien</a></li>
         <li><a class="nav-link scrollto" href="#testi">Me concernant</a></li>
@@ -363,13 +363,13 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
       <div class="container">
 
         <div class="section-title">
-          <span>Les actions</span>
-          <h2>Les actions</h2>
+          <span>Actions et projets</span>
+          <h2>Actions et projets</h2>
           <p>Olution est varié. Mangroove, Farmflow, SAS, Les chroniques de tonton du bled, Scape New Order, Une vie en forêt, Météosaules… Ce sont autant de projets qui en font partie.</p>
         </div>
 
         <ul id="portfolio-flters" class="d-flex justify-content-center">
-          <li data-filter="*" class="filter-active">Tout</li>
+          <li data-filter=".in-bref" class="filter-active">En bref</li>
           <li data-filter=".filter-bateau">Dehors</li>
           <li data-filter=".filter-brousse">Dedans</li>
           <li data-filter=".filter-urbain">Nature urbaine</li>
@@ -377,7 +377,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           <li data-filter=".filter-prototypage">Tech</li>
         </ul>
 
-        <div class="row portfolio-container">
+        <div class="row portfolio-container" data-en-bref-count="8">
             
           <div class="col-lg-4 col-md-6 portfolio-item filter-bateau">
             <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/IMG_4519.JPG" class="img-fluid" alt="Mangoove, à la découverte de la mangrove"></div>
