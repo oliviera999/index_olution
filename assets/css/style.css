@@ -400,12 +400,17 @@ h6 {
   margin-bottom: 50px;
 }
 
+/* Texte SEO : présent dans le HTML pour les crawlers, masqué visuellement */
 #hero .hero-seo-intro {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 0.95rem;
-  max-width: 560px;
-  margin-left: auto;
-  margin-right: auto;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 #hero .hero-audience-buttons .btn {
