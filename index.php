@@ -4,7 +4,7 @@
 <head>
 
 <?php
-$version = '3.8';
+$version = '3.9';
 $base = '';
 $script_dir = dirname($_SERVER['SCRIPT_NAME']);
 $base_for_document = rtrim($script_dir, '/') . '/';
@@ -645,6 +645,110 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
             <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/tech/IMG-20220704-WA0015.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Farmflow au salon BPI"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/tech/IMG-20220704-WA0015.jpg" class="img-fluid" alt="Farmflow au salon BPI"></a></div>
             <div class="portfolio-info">
               <h4>Farmflow au salon de la Banque Publique d'Investissements</h4>
+              <p>Casablanca - Maroc</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-bateau">
+            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/poesie-exterieur.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Poésie en extérieur"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/poesie-exterieur.png" class="img-fluid" alt="Poésie en extérieur"></a></div>
+            <div class="portfolio-info">
+              <h4>Poésie en extérieur</h4>
+              <p>Casablanca - Maroc</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-bateau">
+            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/cours-dehors.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Cours dehors"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/cours-dehors.png" class="img-fluid" alt="Cours dehors"></a></div>
+            <div class="portfolio-info">
+              <h4>Cours dehors</h4>
+              <p>Casablanca - Maroc</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-brousse">
+            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/analyse-chimique.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Analyse chimique"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/analyse-chimique.png" class="img-fluid" alt="Analyse chimique"></a></div>
+            <div class="portfolio-info">
+              <h4>Analyse chimique</h4>
+              <p>Casablanca - Maroc</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-brousse">
+            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/jeu-gnomes-licornes.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Le jeu Gnomes et Licornes"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/jeu-gnomes-licornes.png" class="img-fluid" alt="Le jeu Gnomes et Licornes"></a></div>
+            <div class="portfolio-info">
+              <h4>Le jeu Gnomes et Licornes</h4>
+              <p>Casablanca - Maroc</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
+            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/elevage-insectes.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Élevage d'insectes à grande échelle"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/elevage-insectes.png" class="img-fluid" alt="Élevage d'insectes à grande échelle"></a></div>
+            <div class="portfolio-info">
+              <h4>Élevage d'insectes à grande échelle</h4>
+              <p>Casablanca - Maroc</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
+            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/odd-et-n3.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="ODD et n³"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/odd-et-n3.png" class="img-fluid" alt="ODD et n³"></a></div>
+            <div class="portfolio-info">
+              <h4>ODD et n³</h4>
+              <p>Casablanca - Maroc</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
+            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/lombricomposteur.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Lombricomposteur"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/lombricomposteur.png" class="img-fluid" alt="Lombricomposteur"></a></div>
+            <div class="portfolio-info">
+              <h4>Lombricomposteur</h4>
+              <p>Casablanca - Maroc</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
+            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/potager-urbain.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Potager urbain"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/potager-urbain.png" class="img-fluid" alt="Potager urbain"></a></div>
+            <div class="portfolio-info">
+              <h4>Potager urbain</h4>
+              <p>Casablanca - Maroc</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
+            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/aquaponie-connectee.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Aquaponie connectée"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/aquaponie-connectee.png" class="img-fluid" alt="Aquaponie connectée"></a></div>
+            <div class="portfolio-info">
+              <h4>Aquaponie connectée</h4>
+              <p>Casablanca - Maroc</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
+            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/maison-chat-connectee.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Maison pour chat connectée"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/maison-chat-connectee.png" class="img-fluid" alt="Maison pour chat connectée"></a></div>
+            <div class="portfolio-info">
+              <h4>Maison pour chat connectée</h4>
+              <p>Casablanca - Maroc</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
+            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/expression-libre-n3.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Expression libre dans n³"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/expression-libre-n3.png" class="img-fluid" alt="Expression libre dans n³"></a></div>
+            <div class="portfolio-info">
+              <h4>Expression libre dans n³</h4>
+              <p>Casablanca - Maroc</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
+            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/porte-ouverte-n3.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Porte ouverte de la salle aérée n³"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/porte-ouverte-n3.png" class="img-fluid" alt="Porte ouverte de la salle aérée n³"></a></div>
+            <div class="portfolio-info">
+              <h4>Porte ouverte de la salle aérée n³</h4>
+              <p>Casablanca - Maroc</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-prototypage">
+            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/tech/station-meteo-connectee.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Station météo connectée"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/tech/station-meteo-connectee.png" class="img-fluid" alt="Station météo connectée"></a></div>
+            <div class="portfolio-info">
+              <h4>Station météo connectée</h4>
               <p>Casablanca - Maroc</p>
             </div>
           </div>
