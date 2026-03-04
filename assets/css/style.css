@@ -1226,6 +1226,35 @@ section {
   opacity: 1;
 }
 
+/* Portfolio "Voir plus" : items masqués au chargement */
+.portfolio .portfolio-item-more {
+  display: none;
+}
+
+.portfolio .portfolio-item-more.is-visible {
+  display: block;
+}
+
+.portfolio-more-wrapper {
+  margin-top: 1.5rem;
+}
+
+.portfolio-more-wrapper.is-hidden {
+  display: none !important;
+}
+
+.btn-portfolio-more {
+  min-height: 44px;
+  padding: 0.5rem 1.5rem;
+  font-weight: 600;
+  border-width: 2px;
+}
+
+.btn-portfolio-more:hover {
+  border-color: #ffab40;
+  color: #f3a200;
+}
+
 /*--------------------------------------------------------------
 # Portfolio Details
 --------------------------------------------------------------*/

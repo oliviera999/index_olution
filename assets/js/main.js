@@ -236,6 +236,28 @@
         });
 
       }, true);
+
+      /**
+       * Portfolio "Voir plus" : afficher tous les items au clic
+       */
+      let moreBtn = document.getElementById('portfolio-more-btn');
+      let moreWrapper = document.getElementById('portfolio-more-wrapper');
+      if (moreBtn && moreWrapper) {
+        on('click', moreBtn, function() {
+          let hiddenItems = portfolioContainer.querySelectorAll('.portfolio-item-more');
+          hiddenItems.forEach(function(el) {
+            el.classList.add('is-visible');
+          });
+          moreWrapper.classList.add('is-hidden');
+          moreBtn.setAttribute('aria-expanded', 'true');
+          let activeFilter = document.querySelector('#portfolio-flters li.filter-active');
+          if (activeFilter && portfolioIsotope) {
+            portfolioIsotope.arrange({
+              filter: activeFilter.getAttribute('data-filter')
+            });
+          }
+        });
+      }
     }
 
   });
