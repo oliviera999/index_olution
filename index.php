@@ -4,7 +4,7 @@
 <head>
 
 <?php
-$version = '4.2';
+$version = '4.3';
 $base = '';
 $script_dir = dirname($_SERVER['SCRIPT_NAME']);
 $base_for_document = rtrim($script_dir, '/') . '/';
@@ -776,7 +776,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           <div class="col-12 col-md-6 col-lg-4">
             <div class="results-item">
               <span class="results-badge">🏆 Lauréat Hacktonfutur</span>
-              <p class="mb-0">Farmflow, projet élève d'aquaponie connectée, présenté au salon BPI Paris 2022</p>
+              <p class="mb-0">Farmflow, projet élève d'aquaponie connectée, présenté au salon BPI Casablanca 2022</p>
             </div>
           </div>
           <div class="col-12 col-md-6 col-lg-4">
