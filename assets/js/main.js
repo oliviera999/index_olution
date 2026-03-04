@@ -213,31 +213,35 @@
   });
 
   /**
-   * Porfolio isotope and filter
+   * Portfolio bento : filtre par classe (sans Isotope pour préserver la grille)
    */
   window.addEventListener('load', () => {
     let portfolioContainer = select('.portfolio-container');
-    if (portfolioContainer) {
-      let portfolioIsotope = new Isotope(portfolioContainer, {
-        itemSelector: '.portfolio-item'
+    if (!portfolioContainer) return;
+
+    let items = portfolioContainer.querySelectorAll('.portfolio-item');
+    let portfolioFilters = select('#portfolio-flters li', true);
+
+    function applyFilter(filterValue) {
+      items.forEach(function (el) {
+        if (filterValue === '*') {
+          el.classList.remove('filtered');
+        } else {
+          el.classList.toggle('filtered', !el.matches(filterValue));
+        }
       });
-
-      let portfolioFilters = select('#portfolio-flters li', true);
-
-      on('click', '#portfolio-flters li', function(e) {
-        e.preventDefault();
-        portfolioFilters.forEach(function(el) {
-          el.classList.remove('filter-active');
-        });
-        this.classList.add('filter-active');
-
-        portfolioIsotope.arrange({
-          filter: this.getAttribute('data-filter')
-        });
-
-      }, true);
     }
 
+    applyFilter('*');
+
+    on('click', '#portfolio-flters li', function (e) {
+      e.preventDefault();
+      portfolioFilters.forEach(function (el) {
+        el.classList.remove('filter-active');
+      });
+      this.classList.add('filter-active');
+      applyFilter(this.getAttribute('data-filter'));
+    }, true);
   });
 
   /**
@@ -257,24 +261,6 @@
       }, 50);
     }
   });
-
-  /**
-   * Liste compacte "Les actions" : clic sur la miniature ouvre la lightbox
-   */
-  const listContainer = document.querySelector('.portfolio-list');
-  if (listContainer) {
-    listContainer.addEventListener('click', function (e) {
-      const imgBlock = e.target.closest('.portfolio-item .portfolio-img');
-      if (imgBlock) {
-        const item = imgBlock.closest('.portfolio-item');
-        const link = item ? item.querySelector('.portfolio-info .preview-link') : null;
-        if (link) {
-          e.preventDefault();
-          link.click();
-        }
-      }
-    });
-  }
 
   /**
    * Portfolio details slider

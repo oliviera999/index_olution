@@ -1226,97 +1226,96 @@ section {
   opacity: 1;
 }
 
-/* Liste compacte "Les actions" (option C) : miniature gauche, titre + légende droite */
-.portfolio-list.portfolio-container {
-  display: block;
+/* Grille bento – Les actions (tailles variables) */
+.portfolio-bento {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 140px;
+  gap: 0.5rem;
 }
 
-.portfolio-list .portfolio-item {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 0.75rem;
-  padding: 0.5rem 0;
-  border-radius: 8px;
-  transition: background-color 0.2s ease;
-}
-
-.portfolio-list .portfolio-item:hover {
-  background-color: rgba(0, 0, 0, 0.03);
-}
-
-.portfolio-list .portfolio-item .portfolio-img {
-  flex-shrink: 0;
-  width: 80px;
-  min-width: 80px;
-  height: 80px;
+.portfolio-bento .portfolio-item {
+  position: relative;
   overflow: hidden;
-  border-radius: 8px;
-  cursor: pointer;
+  margin-bottom: 0;
+  grid-column: span 1;
+  grid-row: span 1;
 }
 
-.portfolio-list .portfolio-item .portfolio-img img {
+.portfolio-bento .portfolio-item.bento-large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.portfolio-bento .portfolio-item .portfolio-img {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+}
+
+.portfolio-bento .portfolio-item .portfolio-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
 }
 
-.portfolio-list .portfolio-item:hover .portfolio-img img {
-  transform: scale(1.05);
+.portfolio-bento .portfolio-item:hover .portfolio-img img {
+  transform: scale(1.08);
 }
 
-.portfolio-list .portfolio-item .portfolio-info {
-  flex: 1;
-  min-width: 0;
-  position: static;
-  opacity: 1;
-  background: transparent;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.25rem 1rem;
+.portfolio-bento .portfolio-item .portfolio-info {
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  padding: 8px 12px;
 }
 
-.portfolio-list .portfolio-item .portfolio-info h4 {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #444444;
-  margin: 0;
-  line-height: 1.3;
-  width: 100%;
+.portfolio-bento .portfolio-item .portfolio-info h4 {
+  font-size: 14px;
+  line-height: 1.25;
 }
 
-.portfolio-list .portfolio-item .portfolio-info p {
-  font-size: 0.875rem;
-  color: #6c757d;
-  margin: 0;
+.portfolio-bento .portfolio-item.bento-large .portfolio-info h4 {
+  font-size: 16px;
 }
 
-.portfolio-list .portfolio-item .portfolio-info .preview-link,
-.portfolio-list .portfolio-item .portfolio-info .details-link {
-  position: static;
-  margin-left: auto;
-  font-size: 1.25rem;
-  color: #f3a200;
-  flex-shrink: 0;
+.portfolio-bento .portfolio-item .portfolio-info p {
+  font-size: 12px;
 }
 
-.portfolio-list .portfolio-item .portfolio-info .preview-link:hover,
-.portfolio-list .portfolio-item .portfolio-info .details-link:hover {
-  color: #ffab40;
+.portfolio-bento .portfolio-item.bento-large .portfolio-info p {
+  font-size: 13px;
 }
 
-@media (max-width: 576px) {
-  .portfolio-list .portfolio-item .portfolio-img {
-    width: 64px;
-    min-width: 64px;
-    height: 64px;
+.portfolio-bento .portfolio-item.filtered {
+  display: none !important;
+}
+
+@media (max-width: 991px) {
+  .portfolio-bento {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 120px;
   }
-  .portfolio-list .portfolio-item .portfolio-info h4 {
-    font-size: 0.9375rem;
+}
+
+@media (max-width: 575px) {
+  .portfolio-bento {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 100px;
+    gap: 0.35rem;
+  }
+
+  .portfolio-bento .portfolio-item .portfolio-info h4 {
+    font-size: 11px;
+  }
+
+  .portfolio-bento .portfolio-item .portfolio-info p {
+    font-size: 10px;
+  }
+
+  .portfolio-bento .portfolio-item.bento-large .portfolio-info h4 {
+    font-size: 12px;
   }
 }
 
