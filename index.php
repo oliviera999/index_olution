@@ -4,7 +4,7 @@
 <head>
 
 <?php
-$version = '3.9';
+$version = '4.0';
 $base = '';
 $script_dir = dirname($_SERVER['SCRIPT_NAME']);
 $base_for_document = rtrim($script_dir, '/') . '/';
@@ -673,7 +673,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-brousse">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-fictions">
             <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/jeu-gnomes-licornes.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Le jeu Gnomes et Licornes"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/jeu-gnomes-licornes.png" class="img-fluid" alt="Le jeu Gnomes et Licornes"></a></div>
             <div class="portfolio-info">
               <h4>Le jeu Gnomes et Licornes</h4>
