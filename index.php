@@ -4,7 +4,7 @@
 <head>
 
 <?php
-$version = '3.4';
+$version = '3.5';
 $base = '';
 $script_dir = dirname($_SERVER['SCRIPT_NAME']);
 $base_for_document = rtrim($script_dir, '/') . '/';
@@ -48,6 +48,10 @@ $hero_image_url = ($assets_base !== '') ? $assets_base . $nomimages[$affimage] :
 // Années d'existence : calcul automatique depuis le déploiement de la plateforme (2013)
 $plateforme_annee_deploiement = 2013;
 $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
+
+// Années d'expérience : carrière débutée en 2008
+$carriere_debut = 2008;
+$annees_experience = max(1, (int)date('Y') - $carriere_debut);
 ?>
   <?php if ($base !== ''): ?><base href="<?php echo htmlspecialchars($base); ?>"><?php endif; ?>
   <meta charset="utf-8">
@@ -774,7 +778,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
     <div id="testi" class="section-title">
       <span>Me concernant</span>
       <h2>Me concernant</h2>
-      <p>Olivier ARNOULD-LAURENT — Enseignant certifié — Sciences &amp; Technologie · Réseau AEFE · Lycée Lyautey de Casablanca · Académie de Versailles · 15 ans d'expérience terrain en France, au Gabon et au Maroc</p>
+      <p>Olivier ARNOULD-LAURENT — Enseignant certifié — Sciences &amp; Technologie · Réseau AEFE · Lycée Lyautey de Casablanca · Académie de Versailles · <?php echo $annees_experience; ?> ans d'expérience terrain en France, au Gabon et au Maroc</p>
     </div>
 
     <section id="testimonials" class="testimonials">
