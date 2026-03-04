@@ -1247,12 +1247,15 @@ section {
   min-height: 44px;
   padding: 0.5rem 1.5rem;
   font-weight: 600;
-  border-width: 2px;
+  border: 2px solid #ffab40;
+  color: #f3a200;
+  background: transparent;
 }
 
 .btn-portfolio-more:hover {
-  border-color: #ffab40;
-  color: #f3a200;
+  border-color: #f3a200;
+  color: #fff;
+  background-color: #ffab40;
 }
 
 /*--------------------------------------------------------------

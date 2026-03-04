@@ -4,7 +4,7 @@
 <head>
 
 <?php
-$version = '2.9';
+$version = '3.0';
 $base = '';
 $script_dir = dirname($_SERVER['SCRIPT_NAME']);
 $base_for_document = rtrim($script_dir, '/') . '/';
@@ -681,7 +681,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
         </div>
 
         <div class="portfolio-more-wrapper text-center mt-4" id="portfolio-more-wrapper">
-          <button type="button" class="btn btn-outline-primary btn-portfolio-more" id="portfolio-more-btn" aria-expanded="false">Voir plus d'actions</button>
+          <button type="button" class="btn btn-portfolio-more" id="portfolio-more-btn" aria-expanded="false">Voir plus d'actions</button>
         </div>
 
       </div>

@@ -231,8 +231,17 @@
         });
         this.classList.add('filter-active');
 
+        let filterSel = this.getAttribute('data-filter');
+        /* Révéler les items "Voir plus" de la catégorie sélectionnée pour que le filtre affiche des résultats */
+        if (filterSel && filterSel !== '*') {
+          let toReveal = portfolioContainer.querySelectorAll('.portfolio-item-more' + filterSel);
+          toReveal.forEach(function(el) {
+            el.classList.add('is-visible');
+          });
+        }
+
         portfolioIsotope.arrange({
-          filter: this.getAttribute('data-filter')
+          filter: filterSel || '*'
         });
 
       }, true);
