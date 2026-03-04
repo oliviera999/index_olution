@@ -4,7 +4,7 @@
 <head>
 
 <?php
-$version = '4.9';
+$version = '4.10';
 $base = '';
 // URL canonique pour le SEO (page d'accueil officielle olution.info)
 $canonical_url = 'https://olution.info/';
@@ -31,25 +31,8 @@ $nomimages[14]="assets/img/entete/bg-14.jpg";
 $nomimages[15]="assets/img/entete/bg-15.jpg";
 $nomimages[16]="assets/img/entete/bg-16.jpg";
 $affimage = random_int(1, $nbimages);
-// Détection HTTPS (certificat, proxy, load balancer)
-$is_https = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
-  || (!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https')
-  || (!empty($_SERVER['HTTP_X_FORWARDED_SSL']) && $_SERVER['HTTP_X_FORWARDED_SSL'] === 'on')
-  || (isset($_SERVER['SERVER_PORT']) && (int) $_SERVER['SERVER_PORT'] === 443);
-$scheme = $is_https ? 'https' : 'http';
-$host = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '';
-$script_path = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/');
-if ($host !== '') {
-  $assets_base = $scheme . '://' . $host . $script_path . '/';
-} else {
-  $assets_base = '';
-}
-$assets_base_safe = htmlspecialchars($assets_base, ENT_QUOTES, 'UTF-8');
-$hero_image_url = ($assets_base !== '') ? $assets_base . $nomimages[$affimage] : $nomimages[$affimage];
-
-// SEO : URL canonique officielle (page d'accueil olution.info)
-$site_canonical = 'https://olution.info/';
-$og_image_url = ($assets_base !== '') ? $assets_base . 'assets/img/logoblanc.png' : 'assets/img/logoblanc.png';
+// Chemins assets en relatifs (assets/) : valables après recopie sur olution.info ou tout hébergement
+$hero_image_url = $nomimages[$affimage];
 
 // Années d'existence : calcul automatique depuis le déploiement de la plateforme (2013)
 $plateforme_annee_deploiement = 2013;
@@ -102,8 +85,8 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
   </script>
 
   <!-- Favicons -->
-  <link href="<?php echo $assets_base_safe; ?>assets/img/favicon.png" rel="icon">
-  <link href="<?php echo $assets_base_safe; ?>assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Cabin" rel="stylesheet">
@@ -116,7 +99,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
   <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="<?php echo $assets_base_safe; ?>assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Laura - v4.8.1
@@ -125,8 +108,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 <style type="text/css">
-#hero{
-background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
+#hero{ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
 </style>
   
 </head>
@@ -158,7 +140,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
   <section id="hero">
     <div class="hero-container">
       <h1>olution</h1>
-      <img src="<?php echo $assets_base_safe; ?>assets/img/logoblanc.png" class="img-fluid" width="10%" alt="Logo Olution">
+      <img src="assets/img/logoblanc.png" class="img-fluid" width="10%" alt="Logo Olution">
       <br>
       <h2>échanger, créer, apprendre</h2>
       <p class="hero-seo-intro mt-2 mb-0">olution.info — Plateforme officielle du projet Olution : formation en ligne, espaces pédagogiques, actions en France et à l'international.</p>
@@ -233,7 +215,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
 
             <div class="swiper-slide">
               <div class="action-item">
-                <img src="<?php echo $assets_base_safe; ?>assets/img/actions/_DSC4906.JPG" class="action-img" alt="Olution, une évolution à l'école">
+                <img src="assets/img/actions/_DSC4906.JPG" class="action-img" alt="Olution, une évolution à l'école">
                 <h3>Olution</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
@@ -245,7 +227,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
             
             <div class="swiper-slide">
               <div class="action-item">
-                <img src="<?php echo $assets_base_safe; ?>assets/img/actions/20171205_172112.jpg" class="action-img" alt="Le monde change, s'adapter avec Olution">
+                <img src="assets/img/actions/20171205_172112.jpg" class="action-img" alt="Le monde change, s'adapter avec Olution">
                 <h3>Le monde change</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
@@ -257,7 +239,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
             
             <div class="swiper-slide">
               <div class="action-item">
-                <img src="<?php echo $assets_base_safe; ?>assets/img/actions/_DSC5567.JPG" class="action-img" alt="L'apprentissage par l'échange">
+                <img src="assets/img/actions/_DSC5567.JPG" class="action-img" alt="L'apprentissage par l'échange">
                 <h3>L'apprentissage par l'échange</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
@@ -269,7 +251,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
 
             <div class="swiper-slide">
               <div class="action-item">
-                <img src="<?php echo $assets_base_safe; ?>assets/img/actions/IMG_20190410_074928_4.jpg" class="action-img" alt="Philosophie Olution : échange, partage, open source">
+                <img src="assets/img/actions/IMG_20190410_074928_4.jpg" class="action-img" alt="Philosophie Olution : échange, partage, open source">
                 <h3>Une philosophie à part entière</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
@@ -281,7 +263,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
             
             <div class="swiper-slide">
               <div class="action-item">
-                <img src="<?php echo $assets_base_safe; ?>assets/img/actions/DSC03858.JPG" class="action-img" alt="Ludifier l'école, travailler en jouant">
+                <img src="assets/img/actions/DSC03858.JPG" class="action-img" alt="Ludifier l'école, travailler en jouant">
                 <h3>Ludifier l'école</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
@@ -293,7 +275,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
             
             <div class="swiper-slide">
               <div class="action-item">
-                <img src="<?php echo $assets_base_safe; ?>assets/img/actions/_DSC5536.JPG" class="action-img" alt="Projet Olution, plateforme et pratique de terrain">
+                <img src="assets/img/actions/_DSC5536.JPG" class="action-img" alt="Projet Olution, plateforme et pratique de terrain">
                 <h3>Un projet aux facettes multiples</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
@@ -305,7 +287,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
             
             <div class="swiper-slide">
               <div class="action-item">
-                <img src="<?php echo $assets_base_safe; ?>assets/img/actions/_DSC2651.JPG" class="action-img" alt="Le mouvement permanent, Olution en évolution">
+                <img src="assets/img/actions/_DSC2651.JPG" class="action-img" alt="Le mouvement permanent, Olution en évolution">
                 <h3>Le mouvement permanent</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
@@ -425,7 +407,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
         <div class="row portfolio-container" data-en-bref-count="8">
             
           <div class="col-lg-4 col-md-6 portfolio-item filter-bateau">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/IMG_4519.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Mangoove, à la découverte de la mangrove"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/IMG_4519.JPG" class="img-fluid" alt="Mangoove, à la découverte de la mangrove"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/IMG_4519.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Mangoove, à la découverte de la mangrove"><img src="assets/img/portfolio/dehors/IMG_4519.JPG" class="img-fluid" alt="Mangoove, à la découverte de la mangrove"></a></div>
             <div class="portfolio-info">
               <h4>"Mangoove", à la découverte de la mangrove</h4>
               <p>Libreville - Gabon</p>
@@ -433,7 +415,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-bateau">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/DSC03218.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="La forêt pour tous, sortie naturaliste en fauteuil roulant"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/DSC03218.JPG" class="img-fluid" alt="La forêt pour tous, sortie naturaliste en fauteuil roulant"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/DSC03218.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="La forêt pour tous, sortie naturaliste en fauteuil roulant"><img src="assets/img/portfolio/dehors/DSC03218.JPG" class="img-fluid" alt="La forêt pour tous, sortie naturaliste en fauteuil roulant"></a></div>
             <div class="portfolio-info">
               <h4>La forêt pour tous, une sortie naturaliste en fauteuil roulant</h4>
               <p>Essonne - France</p>
@@ -442,7 +424,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-bateau">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/_DSC2691.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Découverte de la brousse équatoriale"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/_DSC2691.JPG" class="img-fluid" alt="Découverte de la brousse équatoriale"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/_DSC2691.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Découverte de la brousse équatoriale"><img src="assets/img/portfolio/dehors/_DSC2691.JPG" class="img-fluid" alt="Découverte de la brousse équatoriale"></a></div>
             <div class="portfolio-info">
               <h4>Découverte de la brousse équatoriale</h4>
               <p>Nyonié - Gabon</p>
@@ -450,7 +432,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-bateau">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/1447416383867.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Kayak au collège"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/1447416383867.jpg" class="img-fluid" alt="Kayak au collège"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/1447416383867.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Kayak au collège"><img src="assets/img/portfolio/dehors/1447416383867.jpg" class="img-fluid" alt="Kayak au collège"></a></div>
             <div class="portfolio-info">
               <h4>Kayak au collège</h4>
               <p>Yvelines - France</p>
@@ -458,7 +440,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-bateau">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/IMG_4179.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Mangroove à Nyonié, restauration d'une mangrove"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/IMG_4179.jpg" class="img-fluid" alt="Mangroove à Nyonié, restauration d'une mangrove"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/IMG_4179.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Mangroove à Nyonié, restauration d'une mangrove"><img src="assets/img/portfolio/dehors/IMG_4179.jpg" class="img-fluid" alt="Mangroove à Nyonié, restauration d'une mangrove"></a></div>
             <div class="portfolio-info">
               <h4>"Mangroove à Nyonié", restauration d'une mangrove abîmée</h4>
               <p>Nyonié - Gabon</p>
@@ -466,7 +448,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-bateau">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/_DSC2570.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Croquis du paysage"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/_DSC2570.JPG" class="img-fluid" alt="Croquis du paysage"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/_DSC2570.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Croquis du paysage"><img src="assets/img/portfolio/dehors/_DSC2570.JPG" class="img-fluid" alt="Croquis du paysage"></a></div>
             <div class="portfolio-info">
               <h4>Croquis du paysage</h4>
               <p>Nyonié - Gabon</p>
@@ -474,7 +456,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
           
         <div class="col-lg-4 col-md-6 portfolio-item filter-bateau">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/_DSC2638.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Ramassage d'ordures"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/_DSC2638.JPG" class="img-fluid" alt="Ramassage d'ordures sur les plages au Gabon"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/_DSC2638.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Ramassage d'ordures"><img src="assets/img/portfolio/dehors/_DSC2638.JPG" class="img-fluid" alt="Ramassage d'ordures sur les plages au Gabon"></a></div>
             <div class="portfolio-info">
               <h4>Ramassage d'ordures</h4>
               <p>plages au Gabon</p>
@@ -482,7 +464,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-bateau">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/Une-vie-en-foret.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Tournage avec Francis Hallé"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/Une-vie-en-foret.jpg" class="img-fluid" alt="Tournage avec Francis Hallé"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/Une-vie-en-foret.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Tournage avec Francis Hallé"><img src="assets/img/portfolio/dehors/Une-vie-en-foret.jpg" class="img-fluid" alt="Tournage avec Francis Hallé"></a></div>
             <div class="portfolio-info">
               <h4>Tournage avec Francis Hallé</h4>
               <p>Gabon</p>
@@ -490,7 +472,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-bateau">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/_DSC2573.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Exploration de l'environnement"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/_DSC2573.JPG" class="img-fluid" alt="Exploration de l'environnement, savane et jungle"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/_DSC2573.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Exploration de l'environnement"><img src="assets/img/portfolio/dehors/_DSC2573.JPG" class="img-fluid" alt="Exploration de l'environnement, savane et jungle"></a></div>
             <div class="portfolio-info">
               <h4>Exploration de l'environnement</h4>
               <p>Savane et Jungle - Gabon</p>
@@ -498,7 +480,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-brousse">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/DSC_0096.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Interview production minisérie SAS"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/DSC_0096.JPG" class="img-fluid" alt="Interview production minisérie SAS"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/dedans/DSC_0096.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Interview production minisérie SAS"><img src="assets/img/portfolio/dedans/DSC_0096.JPG" class="img-fluid" alt="Interview production minisérie SAS"></a></div>
             <div class="portfolio-info">
               <h4>Interview concernant la production d'une minisérie (SAS)</h4>
               <p>Yvelines - France</p>
@@ -506,7 +488,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-brousse">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/DSC04815.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SAS, dispositif contre le décrochage scolaire"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/DSC04815.JPG" class="img-fluid" alt="SAS, dispositif contre le décrochage scolaire"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/dedans/DSC04815.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SAS, dispositif contre le décrochage scolaire"><img src="assets/img/portfolio/dedans/DSC04815.JPG" class="img-fluid" alt="SAS, dispositif contre le décrochage scolaire"></a></div>
             <div class="portfolio-info">
               <h4>SAS - dispositif de lutte contre le décrochage scolaire</h4>
               <p>Yvelines - France</p>
@@ -514,7 +496,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
           
                     <div class="col-lg-4 col-md-6 portfolio-item filter-brousse">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/DSC_0078.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SEGPA horticulture"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/DSC_0078.JPG" class="img-fluid" alt="SEGPA horticulture"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/dedans/DSC_0078.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SEGPA horticulture"><img src="assets/img/portfolio/dedans/DSC_0078.JPG" class="img-fluid" alt="SEGPA horticulture"></a></div>
             <div class="portfolio-info">
               <h4>SEGPA horticulture</h4>
               <p>Yvelines - France</p>
@@ -522,7 +504,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-brousse">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/test epnc5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Concours photos"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/test epnc5.jpg" class="img-fluid" alt="Concours photos"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/dedans/test epnc5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Concours photos"><img src="assets/img/portfolio/dedans/test epnc5.jpg" class="img-fluid" alt="Concours photos"></a></div>
             <div class="portfolio-info">
               <h4>Concours photos</h4>
               <p>Yvelines - France</p>
@@ -530,7 +512,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-brousse">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/20181107_091551.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Maquette du système solaire"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/20181107_091551.jpg" class="img-fluid" alt="Maquette du système solaire"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/dedans/20181107_091551.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Maquette du système solaire"><img src="assets/img/portfolio/dedans/20181107_091551.jpg" class="img-fluid" alt="Maquette du système solaire"></a></div>
             <div class="portfolio-info">
               <h4>Construction d'une maquette du système solaire</h4>
               <p>Libreville - Gabon</p>
@@ -538,7 +520,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-brousse">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/DSC04897.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Œil observé à la loupe à main"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/DSC04897.JPG" class="img-fluid" alt="Œil observé à la loupe à main"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/dedans/DSC04897.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Œil observé à la loupe à main"><img src="assets/img/portfolio/dedans/DSC04897.JPG" class="img-fluid" alt="Œil observé à la loupe à main"></a></div>
             <div class="portfolio-info">
               <h4>Œil, observé à la loupe à main</h4>
               <p>Yvelines - France</p>
@@ -546,7 +528,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-brousse">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/20180411_111457.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Opération plante ton palétuvier"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/20180411_111457.jpg" class="img-fluid" alt="Opération plante ton palétuvier"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/dedans/20180411_111457.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Opération plante ton palétuvier"><img src="assets/img/portfolio/dedans/20180411_111457.jpg" class="img-fluid" alt="Opération plante ton palétuvier"></a></div>
             <div class="portfolio-info">
               <h4>Opération "plante ton palétuvier"</h4>
               <p>Libreville - Gabon</p>
@@ -554,7 +536,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-brousse">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/DSC_0329.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Dispositif Ecocollège"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/DSC_0329.JPG" class="img-fluid" alt="Dispositif Ecocollège"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/dedans/DSC_0329.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Dispositif Ecocollège"><img src="assets/img/portfolio/dedans/DSC_0329.JPG" class="img-fluid" alt="Dispositif Ecocollège"></a></div>
             <div class="portfolio-info">
               <h4>Dispositif Ecocollège</h4>
               <p>Yvelines - France</p>
@@ -562,7 +544,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/IMG_20220922_124635_565.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="n3, salle de cours innovante"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/IMG_20220922_124635_565.jpg" class="img-fluid" alt="n3, salle de cours innovante"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/IMG_20220922_124635_565.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="n3, salle de cours innovante"><img src="assets/img/portfolio/urbain/IMG_20220922_124635_565.jpg" class="img-fluid" alt="n3, salle de cours innovante"></a></div>
             <div class="portfolio-info">
               <h4>n3, une salle de cours innovante</h4>
               <p>Casablanca - Maroc</p>
@@ -570,7 +552,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/IMG_20220925_185523_261.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Farmflow Prototype 3, aquaponie à l'école"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/IMG_20220925_185523_261.jpg" class="img-fluid" alt="Farmflow Prototype 3, aquaponie à l'école"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/IMG_20220925_185523_261.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Farmflow Prototype 3, aquaponie à l'école"><img src="assets/img/portfolio/urbain/IMG_20220925_185523_261.jpg" class="img-fluid" alt="Farmflow Prototype 3, aquaponie à l'école"></a></div>
             <div class="portfolio-info">
               <h4>Farmflow Prototype 3, l'aquaponie à l'école</h4>
               <p>Casablanca - Maroc</p>
@@ -578,7 +560,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/phasmes.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Phasmopolis, élevage d'insectes"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/phasmes.jpg" class="img-fluid" alt="Phasmopolis, élevage d'insectes"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/phasmes.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Phasmopolis, élevage d'insectes"><img src="assets/img/portfolio/urbain/phasmes.jpg" class="img-fluid" alt="Phasmopolis, élevage d'insectes"></a></div>
             <div class="portfolio-info">
               <h4>Phasmopolis, un élevage d'insectes</h4>
               <p>Casablanca - Maroc</p>
@@ -586,7 +568,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/DSC03966.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Le club Bio"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/DSC03966.JPG" class="img-fluid" alt="Le club Bio"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/DSC03966.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Le club Bio"><img src="assets/img/portfolio/urbain/DSC03966.JPG" class="img-fluid" alt="Le club Bio"></a></div>
             <div class="portfolio-info">
               <h4>Le club Bio</h4>
               <p>Yvelines - France</p>
@@ -594,7 +576,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/IMG_20220912_102755_859.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Le tiny garden, potager urbain"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/IMG_20220912_102755_859.jpg" class="img-fluid" alt="Le tiny garden, potager urbain"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/IMG_20220912_102755_859.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Le tiny garden, potager urbain"><img src="assets/img/portfolio/urbain/IMG_20220912_102755_859.jpg" class="img-fluid" alt="Le tiny garden, potager urbain"></a></div>
             <div class="portfolio-info">
               <h4>Le tiny garden, un potager urbain</h4>
               <p>Casablanca - Maroc</p>
@@ -602,7 +584,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/DSC06352.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Culture de pleurotes"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/DSC06352.JPG" class="img-fluid" alt="Culture de pleurotes"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/DSC06352.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Culture de pleurotes"><img src="assets/img/portfolio/urbain/DSC06352.JPG" class="img-fluid" alt="Culture de pleurotes"></a></div>
             <div class="portfolio-info">
               <h4>Culture de pleurotes</h4>
               <p>Yvelines - France</p>
@@ -611,7 +593,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-fictions">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/jeux/20210528_182706.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Jouons ! Cartes Sciences et Technologies"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/jeux/20210528_182706.jpg" class="img-fluid" alt="Jouons ! Cartes Sciences et Technologies"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/jeux/20210528_182706.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Jouons ! Cartes Sciences et Technologies"><img src="assets/img/portfolio/jeux/20210528_182706.jpg" class="img-fluid" alt="Jouons ! Cartes Sciences et Technologies"></a></div>
             <div class="portfolio-info">
               <h4>"Jouons !", des cartes à jouer en Sciences et Technologies</h4>
               <p>Casablanca - Maroc</p>
@@ -619,7 +601,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-fictions">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/jeux/2022-05-28.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Scape New Order, jeu de rôle Genially"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/jeux/2022-05-28.png" class="img-fluid" alt="Scape New Order, jeu de rôle Genially"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/jeux/2022-05-28.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Scape New Order, jeu de rôle Genially"><img src="assets/img/portfolio/jeux/2022-05-28.png" class="img-fluid" alt="Scape New Order, jeu de rôle Genially"></a></div>
             <div class="portfolio-info">
               <h4>"Scape New Order", un jeu de rôle Genially pour le confinement</h4>
               <p>Casablanca - Maroc</p>
@@ -627,7 +609,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-fictions">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/jeux/IMG-4684.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Les chroniques de tonton du bled"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/jeux/IMG-4684.jpg" class="img-fluid" alt="Les chroniques de tonton du bled, Imilchil"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/jeux/IMG-4684.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Les chroniques de tonton du bled"><img src="assets/img/portfolio/jeux/IMG-4684.jpg" class="img-fluid" alt="Les chroniques de tonton du bled, Imilchil"></a></div>
             <div class="portfolio-info">
               <h4>"Les chroniques de tonton du bled", une histoire à Imilchil</h4>
               <p>Casablanca - Maroc</p>
@@ -635,7 +617,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-fictions">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/jeux/IMG_20220202_125503_1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="PSE Game, Prévention Santé Environnement"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/jeux/IMG_20220202_125503_1.jpg" class="img-fluid" alt="PSE Game, Prévention Santé Environnement"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/jeux/IMG_20220202_125503_1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="PSE Game, Prévention Santé Environnement"><img src="assets/img/portfolio/jeux/IMG_20220202_125503_1.jpg" class="img-fluid" alt="PSE Game, Prévention Santé Environnement"></a></div>
             <div class="portfolio-info">
               <h4>"PSE Game", une autre manière d'aborder la Prévention Santé Environnement</h4>
               <p>Casablanca - Maroc</p>
@@ -643,7 +625,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-fictions">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/jeux/_DSC5126.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Noël sous l'équateur"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/jeux/_DSC5126.JPG" class="img-fluid" alt="Noël sous l'équateur"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/jeux/_DSC5126.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Noël sous l'équateur"><img src="assets/img/portfolio/jeux/_DSC5126.JPG" class="img-fluid" alt="Noël sous l'équateur"></a></div>
             <div class="portfolio-info">
               <h4>Noël sous l'équateur</h4>
               <p>Libreville - Gabon</p>
@@ -651,7 +633,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-prototypage">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/tech/2022-05-28 (1) (2).png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Farmflow, start-up d'avenir"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/tech/2022-05-28 (1) (2).png" class="img-fluid" alt="Farmflow, start-up d'avenir"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/tech/2022-05-28 (1) (2).png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Farmflow, start-up d'avenir"><img src="assets/img/portfolio/tech/2022-05-28 (1) (2).png" class="img-fluid" alt="Farmflow, start-up d'avenir"></a></div>
             <div class="portfolio-info">
               <h4>Farmflow, une start-up d'avenir</h4>
               <p>Casablanca - Maroc</p>
@@ -659,7 +641,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-prototypage">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/tech/IMG_20220706_141504_5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="L'aquaponie connectée"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/tech/IMG_20220706_141504_5.jpg" class="img-fluid" alt="L'aquaponie connectée"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/tech/IMG_20220706_141504_5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="L'aquaponie connectée"><img src="assets/img/portfolio/tech/IMG_20220706_141504_5.jpg" class="img-fluid" alt="L'aquaponie connectée"></a></div>
             <div class="portfolio-info">
               <h4>L'aquaponie connectée</h4>
               <p>Casablanca - Maroc</p>
@@ -667,7 +649,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-prototypage">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/tech/IMG_20190130_075846_0.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="La grande forêt de l'équateur, expo physique et numérique"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/tech/IMG_20190130_075846_0.jpg" class="img-fluid" alt="La grande forêt de l'équateur, expo physique et numérique"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/tech/IMG_20190130_075846_0.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="La grande forêt de l'équateur, expo physique et numérique"><img src="assets/img/portfolio/tech/IMG_20190130_075846_0.jpg" class="img-fluid" alt="La grande forêt de l'équateur, expo physique et numérique"></a></div>
             <div class="portfolio-info">
               <h4>La grande forêt de l'équateur, une expo physique et numérique</h4>
               <p>Libreville - Gabon</p>
@@ -675,7 +657,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-prototypage">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/tech/Diapositive3.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Serious Game SVT, club WebGeek"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/tech/Diapositive3.JPG" class="img-fluid" alt="Serious Game SVT, club WebGeek"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/tech/Diapositive3.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Serious Game SVT, club WebGeek"><img src="assets/img/portfolio/tech/Diapositive3.JPG" class="img-fluid" alt="Serious Game SVT, club WebGeek"></a></div>
             <div class="portfolio-info">
               <h4>Les Serious Game SVT, proposé par le "club WebGeek"</h4>
               <p>Yvelines - France</p>
@@ -683,7 +665,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-prototypage">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/tech/IMG-20220704-WA0015.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Farmflow au salon BPI"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/tech/IMG-20220704-WA0015.jpg" class="img-fluid" alt="Farmflow au salon BPI"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/tech/IMG-20220704-WA0015.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Farmflow au salon BPI"><img src="assets/img/portfolio/tech/IMG-20220704-WA0015.jpg" class="img-fluid" alt="Farmflow au salon BPI"></a></div>
             <div class="portfolio-info">
               <h4>Farmflow au salon de la Banque Publique d'Investissements</h4>
               <p>Casablanca - Maroc</p>
@@ -691,7 +673,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-bateau">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/poesie-exterieur.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Poésie en extérieur"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/poesie-exterieur.png" class="img-fluid" alt="Poésie en extérieur"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/poesie-exterieur.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Poésie en extérieur"><img src="assets/img/portfolio/dehors/poesie-exterieur.png" class="img-fluid" alt="Poésie en extérieur"></a></div>
             <div class="portfolio-info">
               <h4>Poésie en extérieur</h4>
               <p>Casablanca - Maroc</p>
@@ -699,7 +681,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-bateau">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/cours-dehors.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Cours dehors"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/cours-dehors.png" class="img-fluid" alt="Cours dehors"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/cours-dehors.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Cours dehors"><img src="assets/img/portfolio/dehors/cours-dehors.png" class="img-fluid" alt="Cours dehors"></a></div>
             <div class="portfolio-info">
               <h4>Cours dehors</h4>
               <p>Casablanca - Maroc</p>
@@ -707,7 +689,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-brousse">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/analyse-chimique.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Analyse chimique"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/analyse-chimique.png" class="img-fluid" alt="Analyse chimique"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/dedans/analyse-chimique.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Analyse chimique"><img src="assets/img/portfolio/dedans/analyse-chimique.png" class="img-fluid" alt="Analyse chimique"></a></div>
             <div class="portfolio-info">
               <h4>Analyse chimique</h4>
               <p>Casablanca - Maroc</p>
@@ -715,7 +697,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-fictions">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/jeu-gnomes-licornes.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Le jeu Gnomes et Licornes"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/jeu-gnomes-licornes.png" class="img-fluid" alt="Le jeu Gnomes et Licornes"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/dedans/jeu-gnomes-licornes.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Le jeu Gnomes et Licornes"><img src="assets/img/portfolio/dedans/jeu-gnomes-licornes.png" class="img-fluid" alt="Le jeu Gnomes et Licornes"></a></div>
             <div class="portfolio-info">
               <h4>Le jeu Gnomes et Licornes</h4>
               <p>Casablanca - Maroc</p>
@@ -723,7 +705,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/elevage-insectes.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Élevage d'insectes à grande échelle"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/elevage-insectes.png" class="img-fluid" alt="Élevage d'insectes à grande échelle"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/elevage-insectes.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Élevage d'insectes à grande échelle"><img src="assets/img/portfolio/urbain/elevage-insectes.png" class="img-fluid" alt="Élevage d'insectes à grande échelle"></a></div>
             <div class="portfolio-info">
               <h4>Élevage d'insectes à grande échelle</h4>
               <p>Casablanca - Maroc</p>
@@ -731,7 +713,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/odd-et-n3.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="ODD et n³"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/odd-et-n3.png" class="img-fluid" alt="ODD et n³"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/odd-et-n3.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="ODD et n³"><img src="assets/img/portfolio/urbain/odd-et-n3.png" class="img-fluid" alt="ODD et n³"></a></div>
             <div class="portfolio-info">
               <h4>ODD et n³</h4>
               <p>Casablanca - Maroc</p>
@@ -739,7 +721,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/lombricomposteur.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Lombricomposteur"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/lombricomposteur.png" class="img-fluid" alt="Lombricomposteur"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/lombricomposteur.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Lombricomposteur"><img src="assets/img/portfolio/urbain/lombricomposteur.png" class="img-fluid" alt="Lombricomposteur"></a></div>
             <div class="portfolio-info">
               <h4>Lombricomposteur</h4>
               <p>Casablanca - Maroc</p>
@@ -747,7 +729,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/potager-urbain.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Potager urbain"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/potager-urbain.png" class="img-fluid" alt="Potager urbain"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/potager-urbain.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Potager urbain"><img src="assets/img/portfolio/urbain/potager-urbain.png" class="img-fluid" alt="Potager urbain"></a></div>
             <div class="portfolio-info">
               <h4>Potager urbain</h4>
               <p>Casablanca - Maroc</p>
@@ -755,7 +737,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/aquaponie-connectee.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Aquaponie connectée"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/aquaponie-connectee.png" class="img-fluid" alt="Aquaponie connectée"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/aquaponie-connectee.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Aquaponie connectée"><img src="assets/img/portfolio/urbain/aquaponie-connectee.png" class="img-fluid" alt="Aquaponie connectée"></a></div>
             <div class="portfolio-info">
               <h4>Aquaponie connectée</h4>
               <p>Casablanca - Maroc</p>
@@ -763,7 +745,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/maison-chat-connectee.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Maison pour chat connectée"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/maison-chat-connectee.png" class="img-fluid" alt="Maison pour chat connectée"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/maison-chat-connectee.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Maison pour chat connectée"><img src="assets/img/portfolio/urbain/maison-chat-connectee.png" class="img-fluid" alt="Maison pour chat connectée"></a></div>
             <div class="portfolio-info">
               <h4>Maison pour chat connectée</h4>
               <p>Casablanca - Maroc</p>
@@ -771,7 +753,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/expression-libre-n3.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Expression libre dans n³"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/expression-libre-n3.png" class="img-fluid" alt="Expression libre dans n³"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/expression-libre-n3.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Expression libre dans n³"><img src="assets/img/portfolio/urbain/expression-libre-n3.png" class="img-fluid" alt="Expression libre dans n³"></a></div>
             <div class="portfolio-info">
               <h4>Expression libre dans n³</h4>
               <p>Casablanca - Maroc</p>
@@ -779,7 +761,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/porte-ouverte-n3.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Porte ouverte de la salle aérée n³"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/porte-ouverte-n3.png" class="img-fluid" alt="Porte ouverte de la salle aérée n³"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/porte-ouverte-n3.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Porte ouverte de la salle aérée n³"><img src="assets/img/portfolio/urbain/porte-ouverte-n3.png" class="img-fluid" alt="Porte ouverte de la salle aérée n³"></a></div>
             <div class="portfolio-info">
               <h4>Porte ouverte de la salle aérée n³</h4>
               <p>Casablanca - Maroc</p>
@@ -787,7 +769,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-prototypage">
-            <div class="portfolio-img"><a href="<?php echo $assets_base_safe; ?>assets/img/portfolio/tech/station-meteo-connectee.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Station météo connectée"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/tech/station-meteo-connectee.png" class="img-fluid" alt="Station météo connectée"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/tech/station-meteo-connectee.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Station météo connectée"><img src="assets/img/portfolio/tech/station-meteo-connectee.png" class="img-fluid" alt="Station météo connectée"></a></div>
             <div class="portfolio-info">
               <h4>Station météo connectée</h4>
               <p>Casablanca - Maroc</p>
@@ -867,7 +849,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
         <div class="row justify-content-center row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
           <div class="col d-flex align-items-stretch">
             <div class="icon-box service-card">
-              <img src="<?php echo $assets_base_safe; ?>assets/img/logo-n3.png" class="img-fluid" width="35%" alt="La salle aérée n³">
+              <img src="assets/img/logo-n3.png" class="img-fluid" width="35%" alt="La salle aérée n³">
               <h4 class="title"><a href="https://n3.olution.info/" rel="noopener noreferrer" target="_blank">La salle aérée n³</a></h4>
               <span class="service-badge service-badge-1">Pour qui ? Institutions & partenaires</span>
               <p class="description">Une salle de cours extérieure et bien plus au lycée français de Casablanca.</p>
@@ -877,7 +859,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
 
           <div class="col d-flex align-items-stretch">
             <div class="icon-box service-card">
-              <img src="<?php echo $assets_base_safe; ?>assets/img/olutionff.png" class="img-fluid" width="35%" alt="IOT olution">
+              <img src="assets/img/olutionff.png" class="img-fluid" width="35%" alt="IOT olution">
               <h4 class="title"><a href="https://iot.olution.info" rel="noopener noreferrer" target="_blank">IOT olution</a></h4>
               <span class="service-badge service-badge-2">Pour qui ? Élèves & makers</span>
               <p class="description">Site présentant les modules DIY connectés créés avec les élèves et permettant leur suivi et contrôle en temps réel à distance.</p>
@@ -887,7 +869,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
 
           <div class="col d-flex align-items-stretch">
             <div class="icon-box service-card">
-              <img src="<?php echo $assets_base_safe; ?>assets/img/logo-gnomes-licornes.png" class="img-fluid" width="35%" alt="Gnomes&amp;Licornes">
+              <img src="assets/img/logo-gnomes-licornes.png" class="img-fluid" width="35%" alt="Gnomes&amp;Licornes">
               <h4 class="title"><a href="https://gl.olution.info/" rel="noopener noreferrer" target="_blank">Gnomes&amp;Licornes</a></h4>
               <span class="service-badge service-badge-3">Pour qui ? Élèves de 6e & enseignants</span>
               <p class="description">Une véritable aventure ludique sur l'ensemble de l'année en Sciences et Technologie pour les sixièmes.</p>
@@ -897,7 +879,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
 
           <div class="col d-flex align-items-stretch">
             <div class="icon-box service-card">
-              <img src="<?php echo $assets_base_safe; ?>assets/img/logoff.png" class="img-fluid" width="25%" alt="Farmflow">
+              <img src="assets/img/logoff.png" class="img-fluid" width="25%" alt="Farmflow">
               <h4 class="title"><a href="https://farmflow.marout.org" rel="noopener noreferrer" target="_blank">Farmflow</a></h4>
               <span class="service-badge service-badge-4">Pour qui ? Partenaires & presse</span>
               <p class="description">Un projet de start-up d'aquaponie connectée initié par des élèves de seconde, récompensé au concours Hacktonfutur et présenté au salon de la BPI 2022.</p>
@@ -907,7 +889,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
 
           <div class="col d-flex align-items-stretch">
             <div class="icon-box service-card">
-              <img src="<?php echo $assets_base_safe; ?>assets/img/logomarout.png" class="img-fluid" width="35%" alt="Marout">
+              <img src="assets/img/logomarout.png" class="img-fluid" width="35%" alt="Marout">
               <h4 class="title"><a href="https://marout.org" rel="noopener noreferrer" target="_blank">Marout</a></h4>
               <span class="service-badge service-badge-5">Pour qui ? Réseau associatif</span>
               <p class="description">Mutualisation, partage, conseil sont les mots-clés qui définissent cette association.</p>
@@ -917,7 +899,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
 
           <div class="col d-flex align-items-stretch">
             <div class="icon-box service-card">
-              <img src="<?php echo $assets_base_safe; ?>assets/img/logo-education-nationale.png" class="img-fluid" width="45%" alt="Ministère de l'Éducation Nationale">
+              <img src="assets/img/logo-education-nationale.png" class="img-fluid" width="45%" alt="Ministère de l'Éducation Nationale">
               <h4 class="title"><a href="https://www.education.gouv.fr/" rel="noopener noreferrer" target="_blank">Ministère de l'Éducation Nationale</a></h4>
               <span class="service-badge service-badge-6">Pour qui ? Tous</span>
               <p class="description">Le portail officiel du ministère : politiques éducatives, programmes, concours et ressources pour les personnels et les familles.</p>
@@ -927,7 +909,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
 
           <div class="col d-flex align-items-stretch">
             <div class="icon-box service-card">
-              <img src="<?php echo $assets_base_safe; ?>assets/img/logo-aefe.png" class="img-fluid" width="45%" alt="AEFE - Agence pour l'enseignement français à l'étranger">
+              <img src="assets/img/logo-aefe.png" class="img-fluid" width="45%" alt="AEFE - Agence pour l'enseignement français à l'étranger">
               <h4 class="title"><a href="https://www.aefe.fr/" rel="noopener noreferrer" target="_blank">AEFE</a></h4>
               <span class="service-badge service-badge-7">Pour qui ? Réseau français à l'étranger</span>
               <p class="description">Agence pour l'enseignement français à l'étranger : réseau des lycées français du monde, offres de formation et mobilité internationale.</p>
@@ -959,7 +941,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="<?php echo $assets_base_safe; ?>assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="Accompagner">
+                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="Accompagner">
                 <h3>Accompagner</h3>
                 <h4>Du plus petit à l'âge au temps de la sagesse</h4>
                 <p>
@@ -972,7 +954,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="<?php echo $assets_base_safe; ?>assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="Nature">
+                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="Nature">
                 <h3>Nature</h3>
                 <h4>Vivre dehors fait partie de mon ADN</h4>
                 <p>
@@ -985,7 +967,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="<?php echo $assets_base_safe; ?>assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="Culture">
+                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="Culture">
                 <h3>Culture</h3>
                 <h4>Être acteur dans son environnement</h4>
                 <p>
@@ -998,7 +980,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="<?php echo $assets_base_safe; ?>assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="Tech">
+                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="Tech">
                 <h3>Tech</h3>
                 <h4>Faire quelque chose de ses mains</h4>
                 <p>
@@ -1047,7 +1029,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/waypoints@4.0.1/lib/noframework.waypoints.min.js"></script>
   <!-- Template Main JS File -->
-  <script src="<?php echo $assets_base_safe; ?>assets/js/main.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
 
