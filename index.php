@@ -4,7 +4,7 @@
 <head>
 
 <?php
-$version = '2.7';
+$version = '2.8';
 $base = '';
 $script_dir = dirname($_SERVER['SCRIPT_NAME']);
 $base_for_document = rtrim($script_dir, '/') . '/';
@@ -377,9 +377,9 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
           <li data-filter=".filter-prototypage">Tech</li>
         </ul>
 
-        <div class="portfolio-container portfolio-list">
+        <div class="portfolio-container portfolio-bento">
             
-          <div class="portfolio-item filter-bateau">
+          <div class="portfolio-item bento-large filter-bateau">
             <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/IMG_4519.JPG" class="img-fluid" alt="Mangoove, à la découverte de la mangrove"></div>
             <div class="portfolio-info">
               <h4>"Mangoove", à la découverte de la mangrove</h4>
@@ -425,7 +425,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
             </div>
           </div>
           
-          <div class="portfolio-item filter-bateau">
+          <div class="portfolio-item bento-large filter-bateau">
             <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/_DSC2570.JPG" class="img-fluid" alt="Croquis du paysage"></div>
             <div class="portfolio-info">
               <h4>Croquis du paysage</h4>
@@ -452,7 +452,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
             </div>
           </div>
           
-          <div class="portfolio-item filter-bateau">
+          <div class="portfolio-item bento-large filter-bateau">
             <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dehors/_DSC2573.JPG" class="img-fluid" alt="Exploration de l'environnement, savane et jungle"></div>
             <div class="portfolio-info">
               <h4>Exploration de l'environnement</h4>
@@ -524,7 +524,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
             </div>
           </div>
           
-          <div class="portfolio-item filter-brousse">
+          <div class="portfolio-item bento-large filter-brousse">
             <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/dedans/DSC_0329.JPG" class="img-fluid" alt="Dispositif Ecocollège"></div>
             <div class="portfolio-info">
               <h4>Dispositif Ecocollège</h4>
@@ -578,7 +578,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
             </div>
           </div>
           
-          <div class="portfolio-item filter-urbain">
+          <div class="portfolio-item bento-large filter-urbain">
             <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/urbain/DSC06352.JPG" class="img-fluid" alt="Culture de pleurotes"></div>
             <div class="portfolio-info">
               <h4>Culture de pleurotes</h4>
@@ -624,7 +624,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
             </div>
           </div>
           
-          <div class="portfolio-item filter-fictions">
+          <div class="portfolio-item bento-large filter-fictions">
             <div class="portfolio-img"><img src="<?php echo $assets_base_safe; ?>assets/img/portfolio/jeux/_DSC5126.JPG" class="img-fluid" alt="Noël sous l'équateur"></div>
             <div class="portfolio-info">
               <h4>Noël sous l'équateur</h4>
