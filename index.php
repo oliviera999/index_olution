@@ -4,8 +4,10 @@
 <head>
 
 <?php
-$version = '4.5';
+$version = '4.7';
 $base = '';
+// URL canonique pour le SEO (page d'accueil officielle olution.info)
+$canonical_url = 'https://olution.info/';
 $script_dir = dirname($_SERVER['SCRIPT_NAME']);
 $base_for_document = rtrim($script_dir, '/') . '/';
 if ($base_for_document !== '/' && $base_for_document !== '' && $base_for_document !== './') {
@@ -45,6 +47,10 @@ if ($host !== '') {
 $assets_base_safe = htmlspecialchars($assets_base, ENT_QUOTES, 'UTF-8');
 $hero_image_url = ($assets_base !== '') ? $assets_base . $nomimages[$affimage] : $nomimages[$affimage];
 
+// SEO : URL canonique officielle (page d'accueil olution.info)
+$site_canonical = 'https://olution.info/';
+$og_image_url = ($assets_base !== '') ? $assets_base . 'assets/img/logoblanc.png' : 'assets/img/logoblanc.png';
+
 // Années d'existence : calcul automatique depuis le déploiement de la plateforme (2013)
 $plateforme_annee_deploiement = 2013;
 $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
@@ -57,9 +63,43 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Olution – échanger, créer, apprendre</title>
-  <meta content="Olution propose des alternatives aux façons d'enseigner classiques. Plateforme d'enseignement en ligne, projets terrain, espaces de formation et actions pédagogiques en France et à l'international." name="description">
-  <meta content="Olution, enseignement, pédagogie, plateforme, formation, olution.info, éducation, Marout" name="keywords">
+  <title>olution.info – Olution : échanger, créer, apprendre | Plateforme pédagogique</title>
+  <meta content="olution.info est la plateforme officielle du projet Olution : alternatives à l'enseignement classique, espaces de formation en ligne, actions pédagogiques en France et à l'international. Découvrez la plateforme Moodle, les projets terrain et les ressources pour enseignants et élèves." name="description">
+  <meta content="olution.info, Olution, enseignement, pédagogie, plateforme Moodle, formation en ligne, éducation, espaces de formation, AEFE, Marout" name="keywords">
+
+  <!-- Canonical : évite la dilution entre olution.info et clone / miroirs -->
+  <link rel="canonical" href="<?php echo htmlspecialchars($canonical_url); ?>">
+
+  <!-- Open Graph / partage social et signal sémantique -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="<?php echo htmlspecialchars($canonical_url); ?>">
+  <meta property="og:title" content="olution.info – Olution : échanger, créer, apprendre">
+  <meta property="og:description" content="olution.info est la plateforme officielle du projet Olution : alternatives à l'enseignement classique, espaces de formation, actions pédagogiques en France et à l'international.">
+  <meta property="og:image" content="<?php echo htmlspecialchars($canonical_url); ?>assets/img/logoblanc.png">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="olution.info">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="olution.info – Olution : échanger, créer, apprendre">
+  <meta name="twitter:description" content="olution.info, plateforme officielle du projet Olution : formation en ligne, pédagogie, actions en France et à l'international.">
+
+  <!-- Données structurées (JSON-LD) pour Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "olution.info",
+    "alternateName": "Olution",
+    "url": "<?php echo htmlspecialchars($canonical_url); ?>",
+    "description": "Plateforme officielle du projet Olution : échanger, créer, apprendre. Enseignement en ligne, espaces de formation, actions pédagogiques en France et à l'international.",
+    "inLanguage": "fr",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Olution"
+    }
+  }
+  </script>
 
   <!-- Favicons -->
   <link href="<?php echo $assets_base_safe; ?>assets/img/favicon.png" rel="icon">
@@ -121,6 +161,7 @@ background-image: url('<?php echo htmlspecialchars($hero_image_url); ?>'); }
       <img src="<?php echo $assets_base_safe; ?>assets/img/logoblanc.png" class="img-fluid" width="10%" alt="Logo Olution">
       <br>
       <h2>échanger, créer, apprendre</h2>
+      <p class="hero-seo-intro mt-2 mb-0">olution.info — Plateforme officielle du projet Olution : formation en ligne, espaces pédagogiques, actions en France et à l'international.</p>
       <div class="hero-audience-buttons d-flex flex-wrap justify-content-center gap-2 mt-3">
         <a href="#about" class="btn btn-outline-light rounded-pill scrollto">Enseignant</a>
         <a href="#portfolio" class="btn btn-outline-light rounded-pill scrollto">Élève</a>
