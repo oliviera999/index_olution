@@ -1169,8 +1169,15 @@ section {
   overflow: hidden;
 }
 
+.portfolio .portfolio-item .portfolio-img > a {
+  display: block;
+  cursor: pointer;
+}
+
 .portfolio .portfolio-item .portfolio-img img {
   transition: all 0.8s ease-in-out;
+  display: block;
+  width: 100%;
 }
 
 .portfolio .portfolio-item .portfolio-info {
