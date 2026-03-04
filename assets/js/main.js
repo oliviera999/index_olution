@@ -213,35 +213,31 @@
   });
 
   /**
-   * Portfolio bento : filtre par classe (sans Isotope pour préserver la grille)
+   * Porfolio isotope and filter
    */
   window.addEventListener('load', () => {
     let portfolioContainer = select('.portfolio-container');
-    if (!portfolioContainer) return;
-
-    let items = portfolioContainer.querySelectorAll('.portfolio-item');
-    let portfolioFilters = select('#portfolio-flters li', true);
-
-    function applyFilter(filterValue) {
-      items.forEach(function (el) {
-        if (filterValue === '*') {
-          el.classList.remove('filtered');
-        } else {
-          el.classList.toggle('filtered', !el.matches(filterValue));
-        }
+    if (portfolioContainer) {
+      let portfolioIsotope = new Isotope(portfolioContainer, {
+        itemSelector: '.portfolio-item'
       });
+
+      let portfolioFilters = select('#portfolio-flters li', true);
+
+      on('click', '#portfolio-flters li', function(e) {
+        e.preventDefault();
+        portfolioFilters.forEach(function(el) {
+          el.classList.remove('filter-active');
+        });
+        this.classList.add('filter-active');
+
+        portfolioIsotope.arrange({
+          filter: this.getAttribute('data-filter')
+        });
+
+      }, true);
     }
 
-    applyFilter('*');
-
-    on('click', '#portfolio-flters li', function (e) {
-      e.preventDefault();
-      portfolioFilters.forEach(function (el) {
-        el.classList.remove('filter-active');
-      });
-      this.classList.add('filter-active');
-      applyFilter(this.getAttribute('data-filter'));
-    }, true);
   });
 
   /**
@@ -261,6 +257,19 @@
       }, 50);
     }
   });
+
+  /**
+   * Clic sur l'image du portfolio ouvre la lightbox (bonne UX mobile et desktop)
+   */
+  const portfolioContainer = document.querySelector('.portfolio-container');
+  if (portfolioContainer) {
+    portfolioContainer.addEventListener('click', function (e) {
+      const imgZone = e.target.closest('.portfolio-item .portfolio-img');
+      if (!imgZone || e.target.closest('.portfolio-lightbox')) return;
+      const link = imgZone.closest('.portfolio-item').querySelector('.portfolio-info .portfolio-lightbox.preview-link');
+      if (link) link.click();
+    });
+  }
 
   /**
    * Portfolio details slider
