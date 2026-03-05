@@ -4,7 +4,7 @@
 <head>
 
 <?php
-$version = '4.10';
+$version = '4.11';
 $base = '';
 // URL canonique pour le SEO (page d'accueil officielle olution.info)
 $canonical_url = 'https://olution.info/';
@@ -830,6 +830,12 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             <div class="results-item">
               <span class="results-badge">📺 Interview SAS</span>
               <p class="mb-0">Réalisée par TVfil 78 pour mettre en valeur le dispositif de raccrochage scolaire au collège les Saules en 2015</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="results-item">
+              <span class="results-badge">📰 Résultats et reconnaissance</span>
+              <p class="mb-0">Publications dans Le Café pédagogique et Les Cahiers pédagogiques</p>
             </div>
           </div>
         </div>
