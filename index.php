@@ -4,7 +4,7 @@
 <head>
 
 <?php
-$version = '4.12';
+$version = '4.13';
 $base = '';
 // URL canonique pour le SEO (page d'accueil officielle olution.info)
 $canonical_url = 'https://olution.info/';
@@ -88,8 +88,8 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Google Fonts : Plus Jakarta Sans (titres), DM Sans (corps) -->
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Cabin" rel="stylesheet">
 
   <!-- Vendor CSS (CDN — pas besoin de assets/vendor/) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">

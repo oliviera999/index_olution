@@ -15,8 +15,8 @@
   --color-accent: #8a1ac2;
   --color-accent-blue: #2cbdee;
   --color-accent-amber: #ffb459;
-  --font-heading: "Plus Jakarta Sans";
-  --font-body: "DM Sans";
+  --font-heading: "Raleway";
+  --font-body: "Cabin";
   --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-bounce: 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   --shadow-card: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
@@ -46,7 +46,7 @@ body {
 }
 
 body {
-  font-family: "DM Sans", sans-serif;
+  font-family: "Cabin", sans-serif;
   color: #444444;
 }
 
@@ -66,7 +66,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 /* Réduction des animations si l'utilisateur le préfère */
@@ -164,7 +164,7 @@ h6 {
   white-space: nowrap;
   transition: 0.3s;
   font-size: 12px;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Raleway", sans-serif;
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 1px;
@@ -434,7 +434,7 @@ h6 {
 #hero h1 {
   margin: 0 0 10px 0;
   font-size: 64px;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Raleway", serif;
   color: #fff;
 }
 
