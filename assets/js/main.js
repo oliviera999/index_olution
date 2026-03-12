@@ -25,6 +25,42 @@
   }
 
   /**
+   * AOS (Animate On Scroll) : init avec désactivation sur mobile si nécessaire
+   */
+  const initAOS = () => {
+    if (typeof AOS !== 'undefined') {
+      const isMobile = window.innerWidth < 768;
+      AOS.init({
+        duration: 600,
+        easing: 'ease-out-cubic',
+        offset: 80,
+        once: true,
+        disable: isMobile
+      });
+    }
+  };
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAOS);
+  } else {
+    initAOS();
+  }
+
+  /**
+   * Barre de progression de scroll
+   */
+  const updateScrollProgress = () => {
+    const progressBar = document.getElementById('scroll-progress');
+    if (progressBar) {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = progress + '%';
+    }
+  };
+  window.addEventListener('load', updateScrollProgress);
+  window.addEventListener('scroll', updateScrollProgress, { passive: true });
+
+  /**
    * Easy selector helper function
    */
   const select = (el, all = false) => {

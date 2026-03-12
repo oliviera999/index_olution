@@ -4,7 +4,7 @@
 <head>
 
 <?php
-$version = '4.11';
+$version = '4.12';
 $base = '';
 // URL canonique pour le SEO (page d'accueil officielle olution.info)
 $canonical_url = 'https://olution.info/';
@@ -88,8 +88,8 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Cabin" rel="stylesheet">
+  <!-- Google Fonts : Plus Jakarta Sans (titres), DM Sans (corps) -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS (CDN — pas besoin de assets/vendor/) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -100,6 +100,8 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <!-- AOS : Animate On Scroll -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Laura - v4.8.1
@@ -114,6 +116,8 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
 </head>
 
 <body>
+  <!-- Barre de progression au scroll -->
+  <div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex justify-content-center align-items-center header-transparent">
@@ -160,7 +164,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
 <br>
        <!-- ======= Testimonials Section ======= -->
 
-    <div id="act" class="section-title">
+    <div id="act" class="section-title" data-aos="fade-up">
       <span>Pourquoi Olution ?</span>
       <h2>Pourquoi Olution ?</h2>
       <p>Initialement, Olution est un projet qui propose des alternatives aux façons d'enseigner classiques.</p>
@@ -168,7 +172,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
 
     <div class="container mb-4">
       <div class="row g-3 justify-content-center">
-        <div class="col-12 col-md-6 col-lg-3">
+        <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
           <div class="audience-card card h-100 border-0 shadow-sm">
             <div class="card-body">
               <p class="audience-card-icon mb-2">🎓</p>
@@ -177,7 +181,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-3">
+        <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="150">
           <div class="audience-card card h-100 border-0 shadow-sm">
             <div class="card-body">
               <p class="audience-card-icon mb-2">🧑‍🎒</p>
@@ -186,7 +190,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-3">
+        <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
           <div class="audience-card card h-100 border-0 shadow-sm">
             <div class="card-body">
               <p class="audience-card-icon mb-2">🏫</p>
@@ -195,7 +199,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-3">
+        <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="250">
           <div class="audience-card card h-100 border-0 shadow-sm">
             <div class="card-body">
               <p class="audience-card-icon mb-2">🤝</p>
@@ -307,7 +311,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
         <!-- ======= About Me Section ======= -->
     <section id="about" class="about">
       <div class="container">
-        <div class="section-title">
+        <div class="section-title" data-aos="fade-up">
           <span>olution.info</span>
           <h2>olution.info</h2>
           <p>Olution.info est une plateforme Moodle, d'enseignement en ligne utilisée quotidiennement par les élèves.<br>Initialement, c'est le point de départ, la base d'olution. Aujourd'hui, cela n'en est plus qu'une partie.<br>Son hébergement est réalisé par <a href="https://www.o2switch.fr/" rel="noopener noreferrer" target="_blank">o2switch</a>, des professionnels reconnus dont les serveurs sont en France.</p>
@@ -318,7 +322,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
           <div class="col-lg-8 d-flex flex-column align-items-stretch">
             <div class="content ps-lg-4 d-flex flex-column justify-content-center">
               <div class="row mt-n4">
-                <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
+                <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch" data-aos="zoom-in" data-aos-delay="100">
                   <div class="count-box">
                     <i class="bi bi-emoji-smile" style="color: #20b38e;"></i>
                     <span data-purecounter-start="0" data-purecounter-end="300" data-purecounter-duration="1" class="purecounter"></span>
@@ -326,7 +330,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
                   </div>
                 </div>
 
-                <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
+                <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch" data-aos="zoom-in" data-aos-delay="150">
                   <div class="count-box">
                     <i class="bi bi-journal" style="color: #8a1ac2;"></i>
                     <span data-purecounter-start="0" data-purecounter-end="42" data-purecounter-duration="1" class="purecounter"></span>
@@ -334,7 +338,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
                   </div>
                 </div>
 
-                <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
+                <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch" data-aos="zoom-in" data-aos-delay="200">
                   <div class="count-box">
                     <i class="bi bi-clock" style="color: #2cbdee;"></i>
                     <span data-purecounter-start="0" data-purecounter-end="<?php echo (int) $annees_existence; ?>" data-purecounter-duration="1" class="purecounter"></span>
@@ -342,7 +346,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
                   </div>
                 </div>
 
-                <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
+                <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch" data-aos="zoom-in" data-aos-delay="250">
                   <div class="count-box">
                     <i class="bi bi-award" style="color: #ffb459;"></i>
                     <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter"></span>
@@ -386,10 +390,10 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
       </div>
     </section><!-- End About Me Section -->
     <!-- ======= My Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
+    <section id="portfolio" class="portfolio section-bg">
       <div class="container">
 
-        <div class="section-title">
+        <div class="section-title" data-aos="fade-up">
           <span>Actions et projets</span>
           <h2>Actions et projets</h2>
           <p>Olution est varié. N³, Gnomes&amp;Licornes, Mangroove, Farmflow, SAS, Les chroniques de tonton du bled, Scape New Order, Une vie en forêt, Météosaules… Ce sont autant de projets qui en font partie.</p>
@@ -785,7 +789,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
     <!-- ======= Résultats & Reconnaissances ======= -->
     <section id="results" class="results section-bg">
       <div class="container">
-        <div class="section-title">
+        <div class="section-title" data-aos="fade-up">
           <span>Résultats & Reconnaissances</span>
           <h2>Résultats & Reconnaissances</h2>
         </div>
@@ -846,7 +850,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
     <section id="services" class="services">
       <div class="container">
 
-        <div class="section-title">
+        <div class="section-title" data-aos="fade-up">
           <span>Sites en lien</span>
           <h2>Sites en lien</h2>
           <p>Sites et projets développés dans le cadre d'Olution. L'association Marout en assure le support.</p>
@@ -932,7 +936,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
 
 
        <!-- ======= Testimonials Section ======= -->
-    <div id="testi" class="section-title">
+    <div id="testi" class="section-title" data-aos="fade-up">
       <span>Me concernant</span>
       <h2>Me concernant</h2>
       <p>Olivier ARNOULD-LAURENT — Enseignant certifié — Sciences &amp; Technologie · Réseau AEFE · Lycée Lyautey de Casablanca · Académie de Versailles · <?php echo $annees_experience; ?> ans d'expérience terrain en France, au Gabon et au Maroc</p>
@@ -1006,7 +1010,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
     <section id="contact" class="contact">
       <div class="container">
 
-        <div class="section-title">
+        <div class="section-title" data-aos="fade-up">
           <h2>Contact</h2>
           <p>Vous souhaitez adapter Olution à votre établissement ? Vous cherchez un intervenant pour un projet pédagogique innovant ? Vous voulez collaborer ou en savoir plus ? → <a href="mailto:info@olution.info">Écrivons-nous</a>.</p>
         </div>
@@ -1034,6 +1038,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
   <script src="https://cdn.jsdelivr.net/npm/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/waypoints@4.0.1/lib/noframework.waypoints.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 </body>
