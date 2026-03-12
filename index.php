@@ -4,7 +4,7 @@
 <head>
 
 <?php
-$version = '4.14';
+$version = '4.15';
 $base = '';
 // URL canonique pour le SEO (page d'accueil officielle olution.info)
 $canonical_url = 'https://olution.info/';
@@ -356,7 +356,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
               </div>
             </div><!-- End .content-->
 
-            <div class="skills-content ps-lg-4">
+            <div class="skills-content ps-lg-4" data-aos="fade-up" data-aos-delay="200">
               <div class="progress">
                 <span class="skill">Sciences de la Vie et de la Terre<i class="val">100%</i></span>
                 <div class="progress-bar-wrap">
@@ -399,7 +399,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
           <p>Olution est varié. N³, Gnomes&amp;Licornes, Mangroove, Farmflow, SAS, Les chroniques de tonton du bled, Scape New Order, Une vie en forêt, Météosaules… Ce sont autant de projets qui en font partie.</p>
         </div>
 
-        <ul id="portfolio-flters" class="d-flex justify-content-center">
+        <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
           <li data-filter=".in-bref" class="filter-active">En bref</li>
           <li data-filter=".filter-bateau">Dehors</li>
           <li data-filter=".filter-brousse">Dedans</li>
@@ -410,7 +410,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
 
         <div class="row portfolio-container" data-en-bref-count="8">
             
-          <div class="col-lg-4 col-md-6 portfolio-item filter-bateau">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-bateau" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/dehors/IMG_4519.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Mangoove, à la découverte de la mangrove"><img src="assets/img/portfolio/dehors/IMG_4519.JPG" class="img-fluid" alt="Mangoove, à la découverte de la mangrove"></a></div>
             <div class="portfolio-info">
               <h4>"Mangoove", à la découverte de la mangrove</h4>
@@ -418,7 +418,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-bateau">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-bateau" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/dehors/DSC03218.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="La forêt pour tous, sortie naturaliste en fauteuil roulant"><img src="assets/img/portfolio/dehors/DSC03218.JPG" class="img-fluid" alt="La forêt pour tous, sortie naturaliste en fauteuil roulant"></a></div>
             <div class="portfolio-info">
               <h4>La forêt pour tous, une sortie naturaliste en fauteuil roulant</h4>
@@ -427,7 +427,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
           </div>
           
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-bateau">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-bateau" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/dehors/_DSC2691.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Découverte de la brousse équatoriale"><img src="assets/img/portfolio/dehors/_DSC2691.JPG" class="img-fluid" alt="Découverte de la brousse équatoriale"></a></div>
             <div class="portfolio-info">
               <h4>Découverte de la brousse équatoriale</h4>
@@ -435,7 +435,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-bateau">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-bateau" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/dehors/1447416383867.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Kayak au collège"><img src="assets/img/portfolio/dehors/1447416383867.jpg" class="img-fluid" alt="Kayak au collège"></a></div>
             <div class="portfolio-info">
               <h4>Kayak au collège</h4>
@@ -443,7 +443,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item filter-bateau">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-bateau" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/dehors/IMG_4179.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Mangroove à Nyonié, restauration d'une mangrove"><img src="assets/img/portfolio/dehors/IMG_4179.jpg" class="img-fluid" alt="Mangroove à Nyonié, restauration d'une mangrove"></a></div>
             <div class="portfolio-info">
               <h4>"Mangroove à Nyonié", restauration d'une mangrove abîmée</h4>
@@ -451,7 +451,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item filter-bateau">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-bateau" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/dehors/_DSC2570.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Croquis du paysage"><img src="assets/img/portfolio/dehors/_DSC2570.JPG" class="img-fluid" alt="Croquis du paysage"></a></div>
             <div class="portfolio-info">
               <h4>Croquis du paysage</h4>
@@ -467,7 +467,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item filter-bateau">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-bateau" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/dehors/Une-vie-en-foret.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Tournage avec Francis Hallé"><img src="assets/img/portfolio/dehors/Une-vie-en-foret.jpg" class="img-fluid" alt="Tournage avec Francis Hallé"></a></div>
             <div class="portfolio-info">
               <h4>Tournage avec Francis Hallé</h4>
@@ -475,7 +475,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item filter-bateau">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-bateau" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/dehors/_DSC2573.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Exploration de l'environnement"><img src="assets/img/portfolio/dehors/_DSC2573.JPG" class="img-fluid" alt="Exploration de l'environnement, savane et jungle"></a></div>
             <div class="portfolio-info">
               <h4>Exploration de l'environnement</h4>
@@ -483,7 +483,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-brousse">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-brousse" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/dedans/DSC_0096.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Interview production minisérie SAS"><img src="assets/img/portfolio/dedans/DSC_0096.JPG" class="img-fluid" alt="Interview production minisérie SAS"></a></div>
             <div class="portfolio-info">
               <h4>Interview concernant la production d'une minisérie (SAS)</h4>
@@ -491,7 +491,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item filter-brousse">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-brousse" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/dedans/DSC04815.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SAS, dispositif contre le décrochage scolaire"><img src="assets/img/portfolio/dedans/DSC04815.JPG" class="img-fluid" alt="SAS, dispositif contre le décrochage scolaire"></a></div>
             <div class="portfolio-info">
               <h4>SAS - dispositif de lutte contre le décrochage scolaire</h4>
@@ -499,7 +499,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
           
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-brousse">
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-brousse" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/dedans/DSC_0078.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SEGPA horticulture"><img src="assets/img/portfolio/dedans/DSC_0078.JPG" class="img-fluid" alt="SEGPA horticulture"></a></div>
             <div class="portfolio-info">
               <h4>SEGPA horticulture</h4>
@@ -507,7 +507,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item filter-brousse">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-brousse" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/dedans/test epnc5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Concours photos"><img src="assets/img/portfolio/dedans/test epnc5.jpg" class="img-fluid" alt="Concours photos"></a></div>
             <div class="portfolio-info">
               <h4>Concours photos</h4>
@@ -515,7 +515,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item filter-brousse">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-brousse" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/dedans/20181107_091551.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Maquette du système solaire"><img src="assets/img/portfolio/dedans/20181107_091551.jpg" class="img-fluid" alt="Maquette du système solaire"></a></div>
             <div class="portfolio-info">
               <h4>Construction d'une maquette du système solaire</h4>
@@ -523,7 +523,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item filter-brousse">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-brousse" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/dedans/DSC04897.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Œil observé à la loupe à main"><img src="assets/img/portfolio/dedans/DSC04897.JPG" class="img-fluid" alt="Œil observé à la loupe à main"></a></div>
             <div class="portfolio-info">
               <h4>Œil, observé à la loupe à main</h4>
@@ -531,7 +531,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-brousse">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-brousse" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/dedans/20180411_111457.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Opération plante ton palétuvier"><img src="assets/img/portfolio/dedans/20180411_111457.jpg" class="img-fluid" alt="Opération plante ton palétuvier"></a></div>
             <div class="portfolio-info">
               <h4>Opération "plante ton palétuvier"</h4>
@@ -539,7 +539,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item filter-brousse">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-brousse" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/dedans/DSC_0329.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Dispositif Ecocollège"><img src="assets/img/portfolio/dedans/DSC_0329.JPG" class="img-fluid" alt="Dispositif Ecocollège"></a></div>
             <div class="portfolio-info">
               <h4>Dispositif Ecocollège</h4>
@@ -547,7 +547,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/urbain/IMG_20220922_124635_565.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="n3, salle de cours innovante"><img src="assets/img/portfolio/urbain/IMG_20220922_124635_565.jpg" class="img-fluid" alt="n3, salle de cours innovante"></a></div>
             <div class="portfolio-info">
               <h4>n3, une salle de cours innovante</h4>
@@ -555,7 +555,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/urbain/IMG_20220925_185523_261.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Farmflow Prototype 3, aquaponie à l'école"><img src="assets/img/portfolio/urbain/IMG_20220925_185523_261.jpg" class="img-fluid" alt="Farmflow Prototype 3, aquaponie à l'école"></a></div>
             <div class="portfolio-info">
               <h4>Farmflow Prototype 3, l'aquaponie à l'école</h4>
@@ -563,7 +563,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/urbain/phasmes.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Phasmopolis, élevage d'insectes"><img src="assets/img/portfolio/urbain/phasmes.jpg" class="img-fluid" alt="Phasmopolis, élevage d'insectes"></a></div>
             <div class="portfolio-info">
               <h4>Phasmopolis, un élevage d'insectes</h4>
@@ -571,7 +571,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/urbain/DSC03966.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Le club Bio"><img src="assets/img/portfolio/urbain/DSC03966.JPG" class="img-fluid" alt="Le club Bio"></a></div>
             <div class="portfolio-info">
               <h4>Le club Bio</h4>
@@ -579,7 +579,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/urbain/IMG_20220912_102755_859.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Le tiny garden, potager urbain"><img src="assets/img/portfolio/urbain/IMG_20220912_102755_859.jpg" class="img-fluid" alt="Le tiny garden, potager urbain"></a></div>
             <div class="portfolio-info">
               <h4>Le tiny garden, un potager urbain</h4>
@@ -587,7 +587,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/urbain/DSC06352.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Culture de pleurotes"><img src="assets/img/portfolio/urbain/DSC06352.JPG" class="img-fluid" alt="Culture de pleurotes"></a></div>
             <div class="portfolio-info">
               <h4>Culture de pleurotes</h4>
@@ -596,7 +596,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
           </div>
           
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-fictions">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-fictions" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/jeux/20210528_182706.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Jouons ! Cartes Sciences et Technologies"><img src="assets/img/portfolio/jeux/20210528_182706.jpg" class="img-fluid" alt="Jouons ! Cartes Sciences et Technologies"></a></div>
             <div class="portfolio-info">
               <h4>"Jouons !", des cartes à jouer en Sciences et Technologies</h4>
@@ -604,7 +604,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item filter-fictions">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-fictions" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/jeux/2022-05-28.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Scape New Order, jeu de rôle Genially"><img src="assets/img/portfolio/jeux/2022-05-28.png" class="img-fluid" alt="Scape New Order, jeu de rôle Genially"></a></div>
             <div class="portfolio-info">
               <h4>"Scape New Order", un jeu de rôle Genially pour le confinement</h4>
@@ -612,7 +612,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-fictions">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-fictions" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/jeux/IMG-4684.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Les chroniques de tonton du bled"><img src="assets/img/portfolio/jeux/IMG-4684.jpg" class="img-fluid" alt="Les chroniques de tonton du bled, Imilchil"></a></div>
             <div class="portfolio-info">
               <h4>"Les chroniques de tonton du bled", une histoire à Imilchil</h4>
@@ -620,7 +620,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item filter-fictions">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-fictions" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/jeux/IMG_20220202_125503_1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="PSE Game, Prévention Santé Environnement"><img src="assets/img/portfolio/jeux/IMG_20220202_125503_1.jpg" class="img-fluid" alt="PSE Game, Prévention Santé Environnement"></a></div>
             <div class="portfolio-info">
               <h4>"PSE Game", une autre manière d'aborder la Prévention Santé Environnement</h4>
@@ -628,7 +628,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item filter-fictions">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-fictions" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/jeux/_DSC5126.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Noël sous l'équateur"><img src="assets/img/portfolio/jeux/_DSC5126.JPG" class="img-fluid" alt="Noël sous l'équateur"></a></div>
             <div class="portfolio-info">
               <h4>Noël sous l'équateur</h4>
@@ -636,7 +636,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-prototypage">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-prototypage" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/tech/2022-05-28 (1) (2).png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Farmflow, start-up d'avenir"><img src="assets/img/portfolio/tech/2022-05-28 (1) (2).png" class="img-fluid" alt="Farmflow, start-up d'avenir"></a></div>
             <div class="portfolio-info">
               <h4>Farmflow, une start-up d'avenir</h4>
@@ -644,7 +644,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item filter-prototypage">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-prototypage" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/tech/IMG_20220706_141504_5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="L'aquaponie connectée"><img src="assets/img/portfolio/tech/IMG_20220706_141504_5.jpg" class="img-fluid" alt="L'aquaponie connectée"></a></div>
             <div class="portfolio-info">
               <h4>L'aquaponie connectée</h4>
@@ -652,7 +652,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item filter-prototypage">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-prototypage" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/tech/IMG_20190130_075846_0.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="La grande forêt de l'équateur, expo physique et numérique"><img src="assets/img/portfolio/tech/IMG_20190130_075846_0.jpg" class="img-fluid" alt="La grande forêt de l'équateur, expo physique et numérique"></a></div>
             <div class="portfolio-info">
               <h4>La grande forêt de l'équateur, une expo physique et numérique</h4>
@@ -660,7 +660,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item filter-prototypage">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-prototypage" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/tech/Diapositive3.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Serious Game SVT, club WebGeek"><img src="assets/img/portfolio/tech/Diapositive3.JPG" class="img-fluid" alt="Serious Game SVT, club WebGeek"></a></div>
             <div class="portfolio-info">
               <h4>Les Serious Game SVT, proposé par le "club WebGeek"</h4>
@@ -668,7 +668,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item filter-prototypage">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-prototypage" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/tech/IMG-20220704-WA0015.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Farmflow au salon BPI"><img src="assets/img/portfolio/tech/IMG-20220704-WA0015.jpg" class="img-fluid" alt="Farmflow au salon BPI"></a></div>
             <div class="portfolio-info">
               <h4>Farmflow au salon de la Banque Publique d'Investissements</h4>
@@ -676,7 +676,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-bateau">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-bateau" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/dehors/poesie-exterieur.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Poésie en extérieur"><img src="assets/img/portfolio/dehors/poesie-exterieur.png" class="img-fluid" alt="Poésie en extérieur"></a></div>
             <div class="portfolio-info">
               <h4>Poésie en extérieur</h4>
@@ -684,7 +684,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-bateau">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-bateau" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/dehors/cours-dehors.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Cours dehors"><img src="assets/img/portfolio/dehors/cours-dehors.png" class="img-fluid" alt="Cours dehors"></a></div>
             <div class="portfolio-info">
               <h4>Cours dehors</h4>
@@ -692,7 +692,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-brousse">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-brousse" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/dedans/analyse-chimique.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Analyse chimique"><img src="assets/img/portfolio/dedans/analyse-chimique.png" class="img-fluid" alt="Analyse chimique"></a></div>
             <div class="portfolio-info">
               <h4>Analyse chimique</h4>
@@ -700,7 +700,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-fictions">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-fictions" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/dedans/jeu-gnomes-licornes.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Le jeu Gnomes et Licornes"><img src="assets/img/portfolio/dedans/jeu-gnomes-licornes.png" class="img-fluid" alt="Le jeu Gnomes et Licornes"></a></div>
             <div class="portfolio-info">
               <h4>Le jeu Gnomes et Licornes</h4>
@@ -708,7 +708,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/urbain/elevage-insectes.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Élevage d'insectes à grande échelle"><img src="assets/img/portfolio/urbain/elevage-insectes.png" class="img-fluid" alt="Élevage d'insectes à grande échelle"></a></div>
             <div class="portfolio-info">
               <h4>Élevage d'insectes à grande échelle</h4>
@@ -716,7 +716,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/urbain/odd-et-n3.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="ODD et n³"><img src="assets/img/portfolio/urbain/odd-et-n3.png" class="img-fluid" alt="ODD et n³"></a></div>
             <div class="portfolio-info">
               <h4>ODD et n³</h4>
@@ -724,7 +724,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/urbain/lombricomposteur.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Lombricomposteur"><img src="assets/img/portfolio/urbain/lombricomposteur.png" class="img-fluid" alt="Lombricomposteur"></a></div>
             <div class="portfolio-info">
               <h4>Lombricomposteur</h4>
@@ -732,7 +732,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/urbain/potager-urbain.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Potager urbain"><img src="assets/img/portfolio/urbain/potager-urbain.png" class="img-fluid" alt="Potager urbain"></a></div>
             <div class="portfolio-info">
               <h4>Potager urbain</h4>
@@ -740,7 +740,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/urbain/aquaponie-connectee.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Aquaponie connectée"><img src="assets/img/portfolio/urbain/aquaponie-connectee.png" class="img-fluid" alt="Aquaponie connectée"></a></div>
             <div class="portfolio-info">
               <h4>Aquaponie connectée</h4>
@@ -748,7 +748,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/urbain/maison-chat-connectee.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Maison pour chat connectée"><img src="assets/img/portfolio/urbain/maison-chat-connectee.png" class="img-fluid" alt="Maison pour chat connectée"></a></div>
             <div class="portfolio-info">
               <h4>Maison pour chat connectée</h4>
@@ -756,7 +756,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/urbain/expression-libre-n3.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Expression libre dans n³"><img src="assets/img/portfolio/urbain/expression-libre-n3.png" class="img-fluid" alt="Expression libre dans n³"></a></div>
             <div class="portfolio-info">
               <h4>Expression libre dans n³</h4>
@@ -764,7 +764,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/urbain/porte-ouverte-n3.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Porte ouverte de la salle aérée n³"><img src="assets/img/portfolio/urbain/porte-ouverte-n3.png" class="img-fluid" alt="Porte ouverte de la salle aérée n³"></a></div>
             <div class="portfolio-info">
               <h4>Porte ouverte de la salle aérée n³</h4>
@@ -772,7 +772,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-prototypage">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-prototypage" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/tech/station-meteo-connectee.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Station météo connectée"><img src="assets/img/portfolio/tech/station-meteo-connectee.png" class="img-fluid" alt="Station météo connectée"></a></div>
             <div class="portfolio-info">
               <h4>Station météo connectée</h4>
@@ -794,49 +794,49 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
           <h2>Résultats & Reconnaissances</h2>
         </div>
         <div class="row g-4 justify-content-center">
-          <div class="col-12 col-md-6 col-lg-4">
+          <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
             <div class="results-item results-stat">
               <span class="results-number">90%</span>
               <p class="mb-0">des élèves engagés sur l'année complète dans le dispositif Gnomes & Licornes</p>
             </div>
           </div>
-          <div class="col-12 col-md-6 col-lg-4">
+          <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
             <div class="results-item">
               <span class="results-badge">🏆 Lauréat Hacktonfutur</span>
               <p class="mb-0">Farmflow, projet élève d'aquaponie connectée, présenté au salon BPI Casablanca 2022</p>
             </div>
           </div>
-          <div class="col-12 col-md-6 col-lg-4">
+          <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
             <div class="results-item">
               <span class="results-badge">💬 « L'école vécue comme une aventure »</span>
               <p class="mb-0">Retour d'expérience issu du projet n³, salle aérée du Lycée Lyautey</p>
             </div>
           </div>
-          <div class="col-12 col-md-6 col-lg-4">
+          <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="250">
             <div class="results-item">
               <span class="results-badge">💬 « On va vraiment aller sur Mars monsieur ? »</span>
               <p class="mb-0">Commentaire candide d'élève après 6 mois du projet EIST au lycée Blaise Pascal de Libreville</p>
             </div>
           </div>
-          <div class="col-12 col-md-6 col-lg-4">
+          <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
             <div class="results-item">
               <span class="results-badge">🏆 Lauréat Météo à l'École</span>
               <p class="mb-0">Projet Mété'O'Saules au collège de Guyancourt en 2016</p>
             </div>
           </div>
-          <div class="col-12 col-md-6 col-lg-4">
+          <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
             <div class="results-item">
               <span class="results-badge">🎬 Une vie en forêt</span>
               <p class="mb-0">Participation des élèves au tournage avec Francis Hallé en 2019 au Gabon</p>
             </div>
           </div>
-          <div class="col-12 col-md-6 col-lg-4">
+          <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
             <div class="results-item">
               <span class="results-badge">📺 Interview SAS</span>
               <p class="mb-0">Réalisée par TVfil 78 pour mettre en valeur le dispositif de raccrochage scolaire au collège les Saules en 2015</p>
             </div>
           </div>
-          <div class="col-12 col-md-6 col-lg-4">
+          <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="250">
             <div class="results-item">
               <span class="results-badge">📰 Résultats et reconnaissance</span>
               <p class="mb-0">Publications dans Le Café pédagogique et Les Cahiers pédagogiques</p>
@@ -857,7 +857,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
         </div>
 
         <div class="row justify-content-center row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-          <div class="col d-flex align-items-stretch">
+          <div class="col d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box service-card">
               <img src="assets/img/logo-n3.png" class="img-fluid" width="35%" alt="La salle aérée n³">
               <h4 class="title"><a href="https://n3.olution.info/" rel="noopener noreferrer" target="_blank">La salle aérée n³</a></h4>
@@ -867,7 +867,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
 
-          <div class="col d-flex align-items-stretch">
+          <div class="col d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="150">
             <div class="icon-box service-card">
               <img src="assets/img/olutionff.png" class="img-fluid" width="35%" alt="IOT olution">
               <h4 class="title"><a href="https://iot.olution.info" rel="noopener noreferrer" target="_blank">IOT olution</a></h4>
@@ -877,7 +877,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
 
-          <div class="col d-flex align-items-stretch">
+          <div class="col d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
             <div class="icon-box service-card">
               <img src="assets/img/logo-gnomes-licornes.png" class="img-fluid" width="35%" alt="Gnomes&amp;Licornes">
               <h4 class="title"><a href="https://gl.olution.info/" rel="noopener noreferrer" target="_blank">Gnomes&amp;Licornes</a></h4>
@@ -887,7 +887,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
 
-          <div class="col d-flex align-items-stretch">
+          <div class="col d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box service-card">
               <img src="assets/img/logoff.png" class="img-fluid" width="25%" alt="Farmflow">
               <h4 class="title"><a href="https://farmflow.marout.org" rel="noopener noreferrer" target="_blank">Farmflow</a></h4>
@@ -897,7 +897,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
 
-          <div class="col d-flex align-items-stretch">
+          <div class="col d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="150">
             <div class="icon-box service-card">
               <img src="assets/img/logomarout.png" class="img-fluid" width="35%" alt="Marout">
               <h4 class="title"><a href="https://marout.org" rel="noopener noreferrer" target="_blank">Marout</a></h4>
@@ -907,7 +907,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
 
-          <div class="col d-flex align-items-stretch">
+          <div class="col d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
             <div class="icon-box service-card">
               <img src="assets/img/logo-education-nationale.png" class="img-fluid" width="45%" alt="Ministère de l'Éducation Nationale">
               <h4 class="title"><a href="https://www.education.gouv.fr/" rel="noopener noreferrer" target="_blank">Ministère de l'Éducation Nationale</a></h4>
@@ -917,7 +917,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
 
-          <div class="col d-flex align-items-stretch">
+          <div class="col d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="250">
             <div class="icon-box service-card">
               <img src="assets/img/logo-aefe.png" class="img-fluid" width="45%" alt="AEFE - Agence pour l'enseignement français à l'étranger">
               <h4 class="title"><a href="https://www.aefe.fr/" rel="noopener noreferrer" target="_blank">AEFE</a></h4>
