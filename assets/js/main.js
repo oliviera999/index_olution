@@ -25,17 +25,16 @@
   }
 
   /**
-   * AOS (Animate On Scroll) : init avec désactivation sur mobile si nécessaire
+   * AOS (Animate On Scroll) : init (activé aussi sur mobile)
    */
   const initAOS = () => {
     if (typeof AOS !== 'undefined') {
-      const isMobile = window.innerWidth < 768;
       AOS.init({
         duration: 600,
         easing: 'ease-out-cubic',
         offset: 80,
         once: true,
-        disable: isMobile
+        disable: false
       });
     }
   };
