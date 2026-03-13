@@ -263,7 +263,7 @@
             observer.disconnect();
           }
         });
-      }, { threshold: 0.2 });
+      }, { threshold: 1 });
       observer.observe(testimonialsSection);
     }
   }
