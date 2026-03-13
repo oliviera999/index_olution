@@ -24,7 +24,7 @@ index_olution/
     │   └── style.css       # Styles principaux (personnalisation)
     ├── js/
     │   ├── main.js         # Nav, sliders, filtres portfolio, lightbox, compteurs
-    │   └── validate.js    # Validation formulaire (compatibilité template)
+    │   └── main.js        # Script principal (nav, sliders, portfolio)
     ├── img/                # Images (entete, portfolio, logos, favicon)
     │   ├── entete/         # Images de fond hero (bg-1.jpg … bg-16.jpg)
     │   └── portfolio/      # dehors, dedans, urbain, jeux, tech

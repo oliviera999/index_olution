@@ -4,7 +4,7 @@
 <head>
 
 <?php
-$version = '4.24';
+$version = '4.25';
 $base = '';
 // URL canonique pour le SEO (page d'accueil officielle olution.info)
 $canonical_url = 'https://olution.info/';
@@ -37,10 +37,6 @@ $hero_image_url = $nomimages[$affimage];
 // Années d'existence : calcul automatique depuis le déploiement de la plateforme (2013)
 $plateforme_annee_deploiement = 2013;
 $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
-
-// Années d'expérience : carrière débutée en 2008
-$carriere_debut = 2008;
-$annees_experience = max(1, (int)date('Y') - $carriere_debut);
 ?>
   <?php if ($base !== ''): ?><base href="<?php echo htmlspecialchars($base); ?>"><?php endif; ?>
   <meta charset="utf-8">
@@ -89,7 +85,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Cabin" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Cabin" rel="stylesheet">
 
   <!-- Vendor CSS (CDN — pas besoin de assets/vendor/) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -159,10 +155,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
   </section><!-- End Hero -->
 
   <main id="main">
-<br>
-<br>
-<br>
-       <!-- ======= Testimonials Section ======= -->
+       <!-- ======= Pourquoi Olution ? ======= -->
 
     <div id="act" class="section-title" data-aos="fade-up">
       <span>Pourquoi Olution ?</span>
@@ -459,7 +452,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
             </div>
           </div>
           
-        <div class="col-lg-4 col-md-6 portfolio-item filter-bateau">
+        <div class="col-lg-4 col-md-6 portfolio-item filter-bateau" data-aos="fade-up">
             <div class="portfolio-img"><a href="assets/img/portfolio/dehors/_DSC2638.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Ramassage d'ordures"><img src="assets/img/portfolio/dehors/_DSC2638.JPG" class="img-fluid" alt="Ramassage d'ordures sur les plages au Gabon"></a></div>
             <div class="portfolio-info">
               <h4>Ramassage d'ordures</h4>

@@ -86,13 +86,6 @@
   }
 
   /**
-   * Easy on scroll event listener 
-   */
-  const onscroll = (el, listener) => {
-    el.addEventListener('scroll', listener)
-  }
-
-  /**
    * Navbar links active state on scroll
    */
   let navbarlinks = select('#navbar .scrollto', true)
@@ -110,7 +103,7 @@
     })
   }
   window.addEventListener('load', navbarlinksActive)
-  onscroll(document, navbarlinksActive)
+  window.addEventListener('scroll', navbarlinksActive, { passive: true })
 
   /**
    * Scrolls to an element with header offset
@@ -143,7 +136,7 @@
       }
     }
     window.addEventListener('load', headerScrolled)
-    onscroll(document, headerScrolled)
+    window.addEventListener('scroll', headerScrolled, { passive: true })
   }
 
   /**
@@ -159,7 +152,7 @@
       }
     }
     window.addEventListener('load', toggleBacktotop)
-    onscroll(document, toggleBacktotop)
+    window.addEventListener('scroll', toggleBacktotop, { passive: true })
   }
 
   /**
@@ -171,16 +164,6 @@
     icon.classList.toggle('bi-list')
     icon.classList.toggle('bi-x')
   })
-
-  /**
-   * Mobile nav dropdowns activate
-   */
-  on('click', '.navbar .dropdown > a', function(e) {
-    if (select('#navbar').classList.contains('navbar-mobile')) {
-      e.preventDefault()
-      this.nextElementSibling.classList.toggle('dropdown-active')
-    }
-  }, true)
 
   /**
    * Scrool with ofset on links with a class name .scrollto
@@ -340,23 +323,6 @@
           lb.focus();
         }
       }, 50);
-    }
-  });
-
-  /**
-   * Portfolio details slider
-   */
-  new Swiper('.portfolio-details-slider', {
-    speed: 400,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
     }
   });
 
