@@ -289,7 +289,8 @@
 
       let portfolioIsotope = new Isotope(portfolioContainer, {
         itemSelector: '.portfolio-item',
-        filter: '.in-bref'
+        filter: '.in-bref',
+        transitionDuration: '0.4s'
       });
 
       let portfolioFilters = select('#portfolio-flters li', true);

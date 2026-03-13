@@ -4,7 +4,7 @@
 <head>
 
 <?php
-$version = '4.16';
+$version = '4.17';
 $base = '';
 // URL canonique pour le SEO (page d'accueil officielle olution.info)
 $canonical_url = 'https://olution.info/';
@@ -143,12 +143,12 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
   <!-- ======= Hero Section ======= -->
   <section id="hero">
     <div class="hero-container">
-      <h1>olution</h1>
-      <img src="assets/img/logoblanc.png" class="img-fluid" width="10%" alt="Logo Olution">
-      <br>
-      <h2>échanger, créer, apprendre</h2>
+      <h1 class="hero-title" data-aos="fade-up" data-aos-duration="600" data-aos-delay="0">olution</h1>
+      <img src="assets/img/logoblanc.png" class="img-fluid hero-logo" width="10%" alt="Logo Olution" data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
+      <h2 class="hero-subtitle" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">échanger, créer, apprendre</h2>
+      <p class="hero-tagline" data-aos="fade-up" data-aos-duration="600" data-aos-delay="350">L'école vécue comme une aventure</p>
       <p class="hero-seo-intro mt-2 mb-0">olution.info — Plateforme officielle du projet Olution : formation en ligne, espaces pédagogiques, actions en France et à l'international.</p>
-      <div class="hero-audience-buttons d-flex flex-wrap justify-content-center gap-2 mt-3">
+      <div class="hero-audience-buttons d-flex flex-wrap justify-content-center gap-2" data-aos="fade-up" data-aos-duration="600" data-aos-delay="450">
         <a href="#about" class="btn btn-outline-light rounded-pill scrollto">Enseignant</a>
         <a href="#portfolio" class="btn btn-outline-light rounded-pill scrollto">Élève</a>
         <a href="#testi" class="btn btn-outline-light rounded-pill scrollto">Institution</a>
