@@ -269,6 +269,8 @@
       let portfolioIsotope = new Isotope(portfolioContainer, {
         itemSelector: '.portfolio-item',
         filter: '.in-bref',
+        layoutMode: 'fitRows',
+        percentPosition: true,
         transitionDuration: '0.4s'
       });
 
@@ -286,27 +288,33 @@
         });
 
       }, true);
+
+      initPortfolioLightbox();
     }
 
   });
 
   /**
-   * Initiate portfolio lightbox (focus déplacé à l'ouverture pour éviter aria-hidden)
+   * Initiate portfolio lightbox (après Isotope pour DOM stable — focus déplacé à l'ouverture)
    */
-  const portfolioLightbox = GLightbox({
-    selector: '.portfolio-lightbox',
-    openEffect: 'zoom',
-    closeEffect: 'zoom',
-    onOpen: function () {
-      setTimeout(function () {
-        var lb = document.querySelector('.glightbox-container');
-        if (lb) {
-          lb.setAttribute('tabindex', '-1');
-          lb.focus();
+  const initPortfolioLightbox = () => {
+    if (typeof GLightbox !== 'undefined') {
+      GLightbox({
+        selector: '.portfolio-lightbox',
+        openEffect: 'zoom',
+        closeEffect: 'zoom',
+        onOpen: function () {
+          setTimeout(function () {
+            var lb = document.querySelector('.glightbox-container');
+            if (lb) {
+              lb.setAttribute('tabindex', '-1');
+              lb.focus();
+            }
+          }, 50);
         }
-      }, 50);
+      });
     }
-  });
+  };
 
   /**
    * Initiate Pure Counter au scroll (section #about)
