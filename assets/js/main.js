@@ -8,10 +8,14 @@
   "use strict";
 
   /**
-   * Tous les liens externes s'ouvrent dans un nouvel onglet
+   * Tous les liens externes (hors même origine) s'ouvrent dans un nouvel onglet
    */
   const applyExternalLinkTarget = () => {
+    const origin = window.location.origin;
     document.querySelectorAll('a[href^="http://"], a[href^="https://"]').forEach(function(a) {
+      try {
+        if (new URL(a.href, window.location.origin).origin === origin) return;
+      } catch (e) { return; }
       if (!a.hasAttribute('target') || a.getAttribute('target') !== '_blank') {
         a.setAttribute('target', '_blank');
         a.setAttribute('rel', 'noopener noreferrer');
@@ -45,21 +49,6 @@
   }
 
   /**
-   * Barre de progression de scroll
-   */
-  const updateScrollProgress = () => {
-    const progressBar = document.getElementById('scroll-progress');
-    if (progressBar) {
-      const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-      progressBar.style.width = progress + '%';
-    }
-  };
-  window.addEventListener('load', updateScrollProgress);
-  window.addEventListener('scroll', updateScrollProgress, { passive: true });
-
-  /**
    * Easy selector helper function
    */
   const select = (el, all = false) => {
@@ -86,73 +75,60 @@
   }
 
   /**
-   * Navbar links active state on scroll
+   * Handler scroll unifié (RAF) : progress bar, nav active, header, back-to-top
    */
-  let navbarlinks = select('#navbar .scrollto', true)
-  const navbarlinksActive = () => {
-    let position = window.scrollY + 200
-    navbarlinks.forEach(navbarlink => {
-      if (!navbarlink.hash) return
-      let section = select(navbarlink.hash)
-      if (!section) return
-      if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
-        navbarlink.classList.add('active')
-      } else {
-        navbarlink.classList.remove('active')
-      }
-    })
-  }
-  window.addEventListener('load', navbarlinksActive)
-  window.addEventListener('scroll', navbarlinksActive, { passive: true })
+  const progressBar = document.getElementById('scroll-progress');
+  const navbarlinks = select('#navbar .scrollto', true);
+  const selectHeader = select('#header');
+  const backtotop = select('.back-to-top');
+  let ticking = false;
+
+  const onScroll = () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        const scrollY = window.scrollY || document.documentElement.scrollTop;
+        if (progressBar) {
+          const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          progressBar.style.width = (docHeight > 0 ? (scrollY / docHeight) * 100 : 0) + '%';
+        }
+        const position = scrollY + 200;
+        navbarlinks.forEach(function(navbarlink) {
+          if (!navbarlink.hash) return;
+          const section = select(navbarlink.hash);
+          if (!section) return;
+          const isActive = position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight);
+          navbarlink.classList.toggle('active', isActive);
+        });
+        if (selectHeader) {
+          selectHeader.classList.toggle('header-scrolled', scrollY > 100);
+        }
+        if (backtotop) {
+          backtotop.classList.toggle('active', scrollY > 100);
+        }
+        ticking = false;
+      });
+      ticking = true;
+    }
+  };
+  window.addEventListener('load', onScroll);
+  window.addEventListener('scroll', onScroll, { passive: true });
 
   /**
    * Scrolls to an element with header offset
    */
   const scrollto = (el) => {
-    let header = select('#header')
-    let offset = header.offsetHeight
-
-    if (!header.classList.contains('header-scrolled')) {
-      offset -= 20
+    const header = select('#header');
+    let offset = header ? header.offsetHeight : 0;
+    if (header && !header.classList.contains('header-scrolled')) {
+      offset -= 20;
     }
-
-    let elementPos = select(el).offsetTop
-    window.scrollTo({
-      top: elementPos - offset,
-      behavior: 'smooth'
-    })
-  }
-
-  /**
-   * Toggle .header-scrolled class to #header when page is scrolled
-   */
-  let selectHeader = select('#header')
-  if (selectHeader) {
-    const headerScrolled = () => {
-      if (window.scrollY > 100) {
-        selectHeader.classList.add('header-scrolled')
-      } else {
-        selectHeader.classList.remove('header-scrolled')
-      }
+    const target = select(el);
+    if (target) {
+      window.scrollTo({
+        top: target.offsetTop - offset,
+        behavior: 'smooth'
+      });
     }
-    window.addEventListener('load', headerScrolled)
-    window.addEventListener('scroll', headerScrolled, { passive: true })
-  }
-
-  /**
-   * Back to top button
-   */
-  let backtotop = select('.back-to-top')
-  if (backtotop) {
-    const toggleBacktotop = () => {
-      if (window.scrollY > 100) {
-        backtotop.classList.add('active')
-      } else {
-        backtotop.classList.remove('active')
-      }
-    }
-    window.addEventListener('load', toggleBacktotop)
-    window.addEventListener('scroll', toggleBacktotop, { passive: true })
   }
 
   /**
@@ -248,23 +224,29 @@
     observer.observe(testimonialsSlider);
   }
   
-    /**
-   * Actions slider
+  /**
+   * Actions slider — autoplay uniquement quand visible (IntersectionObserver)
    */
-  new Swiper('.actions-slider', {
-    speed: 600,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    slidesPerView: 'auto',
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    }
-  });
+  const actionsSliderEl = document.querySelector('.actions-slider');
+  if (actionsSliderEl) {
+    const actionsSwiper = new Swiper('.actions-slider', {
+      speed: 600,
+      loop: true,
+      autoplay: { delay: 5000, disableOnInteraction: false },
+      slidesPerView: 'auto',
+      pagination: { el: '.actions-slider .swiper-pagination', type: 'bullets', clickable: true }
+    });
+    actionsSwiper.autoplay.stop();
+    const actionsObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          actionsSwiper.autoplay.start();
+          actionsObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.5 });
+    actionsObserver.observe(actionsSliderEl);
+  }
 
   /**
    * Portfolio isotope and filter — "En bref" : tirage aléatoire de quelques items à chaque chargement

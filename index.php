@@ -4,7 +4,7 @@
 <head>
 
 <?php
-$version = '4.25';
+$version = '4.26';
 $base = '';
 // URL canonique pour le SEO (page d'accueil officielle olution.info)
 $canonical_url = 'https://olution.info/';
@@ -84,13 +84,16 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Cabin" rel="stylesheet">
+  <!-- Preload polices critiques -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Cabin:wght@400&display=swap" as="style">
+  <!-- Google Fonts (variantes réduites) -->
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Cabin:wght@400&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS (CDN — pas besoin de assets/vendor/) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/css/glightbox.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
 
@@ -139,18 +142,18 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
   <!-- ======= Hero Section ======= -->
   <section id="hero">
     <div class="hero-container">
-      <h1 class="hero-title" data-aos="fade-up" data-aos-duration="600" data-aos-delay="0">olution</h1>
-      <img src="assets/img/logoblanc.png" class="img-fluid hero-logo" width="10%" alt="Logo Olution" data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
-      <h2 class="hero-subtitle" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">échanger, créer, apprendre</h2>
-      <p class="hero-tagline" data-aos="fade-up" data-aos-duration="600" data-aos-delay="350">L'école vécue comme une aventure</p>
+      <h1 class="hero-title">olution</h1>
+      <img src="assets/img/logoblanc.png" class="img-fluid hero-logo" width="10%" alt="Logo Olution">
+      <h2 class="hero-subtitle">échanger, créer, apprendre</h2>
+      <p class="hero-tagline">L'école vécue comme une aventure</p>
       <p class="hero-seo-intro mt-2 mb-0">olution.info — Plateforme officielle du projet Olution : formation en ligne, espaces pédagogiques, actions en France et à l'international.</p>
-      <div class="hero-audience-buttons d-flex flex-wrap justify-content-center gap-2" data-aos="fade-up" data-aos-duration="600" data-aos-delay="450">
+      <div class="hero-audience-buttons d-flex flex-wrap justify-content-center gap-2">
         <a href="#about" class="btn btn-outline-light rounded-pill scrollto">Enseignant</a>
         <a href="#portfolio" class="btn btn-outline-light rounded-pill scrollto">Élève</a>
         <a href="#testi" class="btn btn-outline-light rounded-pill scrollto">Institution</a>
         <a href="#services" class="btn btn-outline-light rounded-pill scrollto">Partenaire</a>
       </div>
-      <a href="#act" class="btn-scroll scrollto" title="Scroll Down"><i class="bx bx-chevron-down"></i></a>
+      <a href="#act" class="btn-scroll scrollto" title="Scroll Down"><i class="bi bi-chevron-down"></i></a>
     </div>
   </section><!-- End Hero -->
 
@@ -212,84 +215,84 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
 
             <div class="swiper-slide">
               <div class="action-item">
-                <img src="assets/img/actions/_DSC4906.JPG" class="action-img" alt="Olution, une évolution à l'école">
+                <img loading="lazy" src="assets/img/actions/_DSC4906.JPG" class="action-img" alt="Olution, une évolution à l'école">
                 <h3>Olution</h3>
                 <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  <i class="bi bi-quote quote-icon-left"></i>
                   Plus qu'une solution. C'est une évolution, une révolution à l'école.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
             </div><!-- End action item -->
             
             <div class="swiper-slide">
               <div class="action-item">
-                <img src="assets/img/actions/20171205_172112.jpg" class="action-img" alt="Le monde change, s'adapter avec Olution">
+                <img loading="lazy" src="assets/img/actions/20171205_172112.jpg" class="action-img" alt="Le monde change, s'adapter avec Olution">
                 <h3>Le monde change</h3>
                 <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  <i class="bi bi-quote quote-icon-left"></i>
                   Tout va très vite. Il faut s'adapter en permanence, faire preuve de souplesse, découvrir, se réinventer, être créatif. Olution est là pour accompagner sur ce chemin.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
             </div><!-- End action item -->
             
             <div class="swiper-slide">
               <div class="action-item">
-                <img src="assets/img/actions/_DSC5567.JPG" class="action-img" alt="L'apprentissage par l'échange">
+                <img loading="lazy" src="assets/img/actions/_DSC5567.JPG" class="action-img" alt="L'apprentissage par l'échange">
                 <h3>L'apprentissage par l'échange</h3>
                 <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  <i class="bi bi-quote quote-icon-left"></i>
                   Olution, c'est cultiver l'imagination et créativité. Les idées viennent de chacun et sont le centre des projets.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
             </div><!-- End action item -->
 
             <div class="swiper-slide">
               <div class="action-item">
-                <img src="assets/img/actions/IMG_20190410_074928_4.jpg" class="action-img" alt="Philosophie Olution : échange, partage, open source">
+                <img loading="lazy" src="assets/img/actions/IMG_20190410_074928_4.jpg" class="action-img" alt="Philosophie Olution : échange, partage, open source">
                 <h3>Une philosophie à part entière</h3>
                 <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  <i class="bi bi-quote quote-icon-left"></i>
                   Olution met à l'honneur l'échange, le partage, l'open source, le low-cost, le DIY, la nature.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
             </div><!-- End action item -->
             
             <div class="swiper-slide">
               <div class="action-item">
-                <img src="assets/img/actions/DSC03858.JPG" class="action-img" alt="Ludifier l'école, travailler en jouant">
+                <img loading="lazy" src="assets/img/actions/DSC03858.JPG" class="action-img" alt="Ludifier l'école, travailler en jouant">
                 <h3>Ludifier l'école</h3>
                 <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  <i class="bi bi-quote quote-icon-left"></i>
                   Olution, c'est jouer en travaillant, et travailler en jouant. L'école se vit comme une aventure.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
             </div><!-- End action item -->
             
             <div class="swiper-slide">
               <div class="action-item">
-                <img src="assets/img/actions/_DSC5536.JPG" class="action-img" alt="Projet Olution, plateforme et pratique de terrain">
+                <img loading="lazy" src="assets/img/actions/_DSC5536.JPG" class="action-img" alt="Projet Olution, plateforme et pratique de terrain">
                 <h3>Un projet aux facettes multiples</h3>
                 <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  <i class="bi bi-quote quote-icon-left"></i>
                   La plateforme olution.info en est un des éléments centraux, proposant des dizaines d'espaces de formation. La pratique de terrain est également majeure.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
             </div><!-- End action item -->
             
             <div class="swiper-slide">
               <div class="action-item">
-                <img src="assets/img/actions/_DSC2651.JPG" class="action-img" alt="Le mouvement permanent, Olution en évolution">
+                <img loading="lazy" src="assets/img/actions/_DSC2651.JPG" class="action-img" alt="Le mouvement permanent, Olution en évolution">
                 <h3>Le mouvement permanent</h3>
                 <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  <i class="bi bi-quote quote-icon-left"></i>
                   Olution change de jour en jour. Il évolue, se construit, se renouvelle sans cesse. C'est son essence.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
             </div><!-- End action item -->
@@ -404,7 +407,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
         <div class="row portfolio-container" data-en-bref-count="8">
             
           <div class="col-lg-4 col-md-6 portfolio-item filter-bateau" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/IMG_4519.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Mangoove, à la découverte de la mangrove"><img src="assets/img/portfolio/dehors/IMG_4519.JPG" class="img-fluid" alt="Mangoove, à la découverte de la mangrove"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/IMG_4519.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Mangoove, à la découverte de la mangrove"><img loading="lazy" src="assets/img/portfolio/dehors/IMG_4519.JPG" class="img-fluid" alt="Mangoove, à la découverte de la mangrove"></a></div>
             <div class="portfolio-info">
               <h4>"Mangoove", à la découverte de la mangrove</h4>
               <p>Libreville - Gabon</p>
@@ -412,7 +415,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-bateau" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/DSC03218.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="La forêt pour tous, sortie naturaliste en fauteuil roulant"><img src="assets/img/portfolio/dehors/DSC03218.JPG" class="img-fluid" alt="La forêt pour tous, sortie naturaliste en fauteuil roulant"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/DSC03218.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="La forêt pour tous, sortie naturaliste en fauteuil roulant"><img loading="lazy" src="assets/img/portfolio/dehors/DSC03218.JPG" class="img-fluid" alt="La forêt pour tous, sortie naturaliste en fauteuil roulant"></a></div>
             <div class="portfolio-info">
               <h4>La forêt pour tous, une sortie naturaliste en fauteuil roulant</h4>
               <p>Essonne - France</p>
@@ -421,7 +424,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-bateau" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/_DSC2691.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Découverte de la brousse équatoriale"><img src="assets/img/portfolio/dehors/_DSC2691.JPG" class="img-fluid" alt="Découverte de la brousse équatoriale"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/_DSC2691.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Découverte de la brousse équatoriale"><img loading="lazy" src="assets/img/portfolio/dehors/_DSC2691.JPG" class="img-fluid" alt="Découverte de la brousse équatoriale"></a></div>
             <div class="portfolio-info">
               <h4>Découverte de la brousse équatoriale</h4>
               <p>Nyonié - Gabon</p>
@@ -429,7 +432,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-bateau" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/1447416383867.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Kayak au collège"><img src="assets/img/portfolio/dehors/1447416383867.jpg" class="img-fluid" alt="Kayak au collège"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/1447416383867.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Kayak au collège"><img loading="lazy" src="assets/img/portfolio/dehors/1447416383867.jpg" class="img-fluid" alt="Kayak au collège"></a></div>
             <div class="portfolio-info">
               <h4>Kayak au collège</h4>
               <p>Yvelines - France</p>
@@ -437,7 +440,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-bateau" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/IMG_4179.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Mangroove à Nyonié, restauration d'une mangrove"><img src="assets/img/portfolio/dehors/IMG_4179.jpg" class="img-fluid" alt="Mangroove à Nyonié, restauration d'une mangrove"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/IMG_4179.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Mangroove à Nyonié, restauration d'une mangrove"><img loading="lazy" src="assets/img/portfolio/dehors/IMG_4179.jpg" class="img-fluid" alt="Mangroove à Nyonié, restauration d'une mangrove"></a></div>
             <div class="portfolio-info">
               <h4>"Mangroove à Nyonié", restauration d'une mangrove abîmée</h4>
               <p>Nyonié - Gabon</p>
@@ -445,7 +448,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-bateau" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/_DSC2570.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Croquis du paysage"><img src="assets/img/portfolio/dehors/_DSC2570.JPG" class="img-fluid" alt="Croquis du paysage"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/_DSC2570.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Croquis du paysage"><img loading="lazy" src="assets/img/portfolio/dehors/_DSC2570.JPG" class="img-fluid" alt="Croquis du paysage"></a></div>
             <div class="portfolio-info">
               <h4>Croquis du paysage</h4>
               <p>Nyonié - Gabon</p>
@@ -453,7 +456,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
           
         <div class="col-lg-4 col-md-6 portfolio-item filter-bateau" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/_DSC2638.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Ramassage d'ordures"><img src="assets/img/portfolio/dehors/_DSC2638.JPG" class="img-fluid" alt="Ramassage d'ordures sur les plages au Gabon"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/_DSC2638.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Ramassage d'ordures"><img loading="lazy" src="assets/img/portfolio/dehors/_DSC2638.JPG" class="img-fluid" alt="Ramassage d'ordures sur les plages au Gabon"></a></div>
             <div class="portfolio-info">
               <h4>Ramassage d'ordures</h4>
               <p>plages au Gabon</p>
@@ -461,7 +464,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-bateau" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/Une-vie-en-foret.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Tournage avec Francis Hallé"><img src="assets/img/portfolio/dehors/Une-vie-en-foret.jpg" class="img-fluid" alt="Tournage avec Francis Hallé"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/Une-vie-en-foret.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Tournage avec Francis Hallé"><img loading="lazy" src="assets/img/portfolio/dehors/Une-vie-en-foret.jpg" class="img-fluid" alt="Tournage avec Francis Hallé"></a></div>
             <div class="portfolio-info">
               <h4>Tournage avec Francis Hallé</h4>
               <p>Gabon</p>
@@ -469,7 +472,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-bateau" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/_DSC2573.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Exploration de l'environnement"><img src="assets/img/portfolio/dehors/_DSC2573.JPG" class="img-fluid" alt="Exploration de l'environnement, savane et jungle"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/_DSC2573.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Exploration de l'environnement"><img loading="lazy" src="assets/img/portfolio/dehors/_DSC2573.JPG" class="img-fluid" alt="Exploration de l'environnement, savane et jungle"></a></div>
             <div class="portfolio-info">
               <h4>Exploration de l'environnement</h4>
               <p>Savane et Jungle - Gabon</p>
@@ -477,7 +480,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-brousse" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/dedans/DSC_0096.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Interview production minisérie SAS"><img src="assets/img/portfolio/dedans/DSC_0096.JPG" class="img-fluid" alt="Interview production minisérie SAS"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/dedans/DSC_0096.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Interview production minisérie SAS"><img loading="lazy" src="assets/img/portfolio/dedans/DSC_0096.JPG" class="img-fluid" alt="Interview production minisérie SAS"></a></div>
             <div class="portfolio-info">
               <h4>Interview concernant la production d'une minisérie (SAS)</h4>
               <p>Yvelines - France</p>
@@ -485,7 +488,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-brousse" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/dedans/DSC04815.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SAS, dispositif contre le décrochage scolaire"><img src="assets/img/portfolio/dedans/DSC04815.JPG" class="img-fluid" alt="SAS, dispositif contre le décrochage scolaire"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/dedans/DSC04815.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SAS, dispositif contre le décrochage scolaire"><img loading="lazy" src="assets/img/portfolio/dedans/DSC04815.JPG" class="img-fluid" alt="SAS, dispositif contre le décrochage scolaire"></a></div>
             <div class="portfolio-info">
               <h4>SAS - dispositif de lutte contre le décrochage scolaire</h4>
               <p>Yvelines - France</p>
@@ -493,7 +496,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
           
                     <div class="col-lg-4 col-md-6 portfolio-item filter-brousse" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/dedans/DSC_0078.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SEGPA horticulture"><img src="assets/img/portfolio/dedans/DSC_0078.JPG" class="img-fluid" alt="SEGPA horticulture"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/dedans/DSC_0078.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SEGPA horticulture"><img loading="lazy" src="assets/img/portfolio/dedans/DSC_0078.JPG" class="img-fluid" alt="SEGPA horticulture"></a></div>
             <div class="portfolio-info">
               <h4>SEGPA horticulture</h4>
               <p>Yvelines - France</p>
@@ -501,7 +504,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-brousse" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/dedans/test epnc5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Concours photos"><img src="assets/img/portfolio/dedans/test epnc5.jpg" class="img-fluid" alt="Concours photos"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/dedans/test epnc5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Concours photos"><img loading="lazy" src="assets/img/portfolio/dedans/test epnc5.jpg" class="img-fluid" alt="Concours photos"></a></div>
             <div class="portfolio-info">
               <h4>Concours photos</h4>
               <p>Yvelines - France</p>
@@ -509,7 +512,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-brousse" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/dedans/20181107_091551.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Maquette du système solaire"><img src="assets/img/portfolio/dedans/20181107_091551.jpg" class="img-fluid" alt="Maquette du système solaire"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/dedans/20181107_091551.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Maquette du système solaire"><img loading="lazy" src="assets/img/portfolio/dedans/20181107_091551.jpg" class="img-fluid" alt="Maquette du système solaire"></a></div>
             <div class="portfolio-info">
               <h4>Construction d'une maquette du système solaire</h4>
               <p>Libreville - Gabon</p>
@@ -517,7 +520,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-brousse" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/dedans/DSC04897.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Œil observé à la loupe à main"><img src="assets/img/portfolio/dedans/DSC04897.JPG" class="img-fluid" alt="Œil observé à la loupe à main"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/dedans/DSC04897.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Œil observé à la loupe à main"><img loading="lazy" src="assets/img/portfolio/dedans/DSC04897.JPG" class="img-fluid" alt="Œil observé à la loupe à main"></a></div>
             <div class="portfolio-info">
               <h4>Œil, observé à la loupe à main</h4>
               <p>Yvelines - France</p>
@@ -525,7 +528,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-brousse" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/dedans/20180411_111457.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Opération plante ton palétuvier"><img src="assets/img/portfolio/dedans/20180411_111457.jpg" class="img-fluid" alt="Opération plante ton palétuvier"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/dedans/20180411_111457.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Opération plante ton palétuvier"><img loading="lazy" src="assets/img/portfolio/dedans/20180411_111457.jpg" class="img-fluid" alt="Opération plante ton palétuvier"></a></div>
             <div class="portfolio-info">
               <h4>Opération "plante ton palétuvier"</h4>
               <p>Libreville - Gabon</p>
@@ -533,7 +536,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-brousse" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/dedans/DSC_0329.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Dispositif Ecocollège"><img src="assets/img/portfolio/dedans/DSC_0329.JPG" class="img-fluid" alt="Dispositif Ecocollège"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/dedans/DSC_0329.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Dispositif Ecocollège"><img loading="lazy" src="assets/img/portfolio/dedans/DSC_0329.JPG" class="img-fluid" alt="Dispositif Ecocollège"></a></div>
             <div class="portfolio-info">
               <h4>Dispositif Ecocollège</h4>
               <p>Yvelines - France</p>
@@ -541,7 +544,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-urbain" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/IMG_20220922_124635_565.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="n3, salle de cours innovante"><img src="assets/img/portfolio/urbain/IMG_20220922_124635_565.jpg" class="img-fluid" alt="n3, salle de cours innovante"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/IMG_20220922_124635_565.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="n3, salle de cours innovante"><img loading="lazy" src="assets/img/portfolio/urbain/IMG_20220922_124635_565.jpg" class="img-fluid" alt="n3, salle de cours innovante"></a></div>
             <div class="portfolio-info">
               <h4>n3, une salle de cours innovante</h4>
               <p>Casablanca - Maroc</p>
@@ -549,7 +552,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-urbain" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/IMG_20220925_185523_261.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Farmflow Prototype 3, aquaponie à l'école"><img src="assets/img/portfolio/urbain/IMG_20220925_185523_261.jpg" class="img-fluid" alt="Farmflow Prototype 3, aquaponie à l'école"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/IMG_20220925_185523_261.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Farmflow Prototype 3, aquaponie à l'école"><img loading="lazy" src="assets/img/portfolio/urbain/IMG_20220925_185523_261.jpg" class="img-fluid" alt="Farmflow Prototype 3, aquaponie à l'école"></a></div>
             <div class="portfolio-info">
               <h4>Farmflow Prototype 3, l'aquaponie à l'école</h4>
               <p>Casablanca - Maroc</p>
@@ -557,7 +560,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-urbain" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/phasmes.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Phasmopolis, élevage d'insectes"><img src="assets/img/portfolio/urbain/phasmes.jpg" class="img-fluid" alt="Phasmopolis, élevage d'insectes"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/phasmes.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Phasmopolis, élevage d'insectes"><img loading="lazy" src="assets/img/portfolio/urbain/phasmes.jpg" class="img-fluid" alt="Phasmopolis, élevage d'insectes"></a></div>
             <div class="portfolio-info">
               <h4>Phasmopolis, un élevage d'insectes</h4>
               <p>Casablanca - Maroc</p>
@@ -565,7 +568,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-urbain" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/DSC03966.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Le club Bio"><img src="assets/img/portfolio/urbain/DSC03966.JPG" class="img-fluid" alt="Le club Bio"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/DSC03966.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Le club Bio"><img loading="lazy" src="assets/img/portfolio/urbain/DSC03966.JPG" class="img-fluid" alt="Le club Bio"></a></div>
             <div class="portfolio-info">
               <h4>Le club Bio</h4>
               <p>Yvelines - France</p>
@@ -573,7 +576,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-urbain" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/IMG_20220912_102755_859.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Le tiny garden, potager urbain"><img src="assets/img/portfolio/urbain/IMG_20220912_102755_859.jpg" class="img-fluid" alt="Le tiny garden, potager urbain"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/IMG_20220912_102755_859.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Le tiny garden, potager urbain"><img loading="lazy" src="assets/img/portfolio/urbain/IMG_20220912_102755_859.jpg" class="img-fluid" alt="Le tiny garden, potager urbain"></a></div>
             <div class="portfolio-info">
               <h4>Le tiny garden, un potager urbain</h4>
               <p>Casablanca - Maroc</p>
@@ -581,7 +584,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-urbain" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/DSC06352.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Culture de pleurotes"><img src="assets/img/portfolio/urbain/DSC06352.JPG" class="img-fluid" alt="Culture de pleurotes"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/DSC06352.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Culture de pleurotes"><img loading="lazy" src="assets/img/portfolio/urbain/DSC06352.JPG" class="img-fluid" alt="Culture de pleurotes"></a></div>
             <div class="portfolio-info">
               <h4>Culture de pleurotes</h4>
               <p>Yvelines - France</p>
@@ -590,7 +593,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-fictions" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/jeux/20210528_182706.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Jouons ! Cartes Sciences et Technologies"><img src="assets/img/portfolio/jeux/20210528_182706.jpg" class="img-fluid" alt="Jouons ! Cartes Sciences et Technologies"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/jeux/20210528_182706.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Jouons ! Cartes Sciences et Technologies"><img loading="lazy" src="assets/img/portfolio/jeux/20210528_182706.jpg" class="img-fluid" alt="Jouons ! Cartes Sciences et Technologies"></a></div>
             <div class="portfolio-info">
               <h4>"Jouons !", des cartes à jouer en Sciences et Technologies</h4>
               <p>Casablanca - Maroc</p>
@@ -598,7 +601,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-fictions" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/jeux/2022-05-28.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Scape New Order, jeu de rôle Genially"><img src="assets/img/portfolio/jeux/2022-05-28.png" class="img-fluid" alt="Scape New Order, jeu de rôle Genially"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/jeux/2022-05-28.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Scape New Order, jeu de rôle Genially"><img loading="lazy" src="assets/img/portfolio/jeux/2022-05-28.png" class="img-fluid" alt="Scape New Order, jeu de rôle Genially"></a></div>
             <div class="portfolio-info">
               <h4>"Scape New Order", un jeu de rôle Genially pour le confinement</h4>
               <p>Casablanca - Maroc</p>
@@ -606,7 +609,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-fictions" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/jeux/IMG-4684.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Les chroniques de tonton du bled"><img src="assets/img/portfolio/jeux/IMG-4684.jpg" class="img-fluid" alt="Les chroniques de tonton du bled, Imilchil"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/jeux/IMG-4684.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Les chroniques de tonton du bled"><img loading="lazy" src="assets/img/portfolio/jeux/IMG-4684.jpg" class="img-fluid" alt="Les chroniques de tonton du bled, Imilchil"></a></div>
             <div class="portfolio-info">
               <h4>"Les chroniques de tonton du bled", une histoire à Imilchil</h4>
               <p>Casablanca - Maroc</p>
@@ -614,7 +617,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-fictions" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/jeux/IMG_20220202_125503_1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="PSE Game, Prévention Santé Environnement"><img src="assets/img/portfolio/jeux/IMG_20220202_125503_1.jpg" class="img-fluid" alt="PSE Game, Prévention Santé Environnement"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/jeux/IMG_20220202_125503_1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="PSE Game, Prévention Santé Environnement"><img loading="lazy" src="assets/img/portfolio/jeux/IMG_20220202_125503_1.jpg" class="img-fluid" alt="PSE Game, Prévention Santé Environnement"></a></div>
             <div class="portfolio-info">
               <h4>"PSE Game", une autre manière d'aborder la Prévention Santé Environnement</h4>
               <p>Casablanca - Maroc</p>
@@ -622,7 +625,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-fictions" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/jeux/_DSC5126.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Noël sous l'équateur"><img src="assets/img/portfolio/jeux/_DSC5126.JPG" class="img-fluid" alt="Noël sous l'équateur"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/jeux/_DSC5126.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Noël sous l'équateur"><img loading="lazy" src="assets/img/portfolio/jeux/_DSC5126.JPG" class="img-fluid" alt="Noël sous l'équateur"></a></div>
             <div class="portfolio-info">
               <h4>Noël sous l'équateur</h4>
               <p>Libreville - Gabon</p>
@@ -630,7 +633,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-prototypage" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/tech/2022-05-28 (1) (2).png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Farmflow, start-up d'avenir"><img src="assets/img/portfolio/tech/2022-05-28 (1) (2).png" class="img-fluid" alt="Farmflow, start-up d'avenir"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/tech/2022-05-28 (1) (2).png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Farmflow, start-up d'avenir"><img loading="lazy" src="assets/img/portfolio/tech/2022-05-28 (1) (2).png" class="img-fluid" alt="Farmflow, start-up d'avenir"></a></div>
             <div class="portfolio-info">
               <h4>Farmflow, une start-up d'avenir</h4>
               <p>Casablanca - Maroc</p>
@@ -638,7 +641,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-prototypage" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/tech/IMG_20220706_141504_5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="L'aquaponie connectée"><img src="assets/img/portfolio/tech/IMG_20220706_141504_5.jpg" class="img-fluid" alt="L'aquaponie connectée"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/tech/IMG_20220706_141504_5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="L'aquaponie connectée"><img loading="lazy" src="assets/img/portfolio/tech/IMG_20220706_141504_5.jpg" class="img-fluid" alt="L'aquaponie connectée"></a></div>
             <div class="portfolio-info">
               <h4>L'aquaponie connectée</h4>
               <p>Casablanca - Maroc</p>
@@ -646,7 +649,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-prototypage" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/tech/IMG_20190130_075846_0.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="La grande forêt de l'équateur, expo physique et numérique"><img src="assets/img/portfolio/tech/IMG_20190130_075846_0.jpg" class="img-fluid" alt="La grande forêt de l'équateur, expo physique et numérique"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/tech/IMG_20190130_075846_0.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="La grande forêt de l'équateur, expo physique et numérique"><img loading="lazy" src="assets/img/portfolio/tech/IMG_20190130_075846_0.jpg" class="img-fluid" alt="La grande forêt de l'équateur, expo physique et numérique"></a></div>
             <div class="portfolio-info">
               <h4>La grande forêt de l'équateur, une expo physique et numérique</h4>
               <p>Libreville - Gabon</p>
@@ -654,7 +657,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-prototypage" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/tech/Diapositive3.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Serious Game SVT, club WebGeek"><img src="assets/img/portfolio/tech/Diapositive3.JPG" class="img-fluid" alt="Serious Game SVT, club WebGeek"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/tech/Diapositive3.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Serious Game SVT, club WebGeek"><img loading="lazy" src="assets/img/portfolio/tech/Diapositive3.JPG" class="img-fluid" alt="Serious Game SVT, club WebGeek"></a></div>
             <div class="portfolio-info">
               <h4>Les Serious Game SVT, proposé par le "club WebGeek"</h4>
               <p>Yvelines - France</p>
@@ -662,7 +665,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-prototypage" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/tech/IMG-20220704-WA0015.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Farmflow au salon BPI"><img src="assets/img/portfolio/tech/IMG-20220704-WA0015.jpg" class="img-fluid" alt="Farmflow au salon BPI"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/tech/IMG-20220704-WA0015.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Farmflow au salon BPI"><img loading="lazy" src="assets/img/portfolio/tech/IMG-20220704-WA0015.jpg" class="img-fluid" alt="Farmflow au salon BPI"></a></div>
             <div class="portfolio-info">
               <h4>Farmflow au salon de la Banque Publique d'Investissements</h4>
               <p>Casablanca - Maroc</p>
@@ -670,7 +673,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-bateau" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/poesie-exterieur.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Poésie en extérieur"><img src="assets/img/portfolio/dehors/poesie-exterieur.png" class="img-fluid" alt="Poésie en extérieur"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/poesie-exterieur.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Poésie en extérieur"><img loading="lazy" src="assets/img/portfolio/dehors/poesie-exterieur.png" class="img-fluid" alt="Poésie en extérieur"></a></div>
             <div class="portfolio-info">
               <h4>Poésie en extérieur</h4>
               <p>Casablanca - Maroc</p>
@@ -678,7 +681,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-bateau" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/cours-dehors.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Cours dehors"><img src="assets/img/portfolio/dehors/cours-dehors.png" class="img-fluid" alt="Cours dehors"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/cours-dehors.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Cours dehors"><img loading="lazy" src="assets/img/portfolio/dehors/cours-dehors.png" class="img-fluid" alt="Cours dehors"></a></div>
             <div class="portfolio-info">
               <h4>Cours dehors</h4>
               <p>Casablanca - Maroc</p>
@@ -686,7 +689,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-brousse" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/dedans/analyse-chimique.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Analyse chimique"><img src="assets/img/portfolio/dedans/analyse-chimique.png" class="img-fluid" alt="Analyse chimique"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/dedans/analyse-chimique.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Analyse chimique"><img loading="lazy" src="assets/img/portfolio/dedans/analyse-chimique.png" class="img-fluid" alt="Analyse chimique"></a></div>
             <div class="portfolio-info">
               <h4>Analyse chimique</h4>
               <p>Casablanca - Maroc</p>
@@ -694,7 +697,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-fictions" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/dedans/jeu-gnomes-licornes.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Le jeu Gnomes et Licornes"><img src="assets/img/portfolio/dedans/jeu-gnomes-licornes.png" class="img-fluid" alt="Le jeu Gnomes et Licornes"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/dedans/jeu-gnomes-licornes.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Le jeu Gnomes et Licornes"><img loading="lazy" src="assets/img/portfolio/dedans/jeu-gnomes-licornes.png" class="img-fluid" alt="Le jeu Gnomes et Licornes"></a></div>
             <div class="portfolio-info">
               <h4>Le jeu Gnomes et Licornes</h4>
               <p>Casablanca - Maroc</p>
@@ -702,7 +705,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-urbain" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/elevage-insectes.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Élevage d'insectes à grande échelle"><img src="assets/img/portfolio/urbain/elevage-insectes.png" class="img-fluid" alt="Élevage d'insectes à grande échelle"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/elevage-insectes.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Élevage d'insectes à grande échelle"><img loading="lazy" src="assets/img/portfolio/urbain/elevage-insectes.png" class="img-fluid" alt="Élevage d'insectes à grande échelle"></a></div>
             <div class="portfolio-info">
               <h4>Élevage d'insectes à grande échelle</h4>
               <p>Casablanca - Maroc</p>
@@ -710,7 +713,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-urbain" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/odd-et-n3.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="ODD et n³"><img src="assets/img/portfolio/urbain/odd-et-n3.png" class="img-fluid" alt="ODD et n³"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/odd-et-n3.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="ODD et n³"><img loading="lazy" src="assets/img/portfolio/urbain/odd-et-n3.png" class="img-fluid" alt="ODD et n³"></a></div>
             <div class="portfolio-info">
               <h4>ODD et n³</h4>
               <p>Casablanca - Maroc</p>
@@ -718,7 +721,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-urbain" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/lombricomposteur.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Lombricomposteur"><img src="assets/img/portfolio/urbain/lombricomposteur.png" class="img-fluid" alt="Lombricomposteur"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/lombricomposteur.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Lombricomposteur"><img loading="lazy" src="assets/img/portfolio/urbain/lombricomposteur.png" class="img-fluid" alt="Lombricomposteur"></a></div>
             <div class="portfolio-info">
               <h4>Lombricomposteur</h4>
               <p>Casablanca - Maroc</p>
@@ -726,7 +729,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-urbain" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/potager-urbain.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Potager urbain"><img src="assets/img/portfolio/urbain/potager-urbain.png" class="img-fluid" alt="Potager urbain"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/potager-urbain.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Potager urbain"><img loading="lazy" src="assets/img/portfolio/urbain/potager-urbain.png" class="img-fluid" alt="Potager urbain"></a></div>
             <div class="portfolio-info">
               <h4>Potager urbain</h4>
               <p>Casablanca - Maroc</p>
@@ -734,7 +737,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-urbain" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/aquaponie-connectee.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Aquaponie connectée"><img src="assets/img/portfolio/urbain/aquaponie-connectee.png" class="img-fluid" alt="Aquaponie connectée"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/aquaponie-connectee.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Aquaponie connectée"><img loading="lazy" src="assets/img/portfolio/urbain/aquaponie-connectee.png" class="img-fluid" alt="Aquaponie connectée"></a></div>
             <div class="portfolio-info">
               <h4>Aquaponie connectée</h4>
               <p>Casablanca - Maroc</p>
@@ -742,7 +745,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-urbain" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/maison-chat-connectee.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Maison pour chat connectée"><img src="assets/img/portfolio/urbain/maison-chat-connectee.png" class="img-fluid" alt="Maison pour chat connectée"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/maison-chat-connectee.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Maison pour chat connectée"><img loading="lazy" src="assets/img/portfolio/urbain/maison-chat-connectee.png" class="img-fluid" alt="Maison pour chat connectée"></a></div>
             <div class="portfolio-info">
               <h4>Maison pour chat connectée</h4>
               <p>Casablanca - Maroc</p>
@@ -750,7 +753,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-urbain" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/expression-libre-n3.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Expression libre dans n³"><img src="assets/img/portfolio/urbain/expression-libre-n3.png" class="img-fluid" alt="Expression libre dans n³"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/expression-libre-n3.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Expression libre dans n³"><img loading="lazy" src="assets/img/portfolio/urbain/expression-libre-n3.png" class="img-fluid" alt="Expression libre dans n³"></a></div>
             <div class="portfolio-info">
               <h4>Expression libre dans n³</h4>
               <p>Casablanca - Maroc</p>
@@ -758,7 +761,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-urbain" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/porte-ouverte-n3.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Porte ouverte de la salle aérée n³"><img src="assets/img/portfolio/urbain/porte-ouverte-n3.png" class="img-fluid" alt="Porte ouverte de la salle aérée n³"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/porte-ouverte-n3.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Porte ouverte de la salle aérée n³"><img loading="lazy" src="assets/img/portfolio/urbain/porte-ouverte-n3.png" class="img-fluid" alt="Porte ouverte de la salle aérée n³"></a></div>
             <div class="portfolio-info">
               <h4>Porte ouverte de la salle aérée n³</h4>
               <p>Casablanca - Maroc</p>
@@ -766,7 +769,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-prototypage" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/tech/station-meteo-connectee.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Station météo connectée"><img src="assets/img/portfolio/tech/station-meteo-connectee.png" class="img-fluid" alt="Station météo connectée"></a></div>
+            <div class="portfolio-img"><a href="assets/img/portfolio/tech/station-meteo-connectee.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Station météo connectée"><img loading="lazy" src="assets/img/portfolio/tech/station-meteo-connectee.png" class="img-fluid" alt="Station météo connectée"></a></div>
             <div class="portfolio-info">
               <h4>Station météo connectée</h4>
               <p>Casablanca - Maroc</p>
@@ -943,65 +946,65 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
 
             <div class="swiper-slide" data-swiper-autoplay="12000">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/olivier-arnould-laurent.png" class="testimonial-img" alt="Olivier ARNOULD-LAURENT">
+                <img loading="lazy" src="assets/img/testimonials/olivier-arnould-laurent.png" class="testimonial-img" alt="Olivier ARNOULD-LAURENT">
                 <h3>Olivier ARNOULD-LAURENT</h3>
                 <h4>Enseignant certifié — Sciences &amp; Technologie</h4>
                 <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  <i class="bi bi-quote quote-icon-left"></i>
                   Réseau AEFE · Lycée Lyautey de Casablanca · Académie de Versailles · 18 ans d'expérience terrain en France, au Gabon et au Maroc
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
             </div><!-- End testimonial item -->
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="Accompagner">
+                <img loading="lazy" src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="Accompagner">
                 <h3>Accompagner</h3>
                 <h4>Du plus petit à l'âge au temps de la sagesse</h4>
                 <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  <i class="bi bi-quote quote-icon-left"></i>
                   Enseignant depuis de nombreuses années, mais aussi guide, encadrant dans de nombreux contextes. Partager et aider les autres à parcourir leur propre chemin charpente mon parcours.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
             </div><!-- End testimonial item -->
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="Nature">
+                <img loading="lazy" src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="Nature">
                 <h3>Nature</h3>
                 <h4>Vivre dehors fait partie de mon ADN</h4>
                 <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  <i class="bi bi-quote quote-icon-left"></i>
                   Chance m'a été donnée de découvrir des endroits variés. Du pôle nord à l'équateur, à pied, en ski, ou en mer. En contexte professionnel ou personnel.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
             </div><!-- End testimonial item -->
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="Culture">
+                <img loading="lazy" src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="Culture">
                 <h3>Culture</h3>
                 <h4>Être acteur dans son environnement</h4>
                 <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  <i class="bi bi-quote quote-icon-left"></i>
                   A siégé et siège dans de nombreuses instances associatives et institutionnelles. Qu'il s'agisse d'art, de restauration, de commerce, ou de pilotage de projets.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
             </div><!-- End testimonial item -->
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="Tech">
+                <img loading="lazy" src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="Tech">
                 <h3>Tech</h3>
                 <h4>Faire quelque chose de ses mains</h4>
                 <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  <i class="bi bi-quote quote-icon-left"></i>
                   Geek, touche à tout. Créer là où il n'existe rien est un leitmotiv. Et si l'on ne sait pas comment faire, on apprend. IRL ou virtuel.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
             </div><!-- End testimonial item -->
@@ -1039,13 +1042,13 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
   <!-- Vendor JS (CDN — pas besoin de assets/vendor/) -->
   <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs@1.2.1/dist/purecounter_vanilla.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/js/glightbox.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/js/glightbox.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/isotope-layout@3.0.6/dist/isotope.pkgd.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/waypoints@4.0.1/lib/noframework.waypoints.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>
 
