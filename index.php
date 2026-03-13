@@ -4,7 +4,7 @@
 <head>
 
 <?php
-$version = '4.22';
+$version = '4.23';
 $base = '';
 // URL canonique pour le SEO (page d'accueil officielle olution.info)
 $canonical_url = 'https://olution.info/';
@@ -939,7 +939,6 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
     <div id="testi" class="section-title" data-aos="fade-up">
       <span>Me concernant</span>
       <h2>Me concernant</h2>
-      <p>Olivier ARNOULD-LAURENT — Enseignant certifié — Sciences &amp; Technologie · Réseau AEFE · Lycée Lyautey de Casablanca · Académie de Versailles · <?php echo $annees_experience; ?> ans d'expérience terrain en France, au Gabon et au Maroc</p>
     </div>
 
     <section id="testimonials" class="testimonials">
@@ -948,6 +947,19 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
 
         <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
           <div class="swiper-wrapper">
+
+            <div class="swiper-slide" data-swiper-autoplay="12000">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/olivier-arnould-laurent.png" class="testimonial-img" alt="Olivier ARNOULD-LAURENT">
+                <h3>Olivier ARNOULD-LAURENT</h3>
+                <h4>Enseignant certifié — Sciences &amp; Technologie</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Réseau AEFE · Lycée Lyautey de Casablanca · Académie de Versailles · 18 ans d'expérience terrain en France, au Gabon et au Maroc
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
 
             <div class="swiper-slide">
               <div class="testimonial-item">
