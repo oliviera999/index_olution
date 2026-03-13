@@ -442,19 +442,19 @@ h6 {
   background-size: cover;
   background-position: center center;
   position: relative;
-  animation: heroFadeIn 1.2s ease-out forwards, kenBurns 30s ease-in-out 2s infinite;
+  animation: heroFadeIn 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards, kenBurns 30s ease-in-out 2.5s infinite;
 }
 
 @keyframes heroFadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 @keyframes kenBurns {
-  0%, 100% { background-position: 50% 50%; background-size: 100%; }
-  25% { background-position: 55% 52%; background-size: 105%; }
-  50% { background-position: 48% 55%; background-size: 108%; }
-  75% { background-position: 52% 48%; background-size: 105%; }
+  0% { background-position: 50% 50%; background-size: 100%; }
+  33% { background-position: 52% 51%; background-size: 102%; }
+  66% { background-position: 49% 52%; background-size: 103%; }
+  100% { background-position: 50% 50%; background-size: 100%; }
 }
 
 #hero:before {
