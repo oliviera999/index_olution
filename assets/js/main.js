@@ -234,7 +234,7 @@
   }
 
   /**
-   * Testimonials slider — autoplay ne démarre que lorsque la section est visible
+   * Testimonials slider — autoplay ne démarre que lorsque le slider est totalement affiché
    */
   const testimonialsSlider = document.querySelector('.testimonials-slider');
   if (testimonialsSlider) {
@@ -254,18 +254,15 @@
     });
     testimonialsSwiper.autoplay.stop();
 
-    const testimonialsSection = document.querySelector('#testimonials');
-    if (testimonialsSection) {
-      const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            testimonialsSwiper.autoplay.start();
-            observer.disconnect();
-          }
-        });
-      }, { threshold: 1 });
-      observer.observe(testimonialsSection);
-    }
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          testimonialsSwiper.autoplay.start();
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 1 });
+    observer.observe(testimonialsSlider);
   }
   
     /**
