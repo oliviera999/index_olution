@@ -4,7 +4,7 @@
 <head>
 
 <?php
-$version = '4.18';
+$version = '4.19';
 $base = '';
 // URL canonique pour le SEO (page d'accueil officielle olution.info)
 $canonical_url = 'https://olution.info/';

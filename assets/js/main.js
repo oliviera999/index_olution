@@ -234,22 +234,39 @@
   }
 
   /**
-   * Testimonials slider
+   * Testimonials slider — autoplay ne démarre que lorsque la section est visible
    */
-  new Swiper('.testimonials-slider', {
-    speed: 600,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    slidesPerView: 'auto',
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
+  const testimonialsSlider = document.querySelector('.testimonials-slider');
+  if (testimonialsSlider) {
+    const testimonialsSwiper = new Swiper('.testimonials-slider', {
+      speed: 600,
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false
+      },
+      slidesPerView: 'auto',
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true
+      }
+    });
+    testimonialsSwiper.autoplay.stop();
+
+    const testimonialsSection = document.querySelector('#testimonials');
+    if (testimonialsSection) {
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            testimonialsSwiper.autoplay.start();
+            observer.disconnect();
+          }
+        });
+      }, { threshold: 0.2 });
+      observer.observe(testimonialsSection);
     }
-  });
+  }
   
     /**
    * Actions slider
