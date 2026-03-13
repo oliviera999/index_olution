@@ -459,7 +459,7 @@ h6 {
 
 #hero:before {
   content: "";
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(20, 80, 60, 0.4) 100%);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(20, 80, 60, 0.25) 100%);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -495,6 +495,9 @@ h6 {
 #hero .hero-tagline {
   animation: heroStagger 0.5s ease-out 0.8s forwards;
   opacity: 0;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
 }
 #hero .hero-audience-buttons {
   animation: heroStagger 0.5s ease-out 1s forwards;
@@ -901,6 +904,18 @@ section {
   background: url("../img/me.jpg") center center no-repeat;
   background-size: cover;
   min-height: 500px;
+  animation: aboutImageFloat 4s ease-in-out 1.5s infinite;
+  border-radius: 12px;
+  box-shadow: var(--shadow-card);
+}
+
+@keyframes aboutImageFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .about .skills-content {

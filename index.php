@@ -4,7 +4,7 @@
 <head>
 
 <?php
-$version = '4.20';
+$version = '4.22';
 $base = '';
 // URL canonique pour le SEO (page d'accueil officielle olution.info)
 $canonical_url = 'https://olution.info/';
@@ -318,7 +318,7 @@ $annees_experience = max(1, (int)date('Y') - $carriere_debut);
         </div>
 
         <div class="row">
-          <div class="image col-lg-4 d-flex align-items-stretch justify-content-center justify-content-lg-start"></div>
+          <div class="image col-lg-4 d-flex align-items-stretch justify-content-center justify-content-lg-start" data-aos="fade-right" data-aos-delay="100"></div>
           <div class="col-lg-8 d-flex flex-column align-items-stretch">
             <div class="content ps-lg-4 d-flex flex-column justify-content-center">
               <div class="row mt-n4">
