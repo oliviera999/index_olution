@@ -4,7 +4,7 @@
 <head>
 
 <?php
-$version = '4.28';
+$version = '4.29';
 $base = '';
 // URL canonique pour le SEO (page d'accueil officielle olution.info)
 $canonical_url = 'https://olution.info/';
@@ -163,7 +163,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
     <div id="act" class="section-title" data-aos="fade-up">
       <span>Pourquoi Olution ?</span>
       <h2>Pourquoi Olution ?</h2>
-      <p>Initialement, Olution est un projet qui propose des alternatives aux façons d'enseigner classiques.</p>
+      <p>Un projet qui propose des alternatives aux façons d'enseigner classiques.</p>
     </div>
 
     <div class="container mb-4">
@@ -173,7 +173,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
             <div class="card-body">
               <p class="audience-card-icon mb-2">🎓</p>
               <h5 class="card-title h6">Enseignant</h5>
-              <p class="card-text small mb-0">Des ressources pédagogiques innovantes, prêtes à l'emploi, gratuites</p>
+              <p class="card-text small mb-0">Des ressources pédagogiques innovantes, prêtes à l'emploi, partagées</p>
             </div>
           </div>
         </div>
@@ -191,7 +191,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
             <div class="card-body">
               <p class="audience-card-icon mb-2">🏫</p>
               <h5 class="card-title h6">Institution</h5>
-              <p class="card-text small mb-0">Un dispositif documenté, évalué, déployé dans 5 établissements AEFE</p>
+              <p class="card-text small mb-0">Un dispositif documenté, évalué, déployé dans 5 établissements</p>
             </div>
           </div>
         </div>
@@ -948,7 +948,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
               <div class="testimonial-item">
                 <img loading="lazy" src="assets/img/testimonials/olivier-arnould-laurent.png" class="testimonial-img" alt="Olivier ARNOULD-LAURENT">
                 <h3>Olivier ARNOULD-LAURENT</h3>
-                <h4>Enseignant certifié — Sciences &amp; Technologie</h4>
+                <h4>Enseignant certifié</h4>
                 <p>
                   <i class="bi bi-quote quote-icon-left"></i>
                   Réseau AEFE · Lycée Lyautey de Casablanca · Académie de Versailles · 18 ans d'expérience terrain en France, au Gabon et au Maroc
