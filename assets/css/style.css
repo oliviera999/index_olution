@@ -320,6 +320,11 @@ h6 {
 }
 
 @media (max-width: 991px) {
+  #header {
+    padding: 0 10px;
+    justify-content: flex-start;
+  }
+
   #header .navbar {
     display: flex;
     justify-content: space-between;
@@ -337,12 +342,12 @@ h6 {
 
 .mobile-login-btn {
   color: #ffab40;
-  font-size: 1.5rem;
+  font-size: 2.2rem;
   line-height: 0;
-  width: 44px;
-  height: 44px;
-  border-radius: 6px;
-  background: rgba(255, 171, 64, 0.15);
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  background: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -351,8 +356,7 @@ h6 {
 
 .mobile-login-btn:hover,
 .mobile-login-btn:focus {
-  background: rgba(255, 171, 64, 0.3);
-  color: #ffab40;
+  color: #ffc56a;
   outline: none;
 }
 
@@ -373,9 +377,9 @@ h6 {
   }
 
   .mobile-login-btn {
-    width: 48px;
-    height: 48px;
-    font-size: 1.75rem;
+    width: 56px;
+    height: 56px;
+    font-size: 2.2rem;
   }
 }
 
