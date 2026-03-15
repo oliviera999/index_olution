@@ -122,6 +122,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
   <header id="header" class="fixed-top d-flex justify-content-center align-items-center header-transparent">
 
     <nav id="navbar" class="navbar" aria-label="Menu principal">
+      <button type="button" class="mobile-nav-toggle d-lg-none" aria-label="Ouvrir le menu" aria-expanded="false"><i class="bi bi-list" aria-hidden="true"></i></button>
       <ul>
         <li><a class="nav-link scrollto active" href="#hero">Accueil</a></li>
         <li><a class="nav-link scrollto" href="#act">Pourquoi Olution ?</a></li>
@@ -133,7 +134,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
         <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         <li><a href="https://olution.info/my/" style="color:#ffab40" rel="noopener noreferrer" target="_blank"><i class="bi bi-box-arrow-in-right me-1" aria-hidden="true"></i>Se connecter</a></li>
       </ul>
-      <button type="button" class="mobile-nav-toggle d-lg-none" aria-label="Ouvrir le menu" aria-expanded="false"><i class="bi bi-list" aria-hidden="true"></i></button>
+      <a href="https://olution.info/my/" class="mobile-login-btn d-lg-none" aria-label="Se connecter" rel="noopener noreferrer" target="_blank"><i class="bi bi-box-arrow-in-right" aria-hidden="true"></i></a>
     </nav>
     <!-- .navbar -->
 

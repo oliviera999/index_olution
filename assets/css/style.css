@@ -322,7 +322,7 @@ h6 {
 @media (max-width: 991px) {
   #header .navbar {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     width: 100%;
   }
 
@@ -335,6 +335,31 @@ h6 {
   }
 }
 
+.mobile-login-btn {
+  color: #ffab40;
+  font-size: 1.5rem;
+  line-height: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 6px;
+  background: rgba(255, 171, 64, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.mobile-login-btn:hover,
+.mobile-login-btn:focus {
+  background: rgba(255, 171, 64, 0.3);
+  color: #ffab40;
+  outline: none;
+}
+
+.navbar-mobile .mobile-login-btn {
+  display: none;
+}
+
 @media (max-width: 575px) {
   .mobile-nav-toggle {
     width: 48px;
@@ -344,6 +369,12 @@ h6 {
   }
 
   .mobile-nav-toggle i {
+    font-size: 1.75rem;
+  }
+
+  .mobile-login-btn {
+    width: 48px;
+    height: 48px;
     font-size: 1.75rem;
   }
 }
@@ -363,7 +394,7 @@ h6 {
 .navbar-mobile .mobile-nav-toggle {
   position: absolute;
   top: 15px;
-  right: 15px;
+  left: 15px;
 }
 
 .navbar-mobile ul {
