@@ -132,9 +132,9 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
         <li><a class="nav-link scrollto" href="#services">Sites en lien</a></li>
         <li><a class="nav-link scrollto" href="#testi">Me concernant</a></li>
         <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-        <li><a href="https://olution.info/my/" style="color:#ffab40" rel="noopener noreferrer" target="_blank"><i class="bi bi-box-arrow-in-right me-1" aria-hidden="true"></i>Se connecter</a></li>
+        <li><a href="https://olution.info/my/" style="color:#ffab40"><i class="bi bi-box-arrow-in-right me-1" aria-hidden="true"></i>Se connecter</a></li>
       </ul>
-      <a href="https://olution.info/my/" class="mobile-login-btn d-lg-none" aria-label="Se connecter" rel="noopener noreferrer" target="_blank"><i class="bi bi-box-arrow-in-right" aria-hidden="true"></i></a>
+      <a href="https://olution.info/my/" class="mobile-login-btn d-lg-none" aria-label="Se connecter"><i class="bi bi-box-arrow-in-right" aria-hidden="true"></i></a>
     </nav>
     <!-- .navbar -->
 
