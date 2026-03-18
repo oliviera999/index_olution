@@ -1,0 +1,12 @@
+---
+description: Conventions générales du projet Index Olution (langue, chemins assets, vendor, structure HTML, version et déploiement)
+alwaysApply: true
+---
+
+# Conventions Index Olution
+
+- **Langue** : Répondre en français lorsque le projet ou les commentaires sont en français.
+- **Chemins assets** : Toujours relatifs à la racine du site, préfixe `assets/` (ex. `assets/img/entete/`, `assets/css/style.css`). Ne pas utiliser `../` pour les assets depuis `index.php`.
+- **Vendor** : Ne pas modifier les fichiers dans `assets/vendor/`. Personnalisation uniquement dans `assets/css/style.css` et `assets/js/main.js`.
+- **Structure HTML** : Conserver les IDs de sections (`#hero`, `#act`, `#about`, `#portfolio`, `#services`, `#testi`, `#contact`) et les classes Bootstrap/template pour que la navigation et le JS (main.js) continuent de fonctionner.
+- **Version et déploiement** : Après chaque modification du code, automatiquement : (1) incrémenter la version dans le fichier `VERSION` à la racine (source unique, lue par le pied de page), (2) committer les changements (message incluant la nouvelle version), (3) pousser vers le dépôt distant.

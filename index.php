@@ -4,7 +4,8 @@
 <head>
 
 <?php
-$version = '4.29';
+// Version lue depuis VERSION (source unique) — mise à jour du pied de page automatique
+$version = trim((string) @file_get_contents(__DIR__ . '/VERSION')) ?: '0.0.0';
 $base = '';
 // URL canonique pour le SEO (page d'accueil officielle olution.info)
 $canonical_url = 'https://olution.info/';
