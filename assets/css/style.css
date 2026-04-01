@@ -111,6 +111,12 @@ h6 {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+
+  /* AOS laisse souvent opacity:0 en inline ; sans ceci le contenu reste invisible */
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 /*--------------------------------------------------------------

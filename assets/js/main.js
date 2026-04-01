@@ -249,24 +249,71 @@
   }
 
   /**
-   * Portfolio isotope and filter — "En bref" : tirage aléatoire de quelques items à chaque chargement
+   * Initiate portfolio lightbox (après Isotope pour DOM stable — focus déplacé à l'ouverture)
    */
-  window.addEventListener('load', () => {
-    let portfolioContainer = select('.portfolio-container');
-    if (portfolioContainer) {
-      let items = portfolioContainer.querySelectorAll('.portfolio-item');
-      let count = parseInt(portfolioContainer.getAttribute('data-en-bref-count'), 10) || 8;
-      count = Math.min(count, items.length);
-      let order = Array.from({ length: items.length }, (_, i) => i);
-      for (let i = order.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1));
-        [order[i], order[j]] = [order[j], order[i]];
+  function initPortfolioLightbox() {
+    if (typeof GLightbox === 'undefined') return;
+    GLightbox({
+      selector: '.portfolio-lightbox',
+      openEffect: 'zoom',
+      closeEffect: 'zoom',
+      onOpen: function () {
+        setTimeout(function () {
+          var lb = document.querySelector('.glightbox-container');
+          if (lb) {
+            lb.setAttribute('tabindex', '-1');
+            lb.focus();
+          }
+        }, 50);
       }
-      for (let k = 0; k < count; k++) {
-        items[order[k]].classList.add('in-bref');
-      }
+    });
+  }
 
-      let portfolioIsotope = new Isotope(portfolioContainer, {
+  /**
+   * Recalcul AOS + grille portfolio quand le layout change (images lazy, fonts, etc.)
+   */
+  let portfolioIsotopeInstance = null;
+  let layoutRefreshTimer = null;
+  const scheduleLayoutAndAosRefresh = () => {
+    clearTimeout(layoutRefreshTimer);
+    layoutRefreshTimer = setTimeout(function () {
+      if (typeof AOS !== 'undefined') {
+        AOS.refresh();
+      }
+      if (portfolioIsotopeInstance) {
+        portfolioIsotopeInstance.layout();
+      }
+    }, 120);
+  };
+
+  /**
+   * Portfolio isotope and filter — "En bref" : tirage aléatoire de quelques items à chaque chargement.
+   * Exécution dès que le JS tourne (defer en fin de body), pas sur window.load : évite de bloquer
+   * toute l’init sur le chargement de toutes les images / ressources lentes.
+   */
+  const initPortfolio = () => {
+    const portfolioContainer = select('.portfolio-container');
+    if (!portfolioContainer) return;
+
+    const items = portfolioContainer.querySelectorAll('.portfolio-item');
+    if (!items.length) return;
+
+    let count = parseInt(portfolioContainer.getAttribute('data-en-bref-count'), 10) || 8;
+    count = Math.min(count, items.length);
+    const order = Array.from({ length: items.length }, (_, i) => i);
+    for (let i = order.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [order[i], order[j]] = [order[j], order[i]];
+    }
+    for (let k = 0; k < count; k++) {
+      items[order[k]].classList.add('in-bref');
+    }
+
+    try {
+      if (typeof Isotope === 'undefined') {
+        throw new Error('Isotope indisponible');
+      }
+      portfolioIsotopeInstance = new Isotope(portfolioContainer, {
         itemSelector: '.portfolio-item',
         filter: '.in-bref',
         layoutMode: 'fitRows',
@@ -274,47 +321,31 @@
         transitionDuration: '0.4s'
       });
 
-      let portfolioFilters = select('#portfolio-flters li', true);
-
+      const portfolioFilters = select('#portfolio-flters li', true);
       on('click', '#portfolio-flters li', function(e) {
         e.preventDefault();
         portfolioFilters.forEach(function(el) {
           el.classList.remove('filter-active');
         });
         this.classList.add('filter-active');
-
-        portfolioIsotope.arrange({
+        portfolioIsotopeInstance.arrange({
           filter: this.getAttribute('data-filter')
         });
-
       }, true);
 
-      initPortfolioLightbox();
+      if (window.ResizeObserver) {
+        new ResizeObserver(scheduleLayoutAndAosRefresh).observe(portfolioContainer);
+      }
+    } catch (err) {
+      console.error(err);
     }
 
-  });
-
-  /**
-   * Initiate portfolio lightbox (après Isotope pour DOM stable — focus déplacé à l'ouverture)
-   */
-  const initPortfolioLightbox = () => {
-    if (typeof GLightbox !== 'undefined') {
-      GLightbox({
-        selector: '.portfolio-lightbox',
-        openEffect: 'zoom',
-        closeEffect: 'zoom',
-        onOpen: function () {
-          setTimeout(function () {
-            var lb = document.querySelector('.glightbox-container');
-            if (lb) {
-              lb.setAttribute('tabindex', '-1');
-              lb.focus();
-            }
-          }, 50);
-        }
-      });
-    }
+    initPortfolioLightbox();
   };
+
+  initPortfolio();
+
+  window.addEventListener('load', scheduleLayoutAndAosRefresh);
 
   /**
    * Initiate Pure Counter au scroll (section #about)
