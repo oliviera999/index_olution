@@ -475,7 +475,9 @@ h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/hero-bg.jpg") center center;
+  /* L'image de fond est injectée en inline par index.php (tirage aléatoire bg-N.jpg).
+     Couleur de repli affichée le temps du chargement. */
+  background-color: #1a1a1a;
   background-size: cover;
   background-position: center center;
   position: relative;

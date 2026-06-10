@@ -7,7 +7,7 @@ Site vitrine une page pour le projet **Olution** : initiative pédagogique propo
 - **Backend** : PHP (choix aléatoire de l’image hero)
 - **Frontend** : HTML, CSS, JavaScript
 - **Template** : [Laura](https://bootstrapmade.com/laura-free-creative-bootstrap-theme/) (BootstrapMade), basé sur Bootstrap
-- **Librairies** : Bootstrap 5, Bootstrap Icons, Boxicons, Swiper, Isotope, GLightbox, PureCounter, Waypoints (chargées via CDN jsDelivr)
+- **Librairies** : Bootstrap 5, Bootstrap Icons, Swiper, Isotope, GLightbox, PureCounter, Waypoints, AOS (chargées via CDN jsDelivr, versions épinglées + SRI)
 
 ## Structure du projet
 
@@ -16,20 +16,26 @@ index_olution/
 ├── index.php              # Point d’entrée unique
 ├── public/
 │   └── index.php          # Relais optionnel (sans Composer) si le serveur pointe sur public/
+├── VERSION                # Source unique du numéro de version (lu par le pied de page)
+├── data/
+│   └── portfolio.php      # Données des items du portfolio (source unique, rendue par boucle)
+├── tools/
+│   └── gen-portfolio-dims.php  # Recalcule les dimensions (w/h) des images du portfolio
 ├── README.md
 ├── docs/
-│   └── ARCHITECTURE.md     # Détail des sections, portfolio, hero, conventions
+│   ├── ARCHITECTURE.md    # Détail des sections, portfolio, hero, conventions
+│   └── DEPLOY.md          # Procédure de déploiement
 └── assets/
     ├── css/
     │   └── style.css       # Styles principaux (personnalisation)
     ├── js/
-    │   ├── main.js         # Nav, sliders, filtres portfolio, lightbox, compteurs
-    │   └── main.js        # Script principal (nav, sliders, portfolio)
-    ├── img/                # Images (entete, portfolio, logos, favicon)
-    │   ├── entete/         # Images de fond hero (bg-1.jpg … bg-16.jpg)
-    │   └── portfolio/      # dehors, dedans, urbain, jeux, tech
-    └── vendor/             # Optionnel : librairies tierces (sinon chargées via CDN)
+    │   └── main.js         # Nav, sliders, filtres portfolio, lightbox, compteurs
+    └── img/                # Images (entete, portfolio, logos, favicon)
+        ├── entete/         # Images de fond hero (bg-1.jpg … bg-16.jpg)
+        └── portfolio/      # dehors, dedans, urbain, jeux, tech
 ```
+
+> Les librairies tierces (Bootstrap, Swiper, Isotope, GLightbox, etc.) sont chargées via CDN jsDelivr avec versions épinglées et intégrité SRI — aucun dossier `assets/vendor/` n’est nécessaire.
 
 ## Déploiement
 
