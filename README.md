@@ -7,20 +7,25 @@ Site vitrine une page pour le projet **Olution** : initiative pédagogique propo
 - **Backend** : PHP (choix aléatoire de l’image hero)
 - **Frontend** : HTML, CSS, JavaScript
 - **Template** : [Laura](https://bootstrapmade.com/laura-free-creative-bootstrap-theme/) (BootstrapMade), basé sur Bootstrap
-- **Librairies** : Bootstrap 5, Bootstrap Icons, Swiper, Isotope, GLightbox, PureCounter, Waypoints, AOS (chargées via CDN jsDelivr, versions épinglées + SRI)
+- **Librairies** : Bootstrap 5, Bootstrap Icons, Swiper, Isotope, GLightbox, PureCounter, AOS (chargées via CDN jsDelivr, versions épinglées + SRI)
 
 ## Structure du projet
 
 ```
 index_olution/
 ├── index.php              # Point d’entrée unique
+├── mentions-legales.php   # Mentions légales (éditeur, hébergeur, données personnelles)
+├── .htaccess              # Cache navigateur, compression, en-têtes de sécurité (Apache)
 ├── public/
 │   └── index.php          # Relais optionnel (sans Composer) si le serveur pointe sur public/
 ├── VERSION                # Source unique du numéro de version (lu par le pied de page)
 ├── data/
 │   └── portfolio.php      # Données des items du portfolio (source unique, rendue par boucle)
 ├── tools/
-│   └── gen-portfolio-dims.php  # Recalcule les dimensions (w/h) des images du portfolio
+│   ├── gen-portfolio-dims.php  # Recalcule les dimensions (w/h) des images du portfolio
+│   ├── optimize-images.php     # Redimensionne/recompresse les images (GD, --dry-run dispo)
+│   └── check-images.php        # Vérifie orphelines + références cassées (utilisé en CI)
+├── .github/workflows/ci.yml    # CI : lint PHP/JS + intégrité des images
 ├── README.md
 ├── docs/
 │   ├── ARCHITECTURE.md    # Détail des sections, portfolio, hero, conventions

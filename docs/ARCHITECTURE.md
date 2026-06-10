@@ -65,6 +65,24 @@ Si on les omet (`null`), la vignette est rendue sans dimensions (comportement hi
 Le contenu de `data/portfolio.php` est de **confiance** (édité par l’auteur) : il est inséré sans
 échappement pour reproduire le markup existant.
 
+### Curation de l’onglet « En bref »
+
+Le filtre par défaut affiche `data-en-bref-count` items (8). Par défaut le tirage est
+aléatoire à chaque chargement. Pour **curater** la sélection, ajouter `’bref’ => true`
+aux items à mettre en avant dans `data/portfolio.php` : ils sont pris en priorité,
+le reste du quota est complété au hasard. Aucun item marqué = comportement aléatoire pur.
+
+### Outils (`tools/`)
+
+| Script | Rôle |
+|---|---|
+| `gen-portfolio-dims.php` | Recalcule `w`/`h` de chaque item depuis les fichiers images |
+| `optimize-images.php` | Redimensionne (max 1920 px) et recompresse JPEG/PNG via GD ; `--dry-run` pour prévisualiser ; corrige l’orientation EXIF |
+| `check-images.php` | Vérifie qu’aucune image n’est orpheline ni référencée à tort (exécuté par la CI) |
+
+Après tout ajout/remplacement d’image : `php tools/optimize-images.php` puis
+`php tools/gen-portfolio-dims.php`, et la CI vérifie l’intégrité.
+
 Catégories de dossiers d’images : `dehors`, `dedans`, `urbain`, `jeux`, `tech`.
 
 ---

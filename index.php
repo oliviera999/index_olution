@@ -37,7 +37,6 @@ $portfolio_items = require __DIR__ . '/data/portfolio.php';
 
   <title>olution.info – Olution : échanger, créer, apprendre | Plateforme pédagogique</title>
   <meta content="olution.info est la plateforme officielle du projet Olution : alternatives à l'enseignement classique, espaces de formation en ligne, actions pédagogiques en France et à l'international. Découvrez la plateforme Moodle, les projets terrain et les ressources pour enseignants et élèves." name="description">
-  <meta content="olution.info, Olution, enseignement, pédagogie, plateforme Moodle, formation en ligne, éducation, espaces de formation, AEFE, Marout" name="keywords">
 
   <!-- Canonical : évite la dilution entre olution.info et clone / miroirs -->
   <link rel="canonical" href="<?php echo htmlspecialchars($canonical_url); ?>">
@@ -140,14 +139,14 @@ $portfolio_items = require __DIR__ . '/data/portfolio.php';
   <section id="hero">
     <div class="hero-container">
       <h1 class="hero-title">olution</h1>
-      <img src="assets/img/logoblanc.png" class="img-fluid hero-logo" width="10%" alt="Logo Olution">
+      <img src="assets/img/logoblanc.png" class="img-fluid hero-logo" alt="Logo Olution">
       <h2 class="hero-subtitle">échanger, créer, apprendre</h2>
       <p class="hero-tagline">L'école vécue comme une aventure</p>
       <p class="hero-seo-intro mt-2 mb-0">olution.info — Plateforme officielle du projet Olution : formation en ligne, espaces pédagogiques, actions en France et à l'international.</p>
       <div class="hero-audience-buttons d-flex flex-wrap justify-content-center gap-2">
         <a href="#about" class="btn btn-outline-light rounded-pill scrollto">Enseignant</a>
         <a href="#portfolio" class="btn btn-outline-light rounded-pill scrollto">Élève</a>
-        <a href="#testi" class="btn btn-outline-light rounded-pill scrollto">Institution</a>
+        <a href="#results" class="btn btn-outline-light rounded-pill scrollto">Institution</a>
         <a href="#services" class="btn btn-outline-light rounded-pill scrollto">Partenaire</a>
       </div>
       <a href="#act" class="btn-scroll scrollto" title="Scroll Down"><i class="bi bi-chevron-down"></i></a>
@@ -168,7 +167,7 @@ $portfolio_items = require __DIR__ . '/data/portfolio.php';
         <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
           <div class="audience-card card h-100 border-0 shadow-sm">
             <div class="card-body">
-              <p class="audience-card-icon mb-2">🎓</p>
+              <p class="audience-card-icon mb-2" aria-hidden="true">🎓</p>
               <h5 class="card-title h6">Enseignant</h5>
               <p class="card-text small mb-0">Des ressources pédagogiques innovantes, prêtes à l'emploi, partagées</p>
             </div>
@@ -177,7 +176,7 @@ $portfolio_items = require __DIR__ . '/data/portfolio.php';
         <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="150">
           <div class="audience-card card h-100 border-0 shadow-sm">
             <div class="card-body">
-              <p class="audience-card-icon mb-2">🧑‍🎒</p>
+              <p class="audience-card-icon mb-2" aria-hidden="true">🧑‍🎒</p>
               <h5 class="card-title h6">Élève</h5>
               <p class="card-text small mb-0">Apprendre en jouant, en construisant, en sortant de la classe</p>
             </div>
@@ -186,7 +185,7 @@ $portfolio_items = require __DIR__ . '/data/portfolio.php';
         <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
           <div class="audience-card card h-100 border-0 shadow-sm">
             <div class="card-body">
-              <p class="audience-card-icon mb-2">🏫</p>
+              <p class="audience-card-icon mb-2" aria-hidden="true">🏫</p>
               <h5 class="card-title h6">Institution</h5>
               <p class="card-text small mb-0">Un dispositif documenté, évalué, déployé dans 5 établissements</p>
             </div>
@@ -195,7 +194,7 @@ $portfolio_items = require __DIR__ . '/data/portfolio.php';
         <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="250">
           <div class="audience-card card h-100 border-0 shadow-sm">
             <div class="card-body">
-              <p class="audience-card-icon mb-2">🤝</p>
+              <p class="audience-card-icon mb-2" aria-hidden="true">🤝</p>
               <h5 class="card-title h6">Partenaire</h5>
               <p class="card-text small mb-0">Un projet associatif à impact, ancré dans l'enseignement français à l'étranger</p>
             </div>
@@ -393,17 +392,17 @@ $portfolio_items = require __DIR__ . '/data/portfolio.php';
         </div>
 
         <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
-          <li data-filter=".in-bref" class="filter-active">En bref</li>
-          <li data-filter=".filter-bateau">Dehors</li>
-          <li data-filter=".filter-brousse">Dedans</li>
-          <li data-filter=".filter-urbain">Nature urbaine</li>
-          <li data-filter=".filter-fictions">Jeux et fictions</li>
-          <li data-filter=".filter-prototypage">Tech</li>
+          <li data-filter=".in-bref" class="filter-active"><button type="button">En bref</button></li>
+          <li data-filter=".filter-bateau"><button type="button">Dehors</button></li>
+          <li data-filter=".filter-brousse"><button type="button">Dedans</button></li>
+          <li data-filter=".filter-urbain"><button type="button">Nature urbaine</button></li>
+          <li data-filter=".filter-fictions"><button type="button">Jeux et fictions</button></li>
+          <li data-filter=".filter-prototypage"><button type="button">Tech</button></li>
         </ul>
 
         <div class="row portfolio-container" data-en-bref-count="8">
           <?php foreach ($portfolio_items as $item): ?>
-          <div class="col-lg-4 col-md-6 portfolio-item filter-<?php echo $item['cat']; ?>" data-aos="fade-up">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-<?php echo $item['cat']; ?><?php echo !empty($item['bref']) ? ' featured' : ''; ?>" data-aos="fade-up">
             <div class="portfolio-img"><a href="<?php echo $item['img']; ?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="<?php echo $item['title']; ?>"><img loading="lazy" src="<?php echo $item['img']; ?>" class="img-fluid"<?php if ($item['w'] && $item['h']) echo ' width="'.$item['w'].'" height="'.$item['h'].'"'; ?> alt="<?php echo $item['alt']; ?>"></a></div>
             <div class="portfolio-info">
               <h4><?php echo $item['h4']; ?></h4>
@@ -434,43 +433,43 @@ $portfolio_items = require __DIR__ . '/data/portfolio.php';
           </div>
           <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
             <div class="results-item">
-              <span class="results-badge">🏆 Lauréat Hacktonfutur</span>
+              <span class="results-badge"><span aria-hidden="true">🏆</span> Lauréat Hacktonfutur</span>
               <p class="mb-0">Farmflow, projet élève d'aquaponie connectée, présenté au salon BPI Casablanca 2022</p>
             </div>
           </div>
           <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
             <div class="results-item">
-              <span class="results-badge">💬 « L'école vécue comme une aventure »</span>
+              <span class="results-badge"><span aria-hidden="true">💬</span> « L'école vécue comme une aventure »</span>
               <p class="mb-0">Retour d'expérience issu du projet n³, salle aérée du Lycée Lyautey</p>
             </div>
           </div>
           <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="250">
             <div class="results-item">
-              <span class="results-badge">💬 « On va vraiment aller sur Mars monsieur ? »</span>
+              <span class="results-badge"><span aria-hidden="true">💬</span> « On va vraiment aller sur Mars monsieur ? »</span>
               <p class="mb-0">Commentaire candide d'élève après 6 mois du projet EIST au lycée Blaise Pascal de Libreville</p>
             </div>
           </div>
           <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
             <div class="results-item">
-              <span class="results-badge">🏆 Lauréat Météo à l'École</span>
+              <span class="results-badge"><span aria-hidden="true">🏆</span> Lauréat Météo à l'École</span>
               <p class="mb-0">Projet Mété'O'Saules au collège de Guyancourt en 2016</p>
             </div>
           </div>
           <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
             <div class="results-item">
-              <span class="results-badge">🎬 Une vie en forêt</span>
+              <span class="results-badge"><span aria-hidden="true">🎬</span> Une vie en forêt</span>
               <p class="mb-0">Participation des élèves au tournage avec Francis Hallé en 2019 au Gabon</p>
             </div>
           </div>
           <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
             <div class="results-item">
-              <span class="results-badge">📺 Interview SAS</span>
+              <span class="results-badge"><span aria-hidden="true">📺</span> Interview SAS</span>
               <p class="mb-0">Réalisée par TVfil 78 pour mettre en valeur le dispositif de raccrochage scolaire au collège les Saules en 2015</p>
             </div>
           </div>
           <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="250">
             <div class="results-item">
-              <span class="results-badge">📰 Résultats et reconnaissance</span>
+              <span class="results-badge"><span aria-hidden="true">📰</span> Résultats et reconnaissance</span>
               <p class="mb-0">Publications dans Le Café pédagogique et Les Cahiers pédagogiques</p>
             </div>
           </div>
@@ -491,7 +490,7 @@ $portfolio_items = require __DIR__ . '/data/portfolio.php';
         <div class="row justify-content-center row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
           <div class="col d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box service-card">
-              <img src="assets/img/logo-n3.png" class="img-fluid" width="35%" alt="La salle aérée n³">
+              <img src="assets/img/logo-n3.png" class="img-fluid wp-35" alt="La salle aérée n³">
               <h4 class="title"><a href="https://n3.olution.info/" rel="noopener noreferrer" target="_blank">La salle aérée n³</a></h4>
               <span class="service-badge service-badge-1">Pour qui ? Institutions & partenaires</span>
               <p class="description">Une salle de cours extérieure et bien plus au lycée français de Casablanca.</p>
@@ -501,7 +500,7 @@ $portfolio_items = require __DIR__ . '/data/portfolio.php';
 
           <div class="col d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="150">
             <div class="icon-box service-card">
-              <img src="assets/img/olutionff.png" class="img-fluid" width="35%" alt="IOT olution">
+              <img src="assets/img/olutionff.png" class="img-fluid wp-35" alt="IOT olution">
               <h4 class="title"><a href="https://iot.olution.info" rel="noopener noreferrer" target="_blank">IOT olution</a></h4>
               <span class="service-badge service-badge-2">Pour qui ? Élèves & makers</span>
               <p class="description">Site présentant les modules DIY connectés créés avec les élèves et permettant leur suivi et contrôle en temps réel à distance.</p>
@@ -511,7 +510,7 @@ $portfolio_items = require __DIR__ . '/data/portfolio.php';
 
           <div class="col d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
             <div class="icon-box service-card">
-              <img src="assets/img/logo-gnomes-licornes.png" class="img-fluid" width="35%" alt="Gnomes&amp;Licornes">
+              <img src="assets/img/logo-gnomes-licornes.png" class="img-fluid wp-35" alt="Gnomes&amp;Licornes">
               <h4 class="title"><a href="https://gl.olution.info/" rel="noopener noreferrer" target="_blank">Gnomes&amp;Licornes</a></h4>
               <span class="service-badge service-badge-3">Pour qui ? Élèves de 6e & enseignants</span>
               <p class="description">Une véritable aventure ludique sur l'ensemble de l'année en Sciences et Technologie pour les sixièmes.</p>
@@ -521,7 +520,7 @@ $portfolio_items = require __DIR__ . '/data/portfolio.php';
 
           <div class="col d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box service-card">
-              <img src="assets/img/logoff.png" class="img-fluid" width="25%" alt="Farmflow">
+              <img src="assets/img/logoff.png" class="img-fluid wp-25" alt="Farmflow">
               <h4 class="title"><a href="https://farmflow.marout.org" rel="noopener noreferrer" target="_blank">Farmflow</a></h4>
               <span class="service-badge service-badge-4">Pour qui ? Partenaires & presse</span>
               <p class="description">Un projet de start-up d'aquaponie connectée initié par des élèves de seconde, récompensé au concours Hacktonfutur et présenté au salon de la BPI 2022.</p>
@@ -531,7 +530,7 @@ $portfolio_items = require __DIR__ . '/data/portfolio.php';
 
           <div class="col d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="150">
             <div class="icon-box service-card">
-              <img src="assets/img/logomarout.png" class="img-fluid" width="35%" alt="Marout">
+              <img src="assets/img/logomarout.png" class="img-fluid wp-35" alt="Marout">
               <h4 class="title"><a href="https://marout.org" rel="noopener noreferrer" target="_blank">Marout</a></h4>
               <span class="service-badge service-badge-5">Pour qui ? Réseau associatif</span>
               <p class="description">Mutualisation, partage, conseil sont les mots-clés qui définissent cette association.</p>
@@ -541,7 +540,7 @@ $portfolio_items = require __DIR__ . '/data/portfolio.php';
 
           <div class="col d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
             <div class="icon-box service-card">
-              <img src="assets/img/logo-education-nationale.png" class="img-fluid" width="45%" alt="Ministère de l'Éducation Nationale">
+              <img src="assets/img/logo-education-nationale.png" class="img-fluid wp-45" alt="Ministère de l'Éducation Nationale">
               <h4 class="title"><a href="https://www.education.gouv.fr/" rel="noopener noreferrer" target="_blank">Ministère de l'Éducation Nationale</a></h4>
               <span class="service-badge service-badge-6">Pour qui ? Tous</span>
               <p class="description">Le portail officiel du ministère : politiques éducatives, programmes, concours et ressources pour les personnels et les familles.</p>
@@ -551,7 +550,7 @@ $portfolio_items = require __DIR__ . '/data/portfolio.php';
 
           <div class="col d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="250">
             <div class="icon-box service-card">
-              <img src="assets/img/logo-aefe.png" class="img-fluid" width="45%" alt="AEFE - Agence pour l'enseignement français à l'étranger">
+              <img src="assets/img/logo-aefe.png" class="img-fluid wp-45" alt="AEFE - Agence pour l'enseignement français à l'étranger">
               <h4 class="title"><a href="https://www.aefe.fr/" rel="noopener noreferrer" target="_blank">AEFE</a></h4>
               <span class="service-badge service-badge-7">Pour qui ? Réseau français à l'étranger</span>
               <p class="description">Agence pour l'enseignement français à l'étranger : réseau des lycées français du monde, offres de formation et mobilité internationale.</p>
@@ -669,6 +668,7 @@ $portfolio_items = require __DIR__ . '/data/portfolio.php';
       <p>échanger, créer, apprendre</p>
       <div class="copyright">
         &copy; Un projet proposé par l'association <strong><span>Marout</span></strong>. Tous droits réservés — v<?php echo htmlspecialchars($version); ?>
+        — <a href="mentions-legales.php">Mentions légales</a>
       </div>
     </div>
   </footer><!-- End Footer -->
@@ -682,7 +682,6 @@ $portfolio_items = require __DIR__ . '/data/portfolio.php';
   <script src="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/js/glightbox.min.js" defer integrity="sha384-Lcg6/G/AHqVn603GN2UHyiIV/TPsuh4QkJNKsdCAUmzbItQ9oSceVj00Zf5tM0EG" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/isotope-layout@3.0.6/dist/isotope.pkgd.min.js" defer integrity="sha384-vtH+5pZsjdWxaTWlFSCrWM6i0TIG0HKOqJbPo91LB35dvWpVzuWdJeVoNweP+eoY" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11.2.10/swiper-bundle.min.js" defer integrity="sha384-2UI1PfnXFjVMQ7/ZDEF70CR943oH3v6uZrFQGGqJYlvhh4g6z6uVktxYbOlAczav" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/waypoints@4.0.1/lib/noframework.waypoints.min.js" defer integrity="sha384-FPoWZh8D8xwxiM8HYCnrXbxHZxAtveceECpTZ3hoEfkNYNRiDWaBdR+Ue8jx4hyj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer integrity="sha384-n1AULnKdMJlK1oQCLNDL9qZsDgXtH6jRYFCpBtWFc+a9Yve0KSoMn575rk755NJZ" crossorigin="anonymous"></script>
   <!-- Template Main JS File -->
   <script src="assets/js/main.js" defer></script>

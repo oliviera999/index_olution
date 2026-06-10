@@ -44,8 +44,8 @@ return array (
     'alt' => 'Découverte de la brousse équatoriale',
     'h4' => 'Découverte de la brousse équatoriale',
     'loc' => 'Nyonié - Gabon',
-    'w' => 1926,
-    'h' => 1284,
+    'w' => 1920,
+    'h' => 1280,
   ),
   3 => 
   array (
@@ -66,8 +66,8 @@ return array (
     'alt' => 'Mangroove à Nyonié, restauration d\'une mangrove',
     'h4' => '"Mangroove à Nyonié", restauration d\'une mangrove abîmée',
     'loc' => 'Nyonié - Gabon',
-    'w' => 4898,
-    'h' => 3265,
+    'w' => 1920,
+    'h' => 1280,
   ),
   5 => 
   array (
@@ -77,8 +77,8 @@ return array (
     'alt' => 'Croquis du paysage',
     'h4' => 'Croquis du paysage',
     'loc' => 'Nyonié - Gabon',
-    'w' => 1926,
-    'h' => 1284,
+    'w' => 1920,
+    'h' => 1280,
   ),
   6 => 
   array (
@@ -110,8 +110,8 @@ return array (
     'alt' => 'Exploration de l\'environnement, savane et jungle',
     'h4' => 'Exploration de l\'environnement',
     'loc' => 'Savane et Jungle - Gabon',
-    'w' => 1926,
-    'h' => 1284,
+    'w' => 1920,
+    'h' => 1280,
   ),
   9 => 
   array (
@@ -165,8 +165,8 @@ return array (
     'alt' => 'Maquette du système solaire',
     'h4' => 'Construction d\'une maquette du système solaire',
     'loc' => 'Libreville - Gabon',
-    'w' => 2283,
-    'h' => 1284,
+    'w' => 1920,
+    'h' => 1080,
   ),
   14 => 
   array (
@@ -187,8 +187,8 @@ return array (
     'alt' => 'Opération plante ton palétuvier',
     'h4' => 'Opération "plante ton palétuvier"',
     'loc' => 'Libreville - Gabon',
-    'w' => 2283,
-    'h' => 1284,
+    'w' => 1920,
+    'h' => 1080,
   ),
   16 => 
   array (
@@ -198,8 +198,8 @@ return array (
     'alt' => 'Dispositif Ecocollège',
     'h4' => 'Dispositif Ecocollège',
     'loc' => 'Yvelines - France',
-    'w' => 3713,
-    'h' => 2087,
+    'w' => 1920,
+    'h' => 1079,
   ),
   17 => 
   array (
@@ -209,8 +209,8 @@ return array (
     'alt' => 'n3, salle de cours innovante',
     'h4' => 'n3, une salle de cours innovante',
     'loc' => 'Casablanca - Maroc',
-    'w' => 2561,
-    'h' => 1070,
+    'w' => 1920,
+    'h' => 802,
   ),
   18 => 
   array (
@@ -253,8 +253,8 @@ return array (
     'alt' => 'Le tiny garden, potager urbain',
     'h4' => 'Le tiny garden, un potager urbain',
     'loc' => 'Casablanca - Maroc',
-    'w' => 2016,
-    'h' => 4032,
+    'w' => 960,
+    'h' => 1920,
   ),
   22 => 
   array (
@@ -264,8 +264,8 @@ return array (
     'alt' => 'Culture de pleurotes',
     'h4' => 'Culture de pleurotes',
     'loc' => 'Yvelines - France',
-    'w' => 1925,
-    'h' => 1284,
+    'w' => 1920,
+    'h' => 1281,
   ),
   23 => 
   array (
@@ -286,8 +286,8 @@ return array (
     'alt' => 'Scape New Order, jeu de rôle Genially',
     'h4' => '"Scape New Order", un jeu de rôle Genially pour le confinement',
     'loc' => 'Casablanca - Maroc',
-    'w' => 2228,
-    'h' => 1283,
+    'w' => 1920,
+    'h' => 1106,
   ),
   25 => 
   array (
@@ -308,8 +308,8 @@ return array (
     'alt' => 'PSE Game, Prévention Santé Environnement',
     'h4' => '"PSE Game", une autre manière d\'aborder la Prévention Santé Environnement',
     'loc' => 'Casablanca - Maroc',
-    'w' => 2562,
-    'h' => 751,
+    'w' => 1920,
+    'h' => 563,
   ),
   27 => 
   array (
@@ -319,8 +319,8 @@ return array (
     'alt' => 'Noël sous l\'équateur',
     'h4' => 'Noël sous l\'équateur',
     'loc' => 'Libreville - Gabon',
-    'w' => 1926,
-    'h' => 1284,
+    'w' => 1920,
+    'h' => 1280,
   ),
   28 => 
   array (
@@ -341,8 +341,8 @@ return array (
     'alt' => 'L\'aquaponie connectée',
     'h4' => 'L\'aquaponie connectée',
     'loc' => 'Casablanca - Maroc',
-    'w' => 5376,
-    'h' => 3024,
+    'w' => 1920,
+    'h' => 1080,
   ),
   30 => 
   array (
@@ -363,8 +363,8 @@ return array (
     'alt' => 'Serious Game SVT, club WebGeek',
     'h4' => 'Les Serious Game SVT, proposé par le "club WebGeek"',
     'loc' => 'Yvelines - France',
-    'w' => 2486,
-    'h' => 3508,
+    'w' => 1361,
+    'h' => 1920,
   ),
   32 => 
   array (

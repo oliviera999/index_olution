@@ -23,6 +23,11 @@
   --shadow-card-hover: 0 16px 40px 0 rgba(68, 88, 144, 0.18);
 }
 
+/* Largeurs en pourcentage pour les logos (remplace les attributs width="X%" invalides) */
+.wp-25 { width: 25%; }
+.wp-35 { width: 35%; }
+.wp-45 { width: 45%; }
+
 /*--------------------------------------------------------------
 # Barre de progression de scroll
 --------------------------------------------------------------*/
@@ -475,6 +480,7 @@ h6 {
 #hero {
   width: 100%;
   height: 100vh;
+  height: 100dvh; /* évite le saut dû à la barre d'URL mobile (fallback 100vh au-dessus) */
   /* L'image de fond est injectée en inline par index.php (tirage aléatoire bg-N.jpg).
      Couleur de repli affichée le temps du chargement. */
   background-color: #1a1a1a;
@@ -530,6 +536,7 @@ h6 {
   opacity: 0;
 }
 #hero .hero-logo {
+  width: 10%;
   animation: heroStagger 0.5s ease-out 0.4s forwards;
   opacity: 0;
 }
@@ -1265,6 +1272,18 @@ section {
 .portfolio #portfolio-flters li.filter-active {
   color: #f3a200;
   border-color: #ffab40;
+}
+
+/* Bouton réel dans chaque filtre (accessibilité clavier) : hérite du style du li */
+.portfolio #portfolio-flters li button {
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  text-transform: inherit;
+  color: inherit;
+  cursor: pointer;
 }
 
 /* Container Isotope : désactiver flex Bootstrap pour compatibilité layout */
