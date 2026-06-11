@@ -14,30 +14,22 @@ $base_for_document = rtrim($script_dir, '/') . '/';
 if ($base_for_document !== '/' && $base_for_document !== '' && $base_for_document !== './') {
   $base = $base_for_document;
 }
+// Images hero : générées par boucle (bg-1.jpg … bg-N.jpg dans assets/img/entete/).
+// Ajouter une image = déposer le fichier et incrémenter $nbimages.
 $nbimages = 16;
-$nomimages[1]="assets/img/entete/bg-1.jpg";
-$nomimages[2]="assets/img/entete/bg-2.jpg";
-$nomimages[3]="assets/img/entete/bg-3.jpg";
-$nomimages[4]="assets/img/entete/bg-4.jpg";
-$nomimages[5]="assets/img/entete/bg-5.jpg";
-$nomimages[6]="assets/img/entete/bg-6.jpg";
-$nomimages[7]="assets/img/entete/bg-7.jpg";
-$nomimages[8]="assets/img/entete/bg-8.jpg";
-$nomimages[9]="assets/img/entete/bg-9.jpg";
-$nomimages[10]="assets/img/entete/bg-10.jpg";
-$nomimages[11]="assets/img/entete/bg-11.jpg";
-$nomimages[12]="assets/img/entete/bg-12.jpg";
-$nomimages[13]="assets/img/entete/bg-13.jpg";
-$nomimages[14]="assets/img/entete/bg-14.jpg";
-$nomimages[15]="assets/img/entete/bg-15.jpg";
-$nomimages[16]="assets/img/entete/bg-16.jpg";
-$affimage = random_int(1, $nbimages);
+$nomimages = [];
+for ($i = 1; $i <= $nbimages; $i++) {
+  $nomimages[$i] = "assets/img/entete/bg-$i.jpg";
+}
 // Chemins assets en relatifs (assets/) : valables après recopie sur olution.info ou tout hébergement
-$hero_image_url = $nomimages[$affimage];
+$hero_image_url = $nomimages[random_int(1, $nbimages)];
 
 // Années d'existence : calcul automatique depuis le déploiement de la plateforme (2013)
 $plateforme_annee_deploiement = 2013;
 $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
+
+// Données du portfolio (source unique) — rendues par boucle dans la section #portfolio
+$portfolio_items = require __DIR__ . '/data/portfolio.php';
 ?>
   <?php if ($base !== ''): ?><base href="<?php echo htmlspecialchars($base); ?>"><?php endif; ?>
   <meta charset="utf-8">
@@ -45,7 +37,6 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
 
   <title>olution.info – Olution : échanger, créer, apprendre | Plateforme pédagogique</title>
   <meta content="olution.info est la plateforme officielle du projet Olution : alternatives à l'enseignement classique, espaces de formation en ligne, actions pédagogiques en France et à l'international. Découvrez la plateforme Moodle, les projets terrain et les ressources pour enseignants et élèves." name="description">
-  <meta content="olution.info, Olution, enseignement, pédagogie, plateforme Moodle, formation en ligne, éducation, espaces de formation, AEFE, Marout" name="keywords">
 
   <!-- Canonical : évite la dilution entre olution.info et clone / miroirs -->
   <link rel="canonical" href="<?php echo htmlspecialchars($canonical_url); ?>">
@@ -85,6 +76,9 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
+  <!-- Preload de l'image hero (LCP) : découverte tôt, priorité haute -->
+  <link rel="preload" as="image" href="<?php echo htmlspecialchars($hero_image_url); ?>" fetchpriority="high">
+
   <!-- Preload polices critiques -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -92,16 +86,16 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
   <!-- Google Fonts (variantes réduites) -->
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Cabin:wght@400&display=swap" rel="stylesheet">
 
-  <!-- Vendor CSS (CDN — pas besoin de assets/vendor/) -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/css/glightbox.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
+  <!-- Vendor CSS (CDN, versions épinglées + SRI pour intégrité/sécurité) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/css/glightbox.min.css" rel="stylesheet" integrity="sha384-GPAzSuZc0kFvdIev6wm9zg8gnafE8tLso7rsAYQfc9hAdWCpOcpcNI5W9lWkYcsd" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11.2.10/swiper-bundle.min.css" rel="stylesheet" integrity="sha384-gAPqlBuTCdtVcYt9ocMOYWrnBZ4XSL6q+4eXqwNycOr4iFczhNKtnYhF3NEXJM51" crossorigin="anonymous">
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
   <!-- AOS : Animate On Scroll -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" integrity="sha384-/rJKQnzOkEo+daG0jMjU1IwwY9unxt1NBw3Ef2fmOJ3PW/TfAg2KXVoWwMZQZtw9" crossorigin="anonymous">
 
   <!-- =======================================================
   * Template Name: Laura - v4.8.1
@@ -145,14 +139,14 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
   <section id="hero">
     <div class="hero-container">
       <h1 class="hero-title">olution</h1>
-      <img src="assets/img/logoblanc.png" class="img-fluid hero-logo" width="10%" alt="Logo Olution">
+      <img src="assets/img/logoblanc.png" class="img-fluid hero-logo" alt="Logo Olution">
       <h2 class="hero-subtitle">échanger, créer, apprendre</h2>
       <p class="hero-tagline">L'école vécue comme une aventure</p>
       <p class="hero-seo-intro mt-2 mb-0">olution.info — Plateforme officielle du projet Olution : formation en ligne, espaces pédagogiques, actions en France et à l'international.</p>
       <div class="hero-audience-buttons d-flex flex-wrap justify-content-center gap-2">
         <a href="#about" class="btn btn-outline-light rounded-pill scrollto">Enseignant</a>
         <a href="#portfolio" class="btn btn-outline-light rounded-pill scrollto">Élève</a>
-        <a href="#testi" class="btn btn-outline-light rounded-pill scrollto">Institution</a>
+        <a href="#results" class="btn btn-outline-light rounded-pill scrollto">Institution</a>
         <a href="#services" class="btn btn-outline-light rounded-pill scrollto">Partenaire</a>
       </div>
       <a href="#act" class="btn-scroll scrollto" title="Scroll Down"><i class="bi bi-chevron-down"></i></a>
@@ -173,7 +167,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
         <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
           <div class="audience-card card h-100 border-0 shadow-sm">
             <div class="card-body">
-              <p class="audience-card-icon mb-2">🎓</p>
+              <p class="audience-card-icon mb-2" aria-hidden="true">🎓</p>
               <h5 class="card-title h6">Enseignant</h5>
               <p class="card-text small mb-0">Des ressources pédagogiques innovantes, prêtes à l'emploi, partagées</p>
             </div>
@@ -182,7 +176,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
         <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="150">
           <div class="audience-card card h-100 border-0 shadow-sm">
             <div class="card-body">
-              <p class="audience-card-icon mb-2">🧑‍🎒</p>
+              <p class="audience-card-icon mb-2" aria-hidden="true">🧑‍🎒</p>
               <h5 class="card-title h6">Élève</h5>
               <p class="card-text small mb-0">Apprendre en jouant, en construisant, en sortant de la classe</p>
             </div>
@@ -191,7 +185,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
         <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
           <div class="audience-card card h-100 border-0 shadow-sm">
             <div class="card-body">
-              <p class="audience-card-icon mb-2">🏫</p>
+              <p class="audience-card-icon mb-2" aria-hidden="true">🏫</p>
               <h5 class="card-title h6">Institution</h5>
               <p class="card-text small mb-0">Un dispositif documenté, évalué, déployé dans 5 établissements</p>
             </div>
@@ -200,7 +194,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
         <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="250">
           <div class="audience-card card h-100 border-0 shadow-sm">
             <div class="card-body">
-              <p class="audience-card-icon mb-2">🤝</p>
+              <p class="audience-card-icon mb-2" aria-hidden="true">🤝</p>
               <h5 class="card-title h6">Partenaire</h5>
               <p class="card-text small mb-0">Un projet associatif à impact, ancré dans l'enseignement français à l'étranger</p>
             </div>
@@ -398,386 +392,25 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
         </div>
 
         <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
-          <li data-filter=".in-bref" class="filter-active">En bref</li>
-          <li data-filter=".filter-bateau">Dehors</li>
-          <li data-filter=".filter-brousse">Dedans</li>
-          <li data-filter=".filter-urbain">Nature urbaine</li>
-          <li data-filter=".filter-fictions">Jeux et fictions</li>
-          <li data-filter=".filter-prototypage">Tech</li>
+          <li data-filter=".in-bref" class="filter-active"><button type="button">En bref</button></li>
+          <li data-filter=".filter-bateau"><button type="button">Dehors</button></li>
+          <li data-filter=".filter-brousse"><button type="button">Dedans</button></li>
+          <li data-filter=".filter-urbain"><button type="button">Nature urbaine</button></li>
+          <li data-filter=".filter-fictions"><button type="button">Jeux et fictions</button></li>
+          <li data-filter=".filter-prototypage"><button type="button">Tech</button></li>
         </ul>
 
         <div class="row portfolio-container" data-en-bref-count="8">
-            
-          <div class="col-lg-4 col-md-6 portfolio-item filter-bateau" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/IMG_4519.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Mangoove, à la découverte de la mangrove"><img loading="lazy" src="assets/img/portfolio/dehors/IMG_4519.JPG" class="img-fluid" alt="Mangoove, à la découverte de la mangrove"></a></div>
+          <?php foreach ($portfolio_items as $item): ?>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-<?php echo $item['cat']; ?><?php echo !empty($item['bref']) ? ' featured' : ''; ?>" data-aos="fade-up">
+            <div class="portfolio-img"><a href="<?php echo $item['img']; ?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="<?php echo $item['title']; ?>"><img loading="lazy" src="<?php echo $item['img']; ?>" class="img-fluid"<?php if ($item['w'] && $item['h']) echo ' width="'.$item['w'].'" height="'.$item['h'].'"'; ?> alt="<?php echo $item['alt']; ?>"></a></div>
             <div class="portfolio-info">
-              <h4>"Mangoove", à la découverte de la mangrove</h4>
-              <p>Libreville - Gabon</p>
+              <h4><?php echo $item['h4']; ?></h4>
+              <p><?php echo $item['loc']; ?></p>
             </div>
           </div>
+          <?php endforeach; ?>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-bateau" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/DSC03218.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="La forêt pour tous, sortie naturaliste en fauteuil roulant"><img loading="lazy" src="assets/img/portfolio/dehors/DSC03218.JPG" class="img-fluid" alt="La forêt pour tous, sortie naturaliste en fauteuil roulant"></a></div>
-            <div class="portfolio-info">
-              <h4>La forêt pour tous, une sortie naturaliste en fauteuil roulant</h4>
-              <p>Essonne - France</p>
-            </div>
-          </div>
-          
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-bateau" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/_DSC2691.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Découverte de la brousse équatoriale"><img loading="lazy" src="assets/img/portfolio/dehors/_DSC2691.JPG" class="img-fluid" alt="Découverte de la brousse équatoriale"></a></div>
-            <div class="portfolio-info">
-              <h4>Découverte de la brousse équatoriale</h4>
-              <p>Nyonié - Gabon</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-bateau" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/1447416383867.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Kayak au collège"><img loading="lazy" src="assets/img/portfolio/dehors/1447416383867.jpg" class="img-fluid" alt="Kayak au collège"></a></div>
-            <div class="portfolio-info">
-              <h4>Kayak au collège</h4>
-              <p>Yvelines - France</p>
-            </div>
-          </div>
-          
-          <div class="col-lg-4 col-md-6 portfolio-item filter-bateau" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/IMG_4179.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Mangroove à Nyonié, restauration d'une mangrove"><img loading="lazy" src="assets/img/portfolio/dehors/IMG_4179.jpg" class="img-fluid" alt="Mangroove à Nyonié, restauration d'une mangrove"></a></div>
-            <div class="portfolio-info">
-              <h4>"Mangroove à Nyonié", restauration d'une mangrove abîmée</h4>
-              <p>Nyonié - Gabon</p>
-            </div>
-          </div>
-          
-          <div class="col-lg-4 col-md-6 portfolio-item filter-bateau" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/_DSC2570.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Croquis du paysage"><img loading="lazy" src="assets/img/portfolio/dehors/_DSC2570.JPG" class="img-fluid" alt="Croquis du paysage"></a></div>
-            <div class="portfolio-info">
-              <h4>Croquis du paysage</h4>
-              <p>Nyonié - Gabon</p>
-            </div>
-          </div>
-          
-        <div class="col-lg-4 col-md-6 portfolio-item filter-bateau" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/_DSC2638.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Ramassage d'ordures"><img loading="lazy" src="assets/img/portfolio/dehors/_DSC2638.JPG" class="img-fluid" alt="Ramassage d'ordures sur les plages au Gabon"></a></div>
-            <div class="portfolio-info">
-              <h4>Ramassage d'ordures</h4>
-              <p>plages au Gabon</p>
-            </div>
-          </div>
-          
-          <div class="col-lg-4 col-md-6 portfolio-item filter-bateau" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/Une-vie-en-foret.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Tournage avec Francis Hallé"><img loading="lazy" src="assets/img/portfolio/dehors/Une-vie-en-foret.jpg" class="img-fluid" alt="Tournage avec Francis Hallé"></a></div>
-            <div class="portfolio-info">
-              <h4>Tournage avec Francis Hallé</h4>
-              <p>Gabon</p>
-            </div>
-          </div>
-          
-          <div class="col-lg-4 col-md-6 portfolio-item filter-bateau" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/_DSC2573.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Exploration de l'environnement"><img loading="lazy" src="assets/img/portfolio/dehors/_DSC2573.JPG" class="img-fluid" alt="Exploration de l'environnement, savane et jungle"></a></div>
-            <div class="portfolio-info">
-              <h4>Exploration de l'environnement</h4>
-              <p>Savane et Jungle - Gabon</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-brousse" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/dedans/DSC_0096.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Interview production minisérie SAS"><img loading="lazy" src="assets/img/portfolio/dedans/DSC_0096.JPG" class="img-fluid" alt="Interview production minisérie SAS"></a></div>
-            <div class="portfolio-info">
-              <h4>Interview concernant la production d'une minisérie (SAS)</h4>
-              <p>Yvelines - France</p>
-            </div>
-          </div>
-          
-          <div class="col-lg-4 col-md-6 portfolio-item filter-brousse" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/dedans/DSC04815.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SAS, dispositif contre le décrochage scolaire"><img loading="lazy" src="assets/img/portfolio/dedans/DSC04815.JPG" class="img-fluid" alt="SAS, dispositif contre le décrochage scolaire"></a></div>
-            <div class="portfolio-info">
-              <h4>SAS - dispositif de lutte contre le décrochage scolaire</h4>
-              <p>Yvelines - France</p>
-            </div>
-          </div>
-          
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-brousse" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/dedans/DSC_0078.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SEGPA horticulture"><img loading="lazy" src="assets/img/portfolio/dedans/DSC_0078.JPG" class="img-fluid" alt="SEGPA horticulture"></a></div>
-            <div class="portfolio-info">
-              <h4>SEGPA horticulture</h4>
-              <p>Yvelines - France</p>
-            </div>
-          </div>
-          
-          <div class="col-lg-4 col-md-6 portfolio-item filter-brousse" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/dedans/test epnc5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Concours photos"><img loading="lazy" src="assets/img/portfolio/dedans/test epnc5.jpg" class="img-fluid" alt="Concours photos"></a></div>
-            <div class="portfolio-info">
-              <h4>Concours photos</h4>
-              <p>Yvelines - France</p>
-            </div>
-          </div>
-          
-          <div class="col-lg-4 col-md-6 portfolio-item filter-brousse" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/dedans/20181107_091551.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Maquette du système solaire"><img loading="lazy" src="assets/img/portfolio/dedans/20181107_091551.jpg" class="img-fluid" alt="Maquette du système solaire"></a></div>
-            <div class="portfolio-info">
-              <h4>Construction d'une maquette du système solaire</h4>
-              <p>Libreville - Gabon</p>
-            </div>
-          </div>
-          
-          <div class="col-lg-4 col-md-6 portfolio-item filter-brousse" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/dedans/DSC04897.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Œil observé à la loupe à main"><img loading="lazy" src="assets/img/portfolio/dedans/DSC04897.JPG" class="img-fluid" alt="Œil observé à la loupe à main"></a></div>
-            <div class="portfolio-info">
-              <h4>Œil, observé à la loupe à main</h4>
-              <p>Yvelines - France</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-brousse" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/dedans/20180411_111457.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Opération plante ton palétuvier"><img loading="lazy" src="assets/img/portfolio/dedans/20180411_111457.jpg" class="img-fluid" alt="Opération plante ton palétuvier"></a></div>
-            <div class="portfolio-info">
-              <h4>Opération "plante ton palétuvier"</h4>
-              <p>Libreville - Gabon</p>
-            </div>
-          </div>
-          
-          <div class="col-lg-4 col-md-6 portfolio-item filter-brousse" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/dedans/DSC_0329.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Dispositif Ecocollège"><img loading="lazy" src="assets/img/portfolio/dedans/DSC_0329.JPG" class="img-fluid" alt="Dispositif Ecocollège"></a></div>
-            <div class="portfolio-info">
-              <h4>Dispositif Ecocollège</h4>
-              <p>Yvelines - France</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/IMG_20220922_124635_565.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="n3, salle de cours innovante"><img loading="lazy" src="assets/img/portfolio/urbain/IMG_20220922_124635_565.jpg" class="img-fluid" alt="n3, salle de cours innovante"></a></div>
-            <div class="portfolio-info">
-              <h4>n3, une salle de cours innovante</h4>
-              <p>Casablanca - Maroc</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/IMG_20220925_185523_261.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Farmflow Prototype 3, aquaponie à l'école"><img loading="lazy" src="assets/img/portfolio/urbain/IMG_20220925_185523_261.jpg" class="img-fluid" alt="Farmflow Prototype 3, aquaponie à l'école"></a></div>
-            <div class="portfolio-info">
-              <h4>Farmflow Prototype 3, l'aquaponie à l'école</h4>
-              <p>Casablanca - Maroc</p>
-            </div>
-          </div>
-          
-          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/phasmes.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Phasmopolis, élevage d'insectes"><img loading="lazy" src="assets/img/portfolio/urbain/phasmes.jpg" class="img-fluid" alt="Phasmopolis, élevage d'insectes"></a></div>
-            <div class="portfolio-info">
-              <h4>Phasmopolis, un élevage d'insectes</h4>
-              <p>Casablanca - Maroc</p>
-            </div>
-          </div>
-          
-          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/DSC03966.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Le club Bio"><img loading="lazy" src="assets/img/portfolio/urbain/DSC03966.JPG" class="img-fluid" alt="Le club Bio"></a></div>
-            <div class="portfolio-info">
-              <h4>Le club Bio</h4>
-              <p>Yvelines - France</p>
-            </div>
-          </div>
-          
-          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/IMG_20220912_102755_859.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Le tiny garden, potager urbain"><img loading="lazy" src="assets/img/portfolio/urbain/IMG_20220912_102755_859.jpg" class="img-fluid" alt="Le tiny garden, potager urbain"></a></div>
-            <div class="portfolio-info">
-              <h4>Le tiny garden, un potager urbain</h4>
-              <p>Casablanca - Maroc</p>
-            </div>
-          </div>
-          
-          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/DSC06352.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Culture de pleurotes"><img loading="lazy" src="assets/img/portfolio/urbain/DSC06352.JPG" class="img-fluid" alt="Culture de pleurotes"></a></div>
-            <div class="portfolio-info">
-              <h4>Culture de pleurotes</h4>
-              <p>Yvelines - France</p>
-            </div>
-          </div>
-          
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-fictions" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/jeux/20210528_182706.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Jouons ! Cartes Sciences et Technologies"><img loading="lazy" src="assets/img/portfolio/jeux/20210528_182706.jpg" class="img-fluid" alt="Jouons ! Cartes Sciences et Technologies"></a></div>
-            <div class="portfolio-info">
-              <h4>"Jouons !", des cartes à jouer en Sciences et Technologies</h4>
-              <p>Casablanca - Maroc</p>
-            </div>
-          </div>
-          
-          <div class="col-lg-4 col-md-6 portfolio-item filter-fictions" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/jeux/2022-05-28.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Scape New Order, jeu de rôle Genially"><img loading="lazy" src="assets/img/portfolio/jeux/2022-05-28.png" class="img-fluid" alt="Scape New Order, jeu de rôle Genially"></a></div>
-            <div class="portfolio-info">
-              <h4>"Scape New Order", un jeu de rôle Genially pour le confinement</h4>
-              <p>Casablanca - Maroc</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-fictions" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/jeux/IMG-4684.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Les chroniques de tonton du bled"><img loading="lazy" src="assets/img/portfolio/jeux/IMG-4684.jpg" class="img-fluid" alt="Les chroniques de tonton du bled, Imilchil"></a></div>
-            <div class="portfolio-info">
-              <h4>"Les chroniques de tonton du bled", une histoire à Imilchil</h4>
-              <p>Casablanca - Maroc</p>
-            </div>
-          </div>
-          
-          <div class="col-lg-4 col-md-6 portfolio-item filter-fictions" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/jeux/IMG_20220202_125503_1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="PSE Game, Prévention Santé Environnement"><img loading="lazy" src="assets/img/portfolio/jeux/IMG_20220202_125503_1.jpg" class="img-fluid" alt="PSE Game, Prévention Santé Environnement"></a></div>
-            <div class="portfolio-info">
-              <h4>"PSE Game", une autre manière d'aborder la Prévention Santé Environnement</h4>
-              <p>Casablanca - Maroc</p>
-            </div>
-          </div>
-          
-          <div class="col-lg-4 col-md-6 portfolio-item filter-fictions" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/jeux/_DSC5126.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Noël sous l'équateur"><img loading="lazy" src="assets/img/portfolio/jeux/_DSC5126.JPG" class="img-fluid" alt="Noël sous l'équateur"></a></div>
-            <div class="portfolio-info">
-              <h4>Noël sous l'équateur</h4>
-              <p>Libreville - Gabon</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-prototypage" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/tech/2022-05-28 (1) (2).png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Farmflow, start-up d'avenir"><img loading="lazy" src="assets/img/portfolio/tech/2022-05-28 (1) (2).png" class="img-fluid" alt="Farmflow, start-up d'avenir"></a></div>
-            <div class="portfolio-info">
-              <h4>Farmflow, une start-up d'avenir</h4>
-              <p>Casablanca - Maroc</p>
-            </div>
-          </div>
-          
-          <div class="col-lg-4 col-md-6 portfolio-item filter-prototypage" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/tech/IMG_20220706_141504_5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="L'aquaponie connectée"><img loading="lazy" src="assets/img/portfolio/tech/IMG_20220706_141504_5.jpg" class="img-fluid" alt="L'aquaponie connectée"></a></div>
-            <div class="portfolio-info">
-              <h4>L'aquaponie connectée</h4>
-              <p>Casablanca - Maroc</p>
-            </div>
-          </div>
-          
-          <div class="col-lg-4 col-md-6 portfolio-item filter-prototypage" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/tech/IMG_20190130_075846_0.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="La grande forêt de l'équateur, expo physique et numérique"><img loading="lazy" src="assets/img/portfolio/tech/IMG_20190130_075846_0.jpg" class="img-fluid" alt="La grande forêt de l'équateur, expo physique et numérique"></a></div>
-            <div class="portfolio-info">
-              <h4>La grande forêt de l'équateur, une expo physique et numérique</h4>
-              <p>Libreville - Gabon</p>
-            </div>
-          </div>
-          
-          <div class="col-lg-4 col-md-6 portfolio-item filter-prototypage" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/tech/Diapositive3.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Serious Game SVT, club WebGeek"><img loading="lazy" src="assets/img/portfolio/tech/Diapositive3.JPG" class="img-fluid" alt="Serious Game SVT, club WebGeek"></a></div>
-            <div class="portfolio-info">
-              <h4>Les Serious Game SVT, proposé par le "club WebGeek"</h4>
-              <p>Yvelines - France</p>
-            </div>
-          </div>
-          
-          <div class="col-lg-4 col-md-6 portfolio-item filter-prototypage" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/tech/IMG-20220704-WA0015.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Farmflow au salon BPI"><img loading="lazy" src="assets/img/portfolio/tech/IMG-20220704-WA0015.jpg" class="img-fluid" alt="Farmflow au salon BPI"></a></div>
-            <div class="portfolio-info">
-              <h4>Farmflow au salon de la Banque Publique d'Investissements</h4>
-              <p>Casablanca - Maroc</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-bateau" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/poesie-exterieur.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Poésie en extérieur"><img loading="lazy" src="assets/img/portfolio/dehors/poesie-exterieur.png" class="img-fluid" alt="Poésie en extérieur"></a></div>
-            <div class="portfolio-info">
-              <h4>Poésie en extérieur</h4>
-              <p>Casablanca - Maroc</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-bateau" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/dehors/cours-dehors.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Cours dehors"><img loading="lazy" src="assets/img/portfolio/dehors/cours-dehors.png" class="img-fluid" alt="Cours dehors"></a></div>
-            <div class="portfolio-info">
-              <h4>Cours dehors</h4>
-              <p>Casablanca - Maroc</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-brousse" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/dedans/analyse-chimique.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Analyse chimique"><img loading="lazy" src="assets/img/portfolio/dedans/analyse-chimique.png" class="img-fluid" alt="Analyse chimique"></a></div>
-            <div class="portfolio-info">
-              <h4>Analyse chimique</h4>
-              <p>Casablanca - Maroc</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-fictions" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/dedans/jeu-gnomes-licornes.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Le jeu Gnomes et Licornes"><img loading="lazy" src="assets/img/portfolio/dedans/jeu-gnomes-licornes.png" class="img-fluid" alt="Le jeu Gnomes et Licornes"></a></div>
-            <div class="portfolio-info">
-              <h4>Le jeu Gnomes et Licornes</h4>
-              <p>Casablanca - Maroc</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/elevage-insectes.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Élevage d'insectes à grande échelle"><img loading="lazy" src="assets/img/portfolio/urbain/elevage-insectes.png" class="img-fluid" alt="Élevage d'insectes à grande échelle"></a></div>
-            <div class="portfolio-info">
-              <h4>Élevage d'insectes à grande échelle</h4>
-              <p>Casablanca - Maroc</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/odd-et-n3.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="ODD et n³"><img loading="lazy" src="assets/img/portfolio/urbain/odd-et-n3.png" class="img-fluid" alt="ODD et n³"></a></div>
-            <div class="portfolio-info">
-              <h4>ODD et n³</h4>
-              <p>Casablanca - Maroc</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/lombricomposteur.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Lombricomposteur"><img loading="lazy" src="assets/img/portfolio/urbain/lombricomposteur.png" class="img-fluid" alt="Lombricomposteur"></a></div>
-            <div class="portfolio-info">
-              <h4>Lombricomposteur</h4>
-              <p>Casablanca - Maroc</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/potager-urbain.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Potager urbain"><img loading="lazy" src="assets/img/portfolio/urbain/potager-urbain.png" class="img-fluid" alt="Potager urbain"></a></div>
-            <div class="portfolio-info">
-              <h4>Potager urbain</h4>
-              <p>Casablanca - Maroc</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/aquaponie-connectee.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Aquaponie connectée"><img loading="lazy" src="assets/img/portfolio/urbain/aquaponie-connectee.png" class="img-fluid" alt="Aquaponie connectée"></a></div>
-            <div class="portfolio-info">
-              <h4>Aquaponie connectée</h4>
-              <p>Casablanca - Maroc</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/maison-chat-connectee.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Maison pour chat connectée"><img loading="lazy" src="assets/img/portfolio/urbain/maison-chat-connectee.png" class="img-fluid" alt="Maison pour chat connectée"></a></div>
-            <div class="portfolio-info">
-              <h4>Maison pour chat connectée</h4>
-              <p>Casablanca - Maroc</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/expression-libre-n3.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Expression libre dans n³"><img loading="lazy" src="assets/img/portfolio/urbain/expression-libre-n3.png" class="img-fluid" alt="Expression libre dans n³"></a></div>
-            <div class="portfolio-info">
-              <h4>Expression libre dans n³</h4>
-              <p>Casablanca - Maroc</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-urbain" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/urbain/porte-ouverte-n3.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Porte ouverte de la salle aérée n³"><img loading="lazy" src="assets/img/portfolio/urbain/porte-ouverte-n3.png" class="img-fluid" alt="Porte ouverte de la salle aérée n³"></a></div>
-            <div class="portfolio-info">
-              <h4>Porte ouverte de la salle aérée n³</h4>
-              <p>Casablanca - Maroc</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-prototypage" data-aos="fade-up">
-            <div class="portfolio-img"><a href="assets/img/portfolio/tech/station-meteo-connectee.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Station météo connectée"><img loading="lazy" src="assets/img/portfolio/tech/station-meteo-connectee.png" class="img-fluid" alt="Station météo connectée"></a></div>
-            <div class="portfolio-info">
-              <h4>Station météo connectée</h4>
-              <p>Casablanca - Maroc</p>
-            </div>
-          </div>
-          
         </div>
 
       </div>
@@ -800,43 +433,43 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
           </div>
           <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
             <div class="results-item">
-              <span class="results-badge">🏆 Lauréat Hacktonfutur</span>
+              <span class="results-badge"><span aria-hidden="true">🏆</span> Lauréat Hacktonfutur</span>
               <p class="mb-0">Farmflow, projet élève d'aquaponie connectée, présenté au salon BPI Casablanca 2022</p>
             </div>
           </div>
           <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
             <div class="results-item">
-              <span class="results-badge">💬 « L'école vécue comme une aventure »</span>
+              <span class="results-badge"><span aria-hidden="true">💬</span> « L'école vécue comme une aventure »</span>
               <p class="mb-0">Retour d'expérience issu du projet n³, salle aérée du Lycée Lyautey</p>
             </div>
           </div>
           <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="250">
             <div class="results-item">
-              <span class="results-badge">💬 « On va vraiment aller sur Mars monsieur ? »</span>
+              <span class="results-badge"><span aria-hidden="true">💬</span> « On va vraiment aller sur Mars monsieur ? »</span>
               <p class="mb-0">Commentaire candide d'élève après 6 mois du projet EIST au lycée Blaise Pascal de Libreville</p>
             </div>
           </div>
           <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
             <div class="results-item">
-              <span class="results-badge">🏆 Lauréat Météo à l'École</span>
+              <span class="results-badge"><span aria-hidden="true">🏆</span> Lauréat Météo à l'École</span>
               <p class="mb-0">Projet Mété'O'Saules au collège de Guyancourt en 2016</p>
             </div>
           </div>
           <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
             <div class="results-item">
-              <span class="results-badge">🎬 Une vie en forêt</span>
+              <span class="results-badge"><span aria-hidden="true">🎬</span> Une vie en forêt</span>
               <p class="mb-0">Participation des élèves au tournage avec Francis Hallé en 2019 au Gabon</p>
             </div>
           </div>
           <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
             <div class="results-item">
-              <span class="results-badge">📺 Interview SAS</span>
+              <span class="results-badge"><span aria-hidden="true">📺</span> Interview SAS</span>
               <p class="mb-0">Réalisée par TVfil 78 pour mettre en valeur le dispositif de raccrochage scolaire au collège les Saules en 2015</p>
             </div>
           </div>
           <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="250">
             <div class="results-item">
-              <span class="results-badge">📰 Résultats et reconnaissance</span>
+              <span class="results-badge"><span aria-hidden="true">📰</span> Résultats et reconnaissance</span>
               <p class="mb-0">Publications dans Le Café pédagogique et Les Cahiers pédagogiques</p>
             </div>
           </div>
@@ -857,7 +490,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
         <div class="row justify-content-center row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
           <div class="col d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box service-card">
-              <img src="assets/img/logo-n3.png" class="img-fluid" width="35%" alt="La salle aérée n³">
+              <img src="assets/img/logo-n3.png" class="img-fluid wp-35" alt="La salle aérée n³">
               <h4 class="title"><a href="https://n3.olution.info/" rel="noopener noreferrer" target="_blank">La salle aérée n³</a></h4>
               <span class="service-badge service-badge-1">Pour qui ? Institutions & partenaires</span>
               <p class="description">Une salle de cours extérieure et bien plus au lycée français de Casablanca.</p>
@@ -867,7 +500,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
 
           <div class="col d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="150">
             <div class="icon-box service-card">
-              <img src="assets/img/olutionff.png" class="img-fluid" width="35%" alt="IOT olution">
+              <img src="assets/img/olutionff.png" class="img-fluid wp-35" alt="IOT olution">
               <h4 class="title"><a href="https://iot.olution.info" rel="noopener noreferrer" target="_blank">IOT olution</a></h4>
               <span class="service-badge service-badge-2">Pour qui ? Élèves & makers</span>
               <p class="description">Site présentant les modules DIY connectés créés avec les élèves et permettant leur suivi et contrôle en temps réel à distance.</p>
@@ -877,7 +510,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
 
           <div class="col d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
             <div class="icon-box service-card">
-              <img src="assets/img/logo-gnomes-licornes.png" class="img-fluid" width="35%" alt="Gnomes&amp;Licornes">
+              <img src="assets/img/logo-gnomes-licornes.png" class="img-fluid wp-35" alt="Gnomes&amp;Licornes">
               <h4 class="title"><a href="https://gl.olution.info/" rel="noopener noreferrer" target="_blank">Gnomes&amp;Licornes</a></h4>
               <span class="service-badge service-badge-3">Pour qui ? Élèves de 6e & enseignants</span>
               <p class="description">Une véritable aventure ludique sur l'ensemble de l'année en Sciences et Technologie pour les sixièmes.</p>
@@ -887,7 +520,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
 
           <div class="col d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box service-card">
-              <img src="assets/img/logoff.png" class="img-fluid" width="25%" alt="Farmflow">
+              <img src="assets/img/logoff.png" class="img-fluid wp-25" alt="Farmflow">
               <h4 class="title"><a href="https://farmflow.marout.org" rel="noopener noreferrer" target="_blank">Farmflow</a></h4>
               <span class="service-badge service-badge-4">Pour qui ? Partenaires & presse</span>
               <p class="description">Un projet de start-up d'aquaponie connectée initié par des élèves de seconde, récompensé au concours Hacktonfutur et présenté au salon de la BPI 2022.</p>
@@ -897,7 +530,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
 
           <div class="col d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="150">
             <div class="icon-box service-card">
-              <img src="assets/img/logomarout.png" class="img-fluid" width="35%" alt="Marout">
+              <img src="assets/img/logomarout.png" class="img-fluid wp-35" alt="Marout">
               <h4 class="title"><a href="https://marout.org" rel="noopener noreferrer" target="_blank">Marout</a></h4>
               <span class="service-badge service-badge-5">Pour qui ? Réseau associatif</span>
               <p class="description">Mutualisation, partage, conseil sont les mots-clés qui définissent cette association.</p>
@@ -907,7 +540,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
 
           <div class="col d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
             <div class="icon-box service-card">
-              <img src="assets/img/logo-education-nationale.png" class="img-fluid" width="45%" alt="Ministère de l'Éducation Nationale">
+              <img src="assets/img/logo-education-nationale.png" class="img-fluid wp-45" alt="Ministère de l'Éducation Nationale">
               <h4 class="title"><a href="https://www.education.gouv.fr/" rel="noopener noreferrer" target="_blank">Ministère de l'Éducation Nationale</a></h4>
               <span class="service-badge service-badge-6">Pour qui ? Tous</span>
               <p class="description">Le portail officiel du ministère : politiques éducatives, programmes, concours et ressources pour les personnels et les familles.</p>
@@ -917,7 +550,7 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
 
           <div class="col d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="250">
             <div class="icon-box service-card">
-              <img src="assets/img/logo-aefe.png" class="img-fluid" width="45%" alt="AEFE - Agence pour l'enseignement français à l'étranger">
+              <img src="assets/img/logo-aefe.png" class="img-fluid wp-45" alt="AEFE - Agence pour l'enseignement français à l'étranger">
               <h4 class="title"><a href="https://www.aefe.fr/" rel="noopener noreferrer" target="_blank">AEFE</a></h4>
               <span class="service-badge service-badge-7">Pour qui ? Réseau français à l'étranger</span>
               <p class="description">Agence pour l'enseignement français à l'étranger : réseau des lycées français du monde, offres de formation et mobilité internationale.</p>
@@ -1035,20 +668,21 @@ $annees_existence = max(1, (int)date('Y') - $plateforme_annee_deploiement);
       <p>échanger, créer, apprendre</p>
       <div class="copyright">
         &copy; Un projet proposé par l'association <strong><span>Marout</span></strong>. Tous droits réservés — v<?php echo htmlspecialchars($version); ?>
+        — <a href="mentions-legales.php">Mentions légales</a>
       </div>
     </div>
   </footer><!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Vendor JS (CDN — pas besoin de assets/vendor/) -->
-  <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs@1.2.1/dist/purecounter_vanilla.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/js/glightbox.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/isotope-layout@3.0.6/dist/isotope.pkgd.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/waypoints@4.0.1/lib/noframework.waypoints.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+  <!-- Vendor JS (CDN, versions épinglées + SRI). Tous en defer : exécution dans
+       l'ordre du document, après parsing ; main.js (dernier) a donc toutes ses dépendances. -->
+  <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs@1.2.1/dist/purecounter_vanilla.js" defer integrity="sha384-b/OUoiaWoE9G/eDWFHc+o5LiouLHci4aajBAkjhwIDwfKUzZkMAsX1K7KXt//tX/" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/js/glightbox.min.js" defer integrity="sha384-Lcg6/G/AHqVn603GN2UHyiIV/TPsuh4QkJNKsdCAUmzbItQ9oSceVj00Zf5tM0EG" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/isotope-layout@3.0.6/dist/isotope.pkgd.min.js" defer integrity="sha384-vtH+5pZsjdWxaTWlFSCrWM6i0TIG0HKOqJbPo91LB35dvWpVzuWdJeVoNweP+eoY" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11.2.10/swiper-bundle.min.js" defer integrity="sha384-2UI1PfnXFjVMQ7/ZDEF70CR943oH3v6uZrFQGGqJYlvhh4g6z6uVktxYbOlAczav" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer integrity="sha384-n1AULnKdMJlK1oQCLNDL9qZsDgXtH6jRYFCpBtWFc+a9Yve0KSoMn575rk755NJZ" crossorigin="anonymous"></script>
   <!-- Template Main JS File -->
   <script src="assets/js/main.js" defer></script>
 </body>

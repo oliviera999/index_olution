@@ -1,0 +1,38 @@
+# Index Olution — cache navigateur, compression et en-têtes de sécurité.
+# Tout est sous <IfModule> : si un module est absent chez l'hébergeur, la
+# directive est simplement ignorée (aucune erreur 500).
+
+AddDefaultCharset UTF-8
+
+# --- Compression (o2switch : mod_deflate actif par défaut) ---
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
+  AddOutputFilterByType DEFLATE application/javascript application/json
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# --- Cache navigateur ---
+# Les assets ne sont pas fingerprintés : durées modérées (30 j images, 7 j css/js)
+# pour limiter le risque d'assets périmés après un déploiement.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/png  "access plus 30 days"
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  # HTML/PHP : toujours revalidé (la version du site doit apparaître immédiatement)
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+# --- En-têtes de sécurité de base ---
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+</IfModule>
+
+# --- Divers ---
+Options -Indexes

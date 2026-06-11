@@ -27,29 +27,63 @@ La barre de navigation utilise ces IDs pour le défilement (`.scrollto`). Ne pas
 ## Portfolio (Les actions)
 
 - **Filtres Isotope** : `#portfolio-flters` avec `data-filter` pointant vers des classes.
-- **Classes de filtre** à utiliser pour les items :
+- **Classes de filtre** (suffixe `filter-` + clé `cat` des données) :
   - `filter-bateau` — Dehors
   - `filter-brousse` — Dedans
   - `filter-urbain` — Nature urbaine
   - `filter-fictions` — Jeux et fictions
   - `filter-prototypage` — Tech
 
-**Attention** : un item existant utilise la typo `filter-proptypage` (ligne ~581). Pour la cohérence, utiliser `filter-prototypage` pour les nouveaux items ; les deux peuvent coexister si on ne corrige pas l’ancien.
+### Source des données : `data/portfolio.php`
 
-**Structure HTML d’un item** :
+Depuis la v4.35, les items du portfolio ne sont plus écrits en dur dans `index.php` :
+ils sont déclarés dans **`data/portfolio.php`** (source unique) et rendus par une boucle
+`foreach` dans la section `#portfolio`. Le markup HTML produit reste identique au précédent.
 
-```html
-<div class="col-lg-4 col-md-6 portfolio-item filter-XXX">
-  <div class="portfolio-img"><img src="assets/img/portfolio/CATEGORIE/fichier.jpg" class="img-fluid" alt=""></div>
-  <div class="portfolio-info">
-    <h4>Titre de l'action</h4>
-    <p>Sous-titre ou lieu</p>
-    <a href="assets/img/portfolio/CATEGORIE/fichier.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="..."><i class="bx bx-plus"></i></a>
-  </div>
-</div>
+**Ajouter / modifier un item** = éditer le tableau retourné par `data/portfolio.php` :
+
+```php
+[
+  'cat'   => 'prototypage',                              // bateau|brousse|urbain|fictions|prototypage
+  'img'   => 'assets/img/portfolio/tech/mon-image.jpg',  // lien lightbox + vignette
+  'title' => 'Titre du lien lightbox',
+  'alt'   => 'Texte alternatif de la vignette',
+  'h4'    => 'Titre affiché',
+  'loc'   => 'Lieu / sous-titre',
+  'w'     => 1200, 'h' => 800,                            // dimensions intrinsèques (anti-CLS)
+],
 ```
 
-Catégories de dossiers : `dehors`, `dedans`, `urbain`, `jeux`, `tech`.
+Puis régénérer les dimensions automatiquement :
+
+```bash
+php tools/gen-portfolio-dims.php
+```
+
+`w`/`h` alimentent les attributs `width`/`height` de la vignette (évite le *layout shift* / CLS).
+Si on les omet (`null`), la vignette est rendue sans dimensions (comportement historique).
+Le contenu de `data/portfolio.php` est de **confiance** (édité par l’auteur) : il est inséré sans
+échappement pour reproduire le markup existant.
+
+### Curation de l’onglet « En bref »
+
+Le filtre par défaut affiche `data-en-bref-count` items (8). Par défaut le tirage est
+aléatoire à chaque chargement. Pour **curater** la sélection, ajouter `’bref’ => true`
+aux items à mettre en avant dans `data/portfolio.php` : ils sont pris en priorité,
+le reste du quota est complété au hasard. Aucun item marqué = comportement aléatoire pur.
+
+### Outils (`tools/`)
+
+| Script | Rôle |
+|---|---|
+| `gen-portfolio-dims.php` | Recalcule `w`/`h` de chaque item depuis les fichiers images |
+| `optimize-images.php` | Redimensionne (max 1920 px) et recompresse JPEG/PNG via GD ; `--dry-run` pour prévisualiser ; corrige l’orientation EXIF |
+| `check-images.php` | Vérifie qu’aucune image n’est orpheline ni référencée à tort (exécuté par la CI) |
+
+Après tout ajout/remplacement d’image : `php tools/optimize-images.php` puis
+`php tools/gen-portfolio-dims.php`, et la CI vérifie l’intégrité.
+
+Catégories de dossiers d’images : `dehors`, `dedans`, `urbain`, `jeux`, `tech`.
 
 ---
 

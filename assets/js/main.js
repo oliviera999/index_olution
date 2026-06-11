@@ -132,10 +132,12 @@
   }
 
   /**
-   * Mobile nav toggle
+   * Mobile nav toggle (synchronise aria-expanded pour les lecteurs d'écran)
    */
   on('click', '.mobile-nav-toggle', function(e) {
-    select('#navbar').classList.toggle('navbar-mobile')
+    const navbar = select('#navbar')
+    navbar.classList.toggle('navbar-mobile')
+    this.setAttribute('aria-expanded', navbar.classList.contains('navbar-mobile') ? 'true' : 'false')
     const icon = this.querySelector('i') || this
     icon.classList.toggle('bi-list')
     icon.classList.toggle('bi-x')
@@ -152,8 +154,11 @@
       if (navbar.classList.contains('navbar-mobile')) {
         navbar.classList.remove('navbar-mobile')
         let navbarToggle = select('.mobile-nav-toggle')
-        navbarToggle.classList.toggle('bi-list')
-        navbarToggle.classList.toggle('bi-x')
+        navbarToggle.setAttribute('aria-expanded', 'false')
+        // l'icône est dans le <i> du bouton, pas sur le bouton lui-même
+        const icon = navbarToggle.querySelector('i') || navbarToggle
+        icon.classList.toggle('bi-list')
+        icon.classList.toggle('bi-x')
       }
       scrollto(this.hash)
     }
@@ -176,20 +181,21 @@
   })
 
   /**
-   * Skills animation
+   * Skills animation (IntersectionObserver, comme les sliders — sans Waypoints)
    */
   let skilsContent = select('.skills-content');
   if (skilsContent) {
-    new Waypoint({
-      element: skilsContent,
-      offset: '80%',
-      handler: function(direction) {
-        let progress = select('.progress .progress-bar', true);
-        progress.forEach((el) => {
-          el.style.width = el.getAttribute('aria-valuenow') + '%'
-        });
-      }
-    })
+    const skillsObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          select('.progress .progress-bar', true).forEach((el) => {
+            el.style.width = el.getAttribute('aria-valuenow') + '%'
+          });
+          skillsObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.2 });
+    skillsObserver.observe(skilsContent);
   }
 
   /**
@@ -300,13 +306,26 @@
 
     let count = parseInt(portfolioContainer.getAttribute('data-en-bref-count'), 10) || 8;
     count = Math.min(count, items.length);
+    // Les items curatés (classe .featured, flag 'bref' dans data/portfolio.php) passent
+    // en priorité dans "En bref" ; le reste du quota est tiré au hasard.
+    let selected = 0;
+    items.forEach(function(item) {
+      if (selected < count && item.classList.contains('featured')) {
+        item.classList.add('in-bref');
+        selected++;
+      }
+    });
     const order = Array.from({ length: items.length }, (_, i) => i);
     for (let i = order.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [order[i], order[j]] = [order[j], order[i]];
     }
-    for (let k = 0; k < count; k++) {
-      items[order[k]].classList.add('in-bref');
+    for (let k = 0; k < order.length && selected < count; k++) {
+      const item = items[order[k]];
+      if (!item.classList.contains('in-bref')) {
+        item.classList.add('in-bref');
+        selected++;
+      }
     }
 
     try {
@@ -348,18 +367,19 @@
   window.addEventListener('load', scheduleLayoutAndAosRefresh);
 
   /**
-   * Initiate Pure Counter au scroll (section #about)
+   * Initiate Pure Counter au scroll (section #about) — IntersectionObserver
    */
   let aboutSection = select('#about');
   if (aboutSection && typeof PureCounter === 'function') {
-    new Waypoint({
-      element: aboutSection,
-      offset: '80%',
-      handler: function() {
-        new PureCounter();
-        this.destroy();
-      }
-    });
+    const countersObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          new PureCounter();
+          countersObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.2 });
+    countersObserver.observe(aboutSection);
   }
 
 })()
