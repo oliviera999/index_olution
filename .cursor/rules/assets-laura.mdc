@@ -1,0 +1,11 @@
+---
+description: CSS, JS et template Laura (couleur accent, classes utilisées par le JS, filtres portfolio)
+globs: "assets/css/style.css,assets/js/main.js"
+alwaysApply: false
+---
+
+# CSS / JS et template Laura
+
+- **Couleur d’accent** : `#ffab40` (liens, boutons, état active). Ne pas changer sans cohérence globale dans le thème.
+- **Classes utilisées par le JS** : Ne pas supprimer ni renommer sans adapter main.js : `.scrollto`, `#navbar`, `.portfolio-container`, `.portfolio-item`, `.portfolio-lightbox`, `.actions-slider`, `.testimonials-slider`, `.purecounter`, `.back-to-top`.
+- **Filtres portfolio** : Les classes `filter-*` sont utilisées par Isotope via `data-filter` sur `#portfolio-flters`. Pour un nouvel item, utiliser une des classes existantes (`filter-bateau`, `filter-brousse`, `filter-urbain`, `filter-fictions`, `filter-prototypage`). Si un nouveau filtre est ajouté, ajouter aussi un `<li data-filter=".filter-XXX">` dans `#portfolio-flters`.

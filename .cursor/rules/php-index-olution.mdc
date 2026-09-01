@@ -1,0 +1,11 @@
+---
+description: Règles PHP et HTML pour index.php (hero, tableau images, sections)
+globs: "**/index.php,**/*.php"
+alwaysApply: false
+---
+
+# PHP et HTML index Olution
+
+- **Hero** : Le tableau `$nomimages` est indexé de 1 à `$nbimages`. Toujours utiliser `rand(1, $nbimages)` pour l’indice (jamais 0).
+- **Séparation vue / logique** : Éviter d’ajouter de la logique PHP lourde dans la vue ; garder le bloc actuel en tête de page pour l’image hero.
+- **Commentaires de sections** : Conserver les commentaires `<!-- ======= Section ======= -->` et `<!-- End Section -->` pour le repérage rapide dans index.php.
