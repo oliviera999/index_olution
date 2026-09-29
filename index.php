@@ -14,6 +14,10 @@ $base_for_document = rtrim($script_dir, '/') . '/';
 if ($base_for_document !== '/' && $base_for_document !== '' && $base_for_document !== './') {
   $base = $base_for_document;
 }
+// URL absolue des assets (og:image) : suit l'emplacement réel de la page, racine du site
+// ou sous-dossier (ex. olution.info/accueil/ quand la vitrine est déployée avec Moodle).
+$assets_host = preg_replace('/[^A-Za-z0-9.:-]/', '', $_SERVER['HTTP_HOST'] ?? '') ?: 'olution.info';
+$assets_url = 'https://' . $assets_host . ($base !== '' ? $base : '/') . 'assets/';
 // Images hero : générées par boucle (bg-1.jpg … bg-N.jpg dans assets/img/entete/).
 // Ajouter une image = déposer le fichier et incrémenter $nbimages.
 $nbimages = 16;
@@ -46,7 +50,7 @@ $portfolio_items = require __DIR__ . '/data/portfolio.php';
   <meta property="og:url" content="<?php echo htmlspecialchars($canonical_url); ?>">
   <meta property="og:title" content="olution.info – Olution : échanger, créer, apprendre">
   <meta property="og:description" content="olution.info est la plateforme officielle du projet Olution : alternatives à l'enseignement classique, espaces de formation, actions pédagogiques en France et à l'international.">
-  <meta property="og:image" content="<?php echo htmlspecialchars($canonical_url); ?>assets/img/logoblanc.png">
+  <meta property="og:image" content="<?php echo htmlspecialchars($assets_url); ?>img/logoblanc.png">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="olution.info">
 
